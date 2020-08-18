@@ -11,12 +11,12 @@
 * [Day05](python-basic-notes/day05.md)
 * [Day06](python-basic-notes/day06.md)
 
----
-
-* [Liu's Blog](https://forgotten-forever.github.io/)
-* [GodLin's Blog](https://crushing.xyz)
-
 ## Java Ways
 
 * [Java Ways 01](java-ways/java-ways-01.md)
+
+---
+
+* [Liu's Blog](https://forgotten-forever.github.io/)
+* [GodLin's Blog](https://www.crushing.xyz/)
 
