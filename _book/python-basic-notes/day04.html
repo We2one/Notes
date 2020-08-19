@@ -1,0 +1,473 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Day04 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="day05.html" />
+    
+    
+    <link rel="prev" href="day03.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">java-ways</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../java-ways/java-ways-01.md">
+            
+                <span>
+            
+                    
+                    Java Ways 01
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">python-basic-notes</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="day01.html">
+            
+                <a href="day01.html">
+            
+                    
+                    Day01
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="day02.html">
+            
+                <a href="day02.html">
+            
+                    
+                    Day02
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="day03.html">
+            
+                <a href="day03.html">
+            
+                    
+                    Day03
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.4" data-path="day04.html">
+            
+                <a href="day04.html">
+            
+                    
+                    Day04
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="day05.html">
+            
+                <a href="day05.html">
+            
+                    
+                    Day05
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="day06.html">
+            
+                <a href="day06.html">
+            
+                    
+                    Day06
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Day04</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="day04">Day04</h1>
+<h2 id="&#x5217;&#x8868;&#x7684;&#x5E8F;&#x5217;&#x64CD;&#x4F5C;">&#x5217;&#x8868;&#x7684;&#x5E8F;&#x5217;&#x64CD;&#x4F5C;</h2>
+<ol>
+<li><p>&#x5207;&#x7247;</p>
+<p>&#x683C;&#x5F0F;: &#x5217;&#x8868;&#x540D;[start, stop[, step]]</p>
+</li>
+<li><p>&#x904D;&#x5386;</p>
+</li>
+<li><p>&#x5E8F;&#x5217;&#x89E3;&#x5305; (&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x53D8;&#x91CF;&#x63A5;&#x53D7;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;)</p>
+<pre><code class="lang-python">num1, num2 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+<span class="hljs-comment"># (num1, num2) 1, 2</span>
+num3, *num4 = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
+<span class="hljs-comment"># (num3, num4)  1, [2,3,4,5] </span>
+*num5, num6 = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>]
+<span class="hljs-comment"># (num5, num6) [1,2,3,4], 5</span>
+</code></pre>
+</li>
+<li><p>&#x5217;&#x8868;&#x5185;&#x7F6E;&#x65B9;&#x6CD5;</p>
+<p><code>dir(list)</code>: &#x67E5;&#x770B;&#x5217;&#x8868;&#x5185;&#x7F6E;&#x65B9;&#x6CD5;</p>
+<ul>
+<li><p>&#x589E;&#x52A0;&#x65B9;&#x6CD5;</p>
+<p>| &#x65B9;&#x6CD5; | &#x63CF;&#x8FF0; |
+| :---: | :---: |
+| <strong>append</strong> | &#x8FFD;&#x52A0;&#xFF0C;&#x5728;&#x5217;&#x8868;&#x672B;&#x5C3E;&#x8FFD;&#x52A0;&#x6307;&#x5B9A;&#x7684;&#x5143;&#x7D20; |
+| extend | &#x5C06;&#x6307;&#x5B9A;&#x5E8F;&#x5217;&#x5143;&#x7D20;&#x4F9D;&#x6B21;&#x8FFD;&#x52A0;&#x5230;&#x5217;&#x8868;&#x5C3E;&#x90E8;(&#x5408;&#x5E76;),&#x4E0D;&#x53BB;&#x91CD; (&#x4E0E;&#x4E24;&#x5217;&#x8868;&#x76F8;&#x52A0;&#x7C7B;&#x4F3C;) |
+| <strong>insert</strong> | &#x5C06;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5230;&#x5BF9;&#x5E94;&#x7D22;&#x5F15;&#x4F4D;&#x4E0A;&#xFF0C;&#x6CE8;&#x610F;&#x8D1F;&#x7D22;&#x5F15;&#x5012;&#x5E8F;&#x63D2;&#x5165;&#xFF0C;&#x8D85;&#x51FA;&#x7D22;&#x5F15;&#x4F1A;&#x5728;&#x672B;&#x5C3E;&#x63D2;&#x5165; |</p>
+<pre><code class="lang-text"># append()
+  &gt;&gt;&gt; a = [1,2,3,4]
+  &gt;&gt;&gt; a.append(1)
+  &gt;&gt;&gt; a
+  [1, 2, 3, 4, 1]
+# extend()
+  &gt;&gt;&gt; a.extend(&quot;5&quot;)
+  &gt;&gt;&gt; a
+  [1, 2, 3, 4, 1, &apos;5&apos;]
+# insert()
+  &gt;&gt;&gt; a
+  [1, 2, 3, 4, 1, &apos;5&apos;]
+  &gt;&gt;&gt; a.insert(2, 8)
+  &gt;&gt;&gt; a
+  [1, 2, 8, 3, 4, 1, &apos;5&apos;]
+</code></pre>
+</li>
+<li><p>&#x5220;&#x9664;&#x65B9;&#x6CD5;</p>
+<p>| &#x65B9;&#x6CD5; | &#x63CF;&#x8FF0; |
+| :---: | :---: |
+| <strong>pop</strong> | &#x79FB;&#x9664;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5143;&#x7D20; (&#x9ED8;&#x8BA4;&#x6700;&#x540E;&#x4E00;&#x4E2A;)&#xFF0C;&#x5E76;&#x4E14;&#x8FD4;&#x56DE;&#x8BE5;&#x5143;&#x7D20;&#x7684;&#x503C; |
+| <strong>remove</strong> | &#x79FB;&#x9664;&#x5217;&#x8868;&#x4E2D;&#x67D0;&#x4E2A;&#x503C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x9879;&#xFF0C;&#x6CA1;&#x6709;&#x8FD4;&#x56DE; |
+| del | &#x5220;&#x9664;&#x6574;&#x4E2A;&#x5217;&#x8868;&#x6216;&#x5217;&#x8868;&#x7684;&#x67D0;&#x4E2A;&#x503C;(&#x7269;&#x7406;&#x610F;&#x4E49;&#x4E0A;),del &#x4E3A; python &#x5185;&#x7F6E;&#x529F;&#x80FD;&#xFF0C;&#x4E0D;&#x662F;&#x5217;&#x8868;&#x72EC;&#x6709; |
+| clear | &#x6E05;&#x7A7A;&#x5217;&#x8868; |</p>
+<pre><code class="lang-text">  # pop()
+  &gt;&gt;&gt; a.pop()
+  &apos;5&apos;
+  &gt;&gt;&gt; a
+  [1, 2, 8, 3, 4, 1]
+  # remove()
+  &gt;&gt;&gt; a.remove(8)
+  &gt;&gt;&gt; a
+  [1, 2, 3, 4, 1]
+  # del
+  &gt;&gt;&gt; del a
+  &gt;&gt;&gt; a
+  Traceback (most recent call last):
+    File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+  NameError: name &apos;a&apos; is not defined
+  # clear()
+  &gt;&gt;&gt; a = [1, 2, 3, 4, 1]
+  &gt;&gt;&gt; a.clear()
+  &gt;&gt;&gt; a
+  []
+</code></pre>
+</li>
+<li><p>&#x4FEE;&#x6539;</p>
+<p>| &#x65B9;&#x6CD5; | &#x63CF;&#x8FF0; |
+| :---: | :---: |
+| reverse | &#x5012;&#x5E8F;&#x6392;&#x5E8F; |
+| sort(self, axis=-1, kind=None, order=None[, reverse=True]) | &#x6392;&#x5E8F;&#xFF0C;&#x6309; ASCII &#x7801;&#x8868;, list.sort() &#x6392;&#x5E8F;&#x540E;&#x539F;&#x6570;&#x7EC4;&#x987A;&#x5E8F;&#x53D1;&#x751F;&#x6539;&#x53D8;, reverse=True&#x505A;&#x964D;&#x5E8F; |
+| sorted(list) | &#x5BF9;&#x5217;&#x8868;&#x3001;&#x5B57;&#x5178;&#x3001;&#x5143;&#x7EC4;&#x91CC;&#x9762;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x6392;&#x5E8F;,&#x6392;&#x5E8F;&#x540E;&#x539F;&#x6570;&#x7EC4;&#x987A;&#x5E8F;&#x672A;&#x53D1;&#x751F;&#x6539;&#x53D8; (Python &#x5185;&#x7F6E;&#x51FD;&#x6570;) |</p>
+<pre><code class="lang-text">  # reverse()
+  &gt;&gt;&gt; a = [1, 2, 3, 4, 1]
+  &gt;&gt;&gt; a.reverse()
+  &gt;&gt;&gt; a
+  [1, 4, 3, 2, 1]
+  # sort()
+  &gt;&gt;&gt; a.sort()
+  &gt;&gt;&gt; a
+  [1, 1, 2, 3, 4]
+  # sorted()
+  &gt;&gt;&gt; a
+  [1, 1, 2, 3, 4]
+  &gt;&gt;&gt; sorted(a, reverse=True)
+  [4, 3, 2, 1, 1]
+  &gt;&gt;&gt; a
+  [1, 1, 2, 3, 4]
+</code></pre>
+</li>
+<li><p>&#x67E5;&#x627E;</p>
+<p>| &#x65B9;&#x6CD5; | &#x63CF;&#x8FF0; |
+| :---: | :---: |
+| count | &#x8BA1;&#x6570;&#xFF0C;&#x7EDF;&#x8BA1;&#x8981;&#x8BA1;&#x6570;&#x5143;&#x7D20;&#x5728;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x4E2A;&#x6570; |
+| index(data[, start, end]) | &#x4ECE;&#x5217;&#x8868; (&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x67E5;&#x8BE2;&#x8303;&#x56F4;) &#x4E2D;&#x627E;&#x51FA;&#x67D0;&#x4E2A;&#x503C;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x9879;&#x7684;&#x7D22;&#x5F15; |
+| len(list) | Python &#x5185;&#x7F6E;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;&#x5217;&#x8868;&#x957F;&#x5EA6;(&#x6709;&#x591A;&#x5C11;&#x5143;&#x7D20;) |</p>
+<pre><code class="lang-text">  # count()
+  &gt;&gt;&gt; a
+  [1, 1, 2, 3, 4]
+  &gt;&gt;&gt; a.count(1)
+  2
+  # index()
+  &gt;&gt;&gt; a.index(2)
+  2
+  # len()
+  &gt;&gt;&gt; len(a)
+  5
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>&#x5217;&#x8868;&#x7684;&#x6DF1;&#x6D45;&#x62F7;&#x8D1D;</p>
+<ul>
+<li>python &#x516D;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;<ul>
+<li>&#x53EF;&#x53D8;: &#x5217;&#x8868;&#x3001;&#x5B57;&#x5178;&#x3001;&#x96C6;&#x5408;</li>
+<li>&#x4E0D;&#x53EF;&#x53D8;: &#x6570;&#x503C;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x5143;&#x7EC4;</li>
+</ul>
+</li>
+<li>&#x91CD;&#x65B0;&#x8D4B;&#x503C;: &#x5C06;&#x65B0;&#x7684;&#x53D8;&#x91CF;&#x540D;&#x6307;&#x5411;&#x539F;&#x5730;&#x5740;</li>
+<li>&#x62F7;&#x8D1D;: list.copy()  (&#x53EA;&#x62F7;&#x8D1D;&#x4E86;&#x5916;&#x5C42;&#x5217;&#x8868;&#xFF0C;&#x5185;&#x5C42;&#x6307;&#x5411;&#x5730;&#x5740;&#x4E0D;&#x53D8;&#xFF0C;&#x53D7;&#x539F;&#x5217;&#x8868;&#x4FEE;&#x6539;&#x5F71;&#x54CD;) (&#x53EA;&#x5BF9;&#x5916;&#x5C42;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x91CD;&#x65B0;&#x5F00;&#x8F9F;&#x4E86;&#x63A7;&#x4EF6;&#x5B58;&#x50A8;)</li>
+<li>&#x6DF1;&#x62F7;&#x8D1D;: <ul>
+<li>import copy</li>
+<li>list.deepcopy() (&#x91CD;&#x65B0;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x5730;&#x5740;&#xFF0C;&#x5B58;&#x50A8;&#x88AB;&#x590D;&#x5236;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4E0D;&#x53D7;&#x539F;&#x5217;&#x8868;&#x4FEE;&#x6539;&#x5F71;&#x54CD;)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x5217;&#x8868;&#x63A8;&#x5BFC;&#x5F0F; (&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x5FEB;&#x901F;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5217;&#x8868;)<ul>
+<li>&#x53D8;&#x91CF;&#x540D; = [&#x8868;&#x8FBE;&#x5F0F; for &#x53D8;&#x91CF; in &#x5217;&#x8868;] (&#x65E0;&#x6761;&#x4EF6;&#x7B5B;&#x9009;)</li>
+<li>&#x53D8;&#x91CF;&#x540D; = [&#x8868;&#x8FBE;&#x5F0F; for &#x53D8;&#x91CF; in &#x5217;&#x8868; if &#x6761;&#x4EF6;] (&#x6709;&#x6761;&#x4EF6;&#x7B5B;&#x9009;)</li>
+<li>&#x6267;&#x884C;&#x6D41;&#x7A0B;: &#x901A;&#x8FC7; for &#x5FAA;&#x73AF;&#x5C06;&#x7C7B;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x904D;&#x5386;&#xFF0C;&#x5728;&#x901A;&#x8FC7; if &#x7B5B;&#x9009;&#xFF0C;&#x7136;&#x540E;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#x7684;&#x653E;&#x5165;&#x65B0;&#x7684;&#x5217;&#x8868;</li>
+</ul>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="day03.html" class="navigation navigation-prev " aria-label="Previous page: Day03">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="day05.html" class="navigation navigation-next " aria-label="Next page: Day05">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Day04","level":"2.4","depth":1,"next":{"title":"Day05","level":"2.5","depth":1,"path":"python-basic-notes/day05.md","ref":"python-basic-notes/day05.md","articles":[]},"previous":{"title":"Day03","level":"2.3","depth":1,"path":"python-basic-notes/day03.md","ref":"python-basic-notes/day03.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python-basic-notes/day04.md","mtime":"2020-08-18T07:24:26.092Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-19T10:17:26.613Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
