@@ -1,23 +1,23 @@
-# Table of contents
+# Summary
+* [Introduction](README.md)
 
-* [Alright!](README.md)
+## Java ways
+* [Java ways 01](java-ways/java-ways-01.md)
+* [One](java-ways/one.md)
 
-## Python Basic Notes
+* [Ways](java-ways/ways/README.md)
+    * [Java ways 01](java-ways/ways/java-ways-01.md)
 
-* [Day01](python-basic-notes/day01.md)
-* [Day02](python-basic-notes/day02.md)
-* [Day03](python-basic-notes/day03.md)
-* [Day04](python-basic-notes/day04.md)
-* [Day05](python-basic-notes/day05.md)
-* [Day06](python-basic-notes/day06.md)
 
-## Java Ways
-
-* [oNE](java-ways/one.md)
-* [Java Ways 01](java-ways/java-ways-01.md)
-
----
-
-* [Liu's Blog](https://forgotten-forever.github.io/)
-* [GodLin's Blog](https://www.crushing.xyz/)
+## Python basic notes
+* [Day 01](python-basic-notes/Day_01.md)
+* [Day 02](python-basic-notes/Day_02.md)
+* [Day 03](python-basic-notes/Day_03.md)
+* [Day 04](python-basic-notes/Day_04.md)
+* [Day 05](python-basic-notes/Day_05.md)
+* [Day 06](python-basic-notes/Day_06.md)
+* [Day 07](python-basic-notes/Day_07.md)
+* [Day 08](python-basic-notes/Day_08.md)
+* [Day 09](python-basic-notes/Day_09.md)
+* [Day 10](python-basic-notes/Day_10.md)
 
