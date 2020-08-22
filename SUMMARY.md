@@ -3,7 +3,6 @@
 
 ## Java ways
 * [Java ways 01](java-ways/java-ways-01.md)
-* [One](java-ways/one.md)
 
 * [Ways](java-ways/ways/README.md)
     * [Java ways 01](java-ways/ways/java-ways-01.md)
