@@ -13,6 +13,7 @@
 
 ## Java Ways
 
+* [oNE](java-ways/one.md)
 * [Java Ways 01](java-ways/java-ways-01.md)
 
 ---
