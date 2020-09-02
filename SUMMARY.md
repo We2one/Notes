@@ -2,6 +2,9 @@
 * [Introduction](README.md)
 
 ## Java ways
+* [Git](java-ways/git/README.md)
+    * [Git basic](java-ways/git/git-basic.md)
+
 * [Ways](java-ways/ways/README.md)
     * [Java ways 01](java-ways/ways/java-ways-01.md)
 
