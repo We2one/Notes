@@ -5,6 +5,9 @@
 * [Git](java-ways/git/README.md)
     * [Git basic](java-ways/git/git-basic.md)
 
+* [Leetcode101](java-ways/leetcode101/README.md)
+    * [Find even digits](java-ways/leetcode101/Find_Even_Digits.md)
+
 * [Ways](java-ways/ways/README.md)
     * [Java ways 01](java-ways/ways/java-ways-01.md)
 
