@@ -33,7 +33,7 @@
     * [Day 17](python-basic-notes/python-days/Day_17.md)
     * [Day 18](python-basic-notes/python-days/Day_18.md)
     * [Day 19](python-basic-notes/python-days/Day_19.md)
-    * [Day 20(补)](python-basic-notes/python-days/Day_20(补).md)
+    * [Day 20(1)](python-basic-notes/python-days/Day_20(1).md)
     * [Day 20](python-basic-notes/python-days/Day_20.md)
     * [Shell commit](python-basic-notes/python-days/SHELL_commit.md)
     * [Python base](python-basic-notes/python-days/python_base.md)
