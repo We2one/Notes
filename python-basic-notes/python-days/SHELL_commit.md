@@ -74,22 +74,22 @@
                     ```
             
             2. 文件判断
-                
+                 
                 命令 | 命令意义
                 :---: | :---:
-                if[-e 文件路径] | 判断文件是否存在
-                if[-d 文件路径] | 判断是否是文件夹
-                if[-f 文件路径] | 判断是否文件
-                if[-r 文件路径] | 判断文件是否可读
-                if[-w 文件路径] | 判断文件是否可写
-                if[-x 文件路径] | 判断文件是否可执行
+                if[ -e 文件路径 ] | 判断文件是否存在
+                if[ -d 文件路径 ] | 判断是否是文件夹
+                if[ -f 文件路径 ] | 判断是否文件
+                if[ -r 文件路径 ] | 判断文件是否可读
+                if[ -w 文件路径 ] | 判断文件是否可写
+                if[ -x 文件路径 ] | 判断文件是否可执行
                 
             3. 字符串的判断
                 
                 命令 | 命令意义
                 :---: | :---:
-                =/==  | 判断两个字符是否相等 [$a=$b]
-                !=    | 判断两个字符是否不等 [$a!=$b] 
+                =/==  | 判断两个字符是否相等 [ $a=$b ]
+                !=    | 判断两个字符是否不等 [ $a!=$b ] 
                 -z    | 判断字符串长度是否为0  如果为0返回true [ -z $变量 ]
                 -n    | 判断字符串是否不为空 不为空返回true [ -n “$变量” ]
                 
@@ -97,8 +97,8 @@
                 
                 命令 | 命令意义
                 :---: | :---:
-                -eq   | = 相等 [$a -eq $2]
-                -gt   | > 大于 
+                -eq   | = 相等 [ $a -eq $2 ]
+                -gt   | > 大于  
                 -it   | < 小于
                 -ge   | >= 大于等于
                 -le   | <= 小于等于
@@ -128,6 +128,24 @@
                 上述条件都不成立时执行
               esac
               ```
+                + 例子
+                    ```
+                    [angleliuliu@localhost 桌面]$ cat -n case.sh 
+                     1  #!/bin/sh
+                     2
+                     3  read -p "请输入你要进行的操作1)登录,2)退出" num
+                     4
+                     5  case $num in
+                     6  1|login )
+                     7      echo "登录"
+                     8      ;;
+                     9  2|exit )
+                    10      echo "退出"
+                    11      ;;
+                    12  * )
+                    13      echo "输入错误"
+                    14  esac
+                  ```
       
         3. for 循环
             ```
@@ -136,6 +154,25 @@
             循环中代码
            done
            ```
+            + 例子
+                ```
+                [angleliuliu@localhost 桌面]$ cat for.sh 
+                #!/bin/sh
+                
+                num="1 2 3 4 5"
+                
+                for i in $num
+                do
+                    echo $i
+                    sleep 1
+                done
+                [angleliuliu@localhost 桌面]$ sh for.sh 
+                1
+                2
+                3
+                4
+                5
+              ```
            
         4. while 循环
             ```
@@ -144,6 +181,40 @@
             循环执行代码
            done
            ```
+            + 例子
+                ```
+                [angleliuliu@localhost 桌面]$ cat -n while.sh 
+                1  #!/bin/sh
+                2
+                3  i=1
+                4  while (($i <= 10))
+                5  do
+                6      echo $i
+                7      let i++
+                8  done
+                9
+                10
+                11  j=1
+                12  sum=0
+                13  while [ $j -le 100 ]
+                14  do
+                15      sum=`expr $sum + $j`
+                16      let j++
+                17  done
+                18  echo $sum
+                [angleliuliu@localhost 桌面]$ sh while.sh 
+                1
+                2
+                3
+                4
+                5
+                6
+                7
+                8
+                9
+                10
+                5050
+              ```
         
         5. 数值运算三种方式
             
@@ -174,11 +245,31 @@
                 
                 + echo names : 返回第一个元素
                 + echo ${names[@]}  : 获取所有的
-                + echo ${names[*]}  : 获取所有的
+                + echo ${names[*]}  : 获取所有的,作为一个完整字符串
                 + echo ${names[1]}  : 通过索引获取指定值
                 + echo ${#names[@]} : 获取指定数组长度
                 + names[1]=""   : 动态存入数据至数组
                  
+             + 例子
+                ```
+                 angleliuliu@localhost 桌面]$ cat -n arr.sh 
+                 1  #!/bin/sh
+                 2
+                 3  arr=("1" "2" "3")
+                 4
+                 5  echo arr
+                 6  echo ${arr[@]}
+                 7  echo ${arr[*]}
+                 8  echo ${arr[1]}
+                 9  echo ${#arr[@]}
+                [angleliuliu@localhost 桌面]$ sh arr.sh 
+                arr
+                1 2 3
+                1 2 3
+                2
+                3
+               ```
+             
     4. SHELL 函数
         
         + 函数格式
@@ -187,18 +278,54 @@
           function 函数名(){
             代码段
           }
+          
+          # 也可以
+          函数名(){
+            代码段
+          }
+          函数的调用
+          函数名
           ```
           
         + 函数的传参
-            ```
-          # 函数的传参
-          函数名 参数1 参数2 ...
-          # 接收参数
-          $0  接受当前函数的名称
-          $1  接受到的第一个参数
-          $2  接受到的第二个参数
-          ${10}  10以上的参数需要加{}
-          $@ 表示接受到的所有参数
-          $*  接受到的所有参数
-          $#  表示接受的参数个数
+          + 函数的传参 `函数名 参数1 参数2 ...`
+          + 接收参数
+              + $0  接受当前文件的名称
+              + $1  接受到的第一个参数
+              + $2  接受到的第二个参数
+              + ${10}  10以上的参数需要加{}
+              + $@ 表示接受到的所有参数
+              + $*  接受到的所有参数
+              + $#  表示接受的参数个数
+              + $?  表示检测上一条命令是否执行成果 (执行成果 返回 0)
           ```
+          [angleliuliu@localhost 桌面]$ sh func.sh 
+          test1
+          test2
+          a
+          b
+          a b c d e f g 1 2 3
+          10
+          a b c d e f g 1 2 3
+          3
+          [angleliuliu@localhost 桌面]$ cat func.sh 
+          #!/bin/sh
+            
+          function test1(){
+              echo "test1"
+          }
+            
+          test2(){
+              echo "test2"
+              echo $1
+              echo $2
+              echo $@
+              echo $#
+              echo $*
+              echo ${10}
+          }
+            
+          # 调用函数
+          test1
+          ```
+          
