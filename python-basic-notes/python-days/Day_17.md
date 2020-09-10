@@ -38,7 +38,7 @@
   
 + 使用继承方式开启线程 (定义一个类 继承 threading.Thread 类，复写父类的 run() 方法)
 + 
-    ```
+    ````
   import threading
   import time
     
@@ -57,7 +57,7 @@
   if __name__ == "__main__":
       my_thread = MyThread(3)
       my_thread.run()
-  ```
+  ````
   
 + 线程之间共享全局变量
 
@@ -87,7 +87,7 @@
 
         + blocking  : True 当前线程堵塞，直到获取到这个锁为止 (默认为 True)，设定为 False 当前线程不会堵塞
 
-            ```
+            ````
             import threading
             import time
             
@@ -135,8 +135,8 @@
           t1 释放 t2 锁
           t1 释放 t1 锁
           """
-          ```
-          
+          ````
+    
 + 上锁解锁过程
 
     + 当一个线程调用锁的 acquire() 方法获得锁时，锁就进入 locked 状态
@@ -144,8 +144,8 @@
     + 每次只有一个线程可以获得锁，此时另一个线程试图获得这个锁，该线程就会变成 blocked 阻塞状态，直到有用锁的线程调用 release() 方法释放锁，锁进入 unlocked 状态
 
     + 线程调度程序从处于同步阻塞状态的线程中选择一个获得锁，并使得该线程进入运行 (running) 状态
- 
-    ```
+
+    ````
     import threading
     import time
     
@@ -176,7 +176,7 @@
     
         t1.start()
         t2.start()
-  ```
+  ````
   
 + 锁的好处
   
@@ -216,7 +216,7 @@
 
             + queue.Queue(self, maxsize=0)
 
-            ```
+            ````
             import queue
 
             # 先进后出
@@ -232,13 +232,13 @@
             2
             3
             """
-          ```
+          ````
           
         + LIFO : 后入先出
 
             + queue.LifoQueue()
 
-            ```
+            ````
             import queue
 
             # 先进后出
@@ -254,15 +254,15 @@
             2
             1
             """
-          ```
+          ````
           
         + PriorityQueue : 优先级队列，数字越小优先级越高
 
             + q = queue.PriorityQueue()
- 
+
             + q.put((优先级, "队列名"))
 
-            ```
+            ````
             import queue
 
             q = queue.PriorityQueue()
@@ -281,7 +281,7 @@
             (5, '队列5')
             (11, '队列4')
             """
-          ```
+          ````
     
     + 常用操作
 
@@ -301,7 +301,7 @@
 
         + q.get_nowait() : 解决阻塞问题，可以设置不要等待，没有数据就抛出异常
         
-        ```
+        ````
         from queue import Queue
 
         # 先入先出
@@ -331,7 +331,7 @@
         
         # block 参数 False 也可以解决程序阻塞问题,抛出 queue.Empty 异常
         print(q.get(block=False))
-      ```
+      ````
       
     + 规定队列长度
       
@@ -349,7 +349,7 @@
     
     + 简单 : 两个消费者一个生产者
 
-        ```
+        ````
         import threading
         import time
         import queue
@@ -367,15 +367,13 @@
                 print(f'生产了{count}个包子')
                 count += 1
                 time.sleep(0.5)
-        
-        
+
         def consumer(name):
             """消费者"""
             while True:
                 print(f'{name}取出了第{q.get()}个包子')
                 time.sleep(2)
-        
-        
+
         if __name__ == "__main__":
             p = threading.Thread(target=producer, args=("厨师", ))
         
@@ -396,10 +394,10 @@
         生产了5个包子
         ...
         """
-      ```
+      ````
     
     + 复杂 : 多对多
- 
+
         ```
         import threading
         import time
@@ -461,7 +459,7 @@
 
 + 使用函数传参的方法 (局部变量在函数调用时传递比较麻烦, 层层传递)
 
-    ```
+    ````
     # threadLocal ① 函数传参
     def process_student(num):
         std = Student(name)
@@ -478,7 +476,7 @@
     def do_task_2(std):
         do_subtask_2(std)
         do_subtask_2(std)
-  ```
+  ````
 
 + 全局字典的方法 (全局字典存储所有 对象 ，然后以 thread 自身作为 key 获得线程对应的 对象)
 
@@ -507,7 +505,7 @@
 
     + 常用地方是为每个线程绑定一个数据库连接,Http 请求，用户身份信息等
 
-    ```
+    ````
     import threading
     # threadLocal ③ threadLocal
     # 创建全局 threadLocal 对象
@@ -536,7 +534,7 @@
     hello, 学生1 (in 线程1)
     hello, 学生2 (in 线程2)
     """
-  ```
+  ````
   
 ### 全局解释器锁
 
@@ -557,7 +555,7 @@
         + 指定数量的字节码指令
 
         + 线程主动让出控制权 (可以调用 time.sleep(0) 完成)
- 
+
     4. 把线程设置回睡眠 (切换出线程)
 
     5. 解锁 GIL
