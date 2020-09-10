@@ -21,7 +21,7 @@
     + ##### unittest 的使用
     
         1. 步骤
-            
+           
             1. 导入 unittest 模块, 被检测文件或者其中的类
             
             2. 创建一个测试类, 被继承 unittest.TestCase
@@ -56,13 +56,12 @@
             assertlsInstance(a, b) | isInstance(a, b) : 实例对象
             assertNotlsInstance(a, b) | not isInstance(a, b) 
         
-        ```
+        ````
         """
         基本测试流程语法
         """
         import unittest
-        
-        
+
         # 创建类,继承unittest.TestCase
         class MyTest(unittest.TestCase):
         
@@ -87,12 +86,11 @@
                 b = 2
                 res = 3
                 self.assertEqual(a+b, res)
-        
-        
+
         if __name__ == '__main__':
             # 调用测试用例,main自动执行test_开头的方法
             unittest.main()
-      ```
+      ````
 
 ### Python2 / Python3区别
 
@@ -113,14 +111,16 @@
     
 4. #### 异常处理
     + Python2 
+
         ```
       try:
         ...
       except Exception, e:
         ...
       ```
-  
+    
     + Python3
+
         ```
       try:
         ...
@@ -143,7 +143,7 @@
         
     + Python3 : 一种标准输入
         + info = input("提示消息")
-        
+    
 7. #### 除法运算 : /
     + Python2 : 
         + / : 表示整除
@@ -152,7 +152,7 @@
     + Python3 : 
         + / : 真实除法
         + // : 整除
-        
+    
 8. #### 自定义类型
     + Python2 : 保留原始类型继承关系的经典类,同时也支持继承 object 而衍生的新式类,所以在多继承操作过程中会出现两种不同的数据检索方式,对大型项目不友好，开发更加混乱
     
@@ -173,7 +173,7 @@
 
 
 + #### Linux 操作系统特性
-    
+  
     + 完全免费
     + 多用户、多任务
     + 良好的界面(相对而言)
@@ -198,7 +198,7 @@
         + 关闭开机启动
             + chkconfig firewalld off
             + chkconfig iptables off
-            
+        
     + CentOS 7 关闭防火墙
         + 关闭防火墙
             + systemctl stop firewalld
@@ -261,8 +261,9 @@
             + -i | -ignore-case : 忽略字符大小写
         
         + | : 管道符号, 连接多个命令 (将第一个命令的输出结果，作为第二个命令的输入)
-            + 基本语法 : `$ 命令1 | 命令2 | 命令3`
-        
+            
+        + 基本语法 : `$ 命令1 | 命令2 | 命令3`
+            
         + find : 文件检索命令
             + 语法格式 : `$ find path -option [-print] [-exec -ok command] {} \`
                 + path : 命令所查找的目录路径

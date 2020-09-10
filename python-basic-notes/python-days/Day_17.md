@@ -37,28 +37,30 @@
         + threading.activeCount() <==> threading.active_count() : 返回正在运行线程的数量, 与 len(threading.enumerate()) 结果相同
   
 + 使用继承方式开启线程 (定义一个类 继承 threading.Thread 类，复写父类的 run() 方法)
-+ 
-    ````
-  import threading
-  import time
+
+    ```python
+    import threading
+    import time
+      
+      
+    class MyThread(threading.Thread):
+      
+        def __init__(self, num):
+            super(MyThread, self).__init__()
+            self.num = num
+      
+        def run(self):
+            for i in range(self.num):
+                print(f"---run\t{i}---")
+      
+      
+    if __name__ == "__main__":
+        my_thread = MyThread(3)
+        my_thread.run()
+    ```
+
     
-    
-  class MyThread(threading.Thread):
-    
-      def __init__(self, num):
-          super(MyThread, self).__init__()
-          self.num = num
-    
-      def run(self):
-          for i in range(self.num):
-              print(f"---run\t{i}---")
-    
-    
-  if __name__ == "__main__":
-      my_thread = MyThread(3)
-      my_thread.run()
-  ````
-  
+
 + 线程之间共享全局变量
 
     + 共享全局变量导致的 "线程不安全" 问题
@@ -87,44 +89,44 @@
 
         + blocking  : True 当前线程堵塞，直到获取到这个锁为止 (默认为 True)，设定为 False 当前线程不会堵塞
 
-            ````
-            import threading
-            import time
-            
-            
-            def func1():
-                print('t1开始执行')
-                if t1_lock.acquire():
-                    time.sleep(1)
-                    print('t1 获取 t1 锁')
-                    if t2_lock.acquire(blocking=False):
-                        print('t1 获取 t2 锁')
-                        t2_lock.release()
-                        print('t1 释放 t2 锁')
-                    t1_lock.release()
-                    print('t1 释放 t1 锁')
-            
-            def func2():
-                print('t2开始执行')
-                if t2_lock.acquire():
-                    time.sleep(1)
-                    print('t2 获取 t2 锁')
-                    if t1_lock.acquire(blocking=False):
-                        print('t2 获取 t1 锁')
-                        t1_lock.release()
-                        print('t2 释放 t1 锁')
-                    t2_lock.release()
-                    print('t2 释放 t2 锁')
-            
-            if __name__ == "__main__":
-                t1_lock = threading.Lock()
-                t2_lock = threading.Lock()
-            
-                t1 = threading.Thread(target=func1)
-                t2 = threading.Thread(target=func2)
-            
-                t1.start()
-                t2.start()
+          ```python
+          import threading
+          import time
+          
+          
+          def func1():
+              print('t1开始执行')
+              if t1_lock.acquire():
+                  time.sleep(1)
+                  print('t1 获取 t1 锁')
+                  if t2_lock.acquire(blocking=False):
+                      print('t1 获取 t2 锁')
+                      t2_lock.release()
+                      print('t1 释放 t2 锁')
+                  t1_lock.release()
+                  print('t1 释放 t1 锁')
+          
+          def func2():
+              print('t2开始执行')
+              if t2_lock.acquire():
+                  time.sleep(1)
+                  print('t2 获取 t2 锁')
+                  if t1_lock.acquire(blocking=False):
+                      print('t2 获取 t1 锁')
+                      t1_lock.release()
+                      print('t2 释放 t1 锁')
+                  t2_lock.release()
+                  print('t2 释放 t2 锁')
+          
+          if __name__ == "__main__":
+              t1_lock = threading.Lock()
+              t2_lock = threading.Lock()
+          
+              t1 = threading.Thread(target=func1)
+              t2 = threading.Thread(target=func2)
+          
+              t1.start()
+              t2.start()
           """
           t1开始执行
           t2开始执行
@@ -135,17 +137,19 @@
           t1 释放 t2 锁
           t1 释放 t1 锁
           """
-          ````
-    
+          ```
+
+          
+
 + 上锁解锁过程
 
-    + 当一个线程调用锁的 acquire() 方法获得锁时，锁就进入 locked 状态
+  + 当一个线程调用锁的 acquire() 方法获得锁时，锁就进入 locked 状态
 
-    + 每次只有一个线程可以获得锁，此时另一个线程试图获得这个锁，该线程就会变成 blocked 阻塞状态，直到有用锁的线程调用 release() 方法释放锁，锁进入 unlocked 状态
+  + 每次只有一个线程可以获得锁，此时另一个线程试图获得这个锁，该线程就会变成 blocked 阻塞状态，直到有用锁的线程调用 release() 方法释放锁，锁进入 unlocked 状态
 
-    + 线程调度程序从处于同步阻塞状态的线程中选择一个获得锁，并使得该线程进入运行 (running) 状态
+  + 线程调度程序从处于同步阻塞状态的线程中选择一个获得锁，并使得该线程进入运行 (running) 状态
 
-    ````
+    ```python
     import threading
     import time
     
@@ -176,8 +180,10 @@
     
         t1.start()
         t2.start()
-  ````
-  
+    ```
+
+    
+
 + 锁的好处
   
     + 确保了某段关键代码只能有一个线程从头到尾完整的运行
@@ -214,11 +220,11 @@
 
         + FIFO : 先进先出
 
-            + queue.Queue(self, maxsize=0)
+          + queue.Queue(self, maxsize=0)
 
-            ````
+            ```python
             import queue
-
+            
             # 先进后出
             q = queue.Queue()
             q.put(1)
@@ -232,15 +238,17 @@
             2
             3
             """
-          ````
-          
+            ```
+
+            
+
         + LIFO : 后入先出
 
-            + queue.LifoQueue()
+          + queue.LifoQueue()
 
-            ````
+            ```python
             import queue
-
+            
             # 先进后出
             q = queue.LifoQueue()
             q.put(1)
@@ -254,35 +262,39 @@
             2
             1
             """
-          ````
-          
+            ```
+
+            
+
         + PriorityQueue : 优先级队列，数字越小优先级越高
 
             + q = queue.PriorityQueue()
 
             + q.put((优先级, "队列名"))
 
-            ````
-            import queue
+              ```python
+              import queue
+          
+              q = queue.PriorityQueue()
+              q.put((1, "队列1"))
+              q.put((-1, "队列2"))
+              q.put((0, "队列3"))
+              q.put((11, "队列4"))
+              q.put((5, "队列5"))
+              i = 0
+              while i < q.qsize():
+                  print(q.get())
+              """
+              (-1, '队列2')
+              (0, '队列3')
+              (1, '队列1')
+              (5, '队列5')
+              (11, '队列4')
+              """
+            ```
+          
+            
 
-            q = queue.PriorityQueue()
-            q.put((1, "队列1"))
-            q.put((-1, "队列2"))
-            q.put((0, "队列3"))
-            q.put((11, "队列4"))
-            q.put((5, "队列5"))
-            i = 0
-            while i < q.qsize():
-                print(q.get())
-            """
-            (-1, '队列2')
-            (0, '队列3')
-            (1, '队列1')
-            (5, '队列5')
-            (11, '队列4')
-            """
-          ````
-    
     + 常用操作
 
         + q.empty() : 判断是否为空
@@ -301,157 +313,163 @@
 
         + q.get_nowait() : 解决阻塞问题，可以设置不要等待，没有数据就抛出异常
         
-        ````
-        from queue import Queue
-
-        # 先入先出
-        q = Queue()
-        # 判断是否为空，为空 TRUE
-        print(q.empty())
+            ```python
+            from queue import Queue
         
-        q.put('d1')
-        q.put('d2')
-        q.put('d3')
-        q.put('d4')
-        # 判断队列是否已满，满了返回 TRUE
-        print(q.full())
-        print(q.get())
-        print(q.get())
-        print(q.get())
-        print(q.get())
-        
-        # 阻塞，通过 timeout 参数解决阻塞问题，抛出 queue.Empty 异常
-        # print(q.get(timeout=1))
-        
-        # 接上一行的的例子，可以设置不要等待，没有数据就抛出异常
-        # print(q.get_nowait())
-        
-        # 或者使用 if判断 qsize 是否等于 0
-        print(q.qsize())
-        
-        # block 参数 False 也可以解决程序阻塞问题,抛出 queue.Empty 异常
-        print(q.get(block=False))
-      ````
+            # 先入先出
+            q = Queue()
+            # 判断是否为空，为空 TRUE
+            print(q.empty())
+            
+            q.put('d1')
+            q.put('d2')
+            q.put('d3')
+            q.put('d4')
+            # 判断队列是否已满，满了返回 TRUE
+            print(q.full())
+            print(q.get())
+            print(q.get())
+            print(q.get())
+            print(q.get())
+            
+            # 阻塞，通过 timeout 参数解决阻塞问题，抛出 queue.Empty 异常
+            # print(q.get(timeout=1))
+            
+            # 接上一行的的例子，可以设置不要等待，没有数据就抛出异常
+            # print(q.get_nowait())
+            
+            # 或者使用 if判断 qsize 是否等于 0
+            print(q.qsize())
+            
+            # block 参数 False 也可以解决程序阻塞问题,抛出 queue.Empty 异常
+            print(q.get(block=False))
+          ```
+      
+          
       
     + 规定队列长度
       
     + queue.Queue(maxsize=30) : 设置有长度限制的队列
-    
+
 + 生产者与消费者模式
-  
+
     + 定义 : 通过平衡生产线程和消费线程的工作能力来提高程序的整体处理数据的速度
-    
+
     + 什么是生产者消费者模式
 
         + 通过一个容器来解决生产者和消费者的强耦合问题。
 
         + 生产者和消费者彼此不直接通讯，通过阻塞队列来通讯，阻塞队列相当于一个缓冲区，平衡供需关系
-    
+
     + 简单 : 两个消费者一个生产者
 
-        ````
-        import threading
-        import time
-        import queue
-        
-        
-        # 简单生产消费问题
-        q = queue.Queue()
-        
-        
-        def producer(name):
-            """生产者"""
-            count = 1
-            while True:
-                q.put(f'{count}')
-                print(f'生产了{count}个包子')
-                count += 1
-                time.sleep(0.5)
+      ```python
+      import threading
+      import time
+      import queue
+      
+      
+      # 简单生产消费问题
+      q = queue.Queue()
+      
+      
+      def producer(name):
+          """生产者"""
+          count = 1
+          while True:
+              q.put(f'{count}')
+              print(f'生产了{count}个包子')
+              count += 1
+              time.sleep(0.5)
+      
+      def consumer(name):
+          """消费者"""
+          while True:
+              print(f'{name}取出了第{q.get()}个包子')
+              time.sleep(2)
+      
+      if __name__ == "__main__":
+          p = threading.Thread(target=producer, args=("厨师", ))
+      
+          c1 = threading.Thread(target=consumer, args=("消费者1", ))
+          c2 = threading.Thread(target=consumer, args=("消费者2", ))
+      
+          p.start()
+          c1.start()
+          c2.start()
+      """
+      生产了1个包子
+      消费者1取出了第1个包子
+      生产了2个包子消费者2取出了第2个包子
+      
+      生产了3个包子
+      生产了4个包子
+      消费者1取出了第3个包子
+      生产了5个包子
+      ...
+      """
+      ```
 
-        def consumer(name):
-            """消费者"""
-            while True:
-                print(f'{name}取出了第{q.get()}个包子')
-                time.sleep(2)
+      
 
-        if __name__ == "__main__":
-            p = threading.Thread(target=producer, args=("厨师", ))
-        
-            c1 = threading.Thread(target=consumer, args=("消费者1", ))
-            c2 = threading.Thread(target=consumer, args=("消费者2", ))
-        
-            p.start()
-            c1.start()
-            c2.start()
-        """
-        生产了1个包子
-        消费者1取出了第1个包子
-        生产了2个包子消费者2取出了第2个包子
-        
-        生产了3个包子
-        生产了4个包子
-        消费者1取出了第3个包子
-        生产了5个包子
-        ...
-        """
-      ````
-    
     + 复杂 : 多对多
 
-        ```
-        import threading
-        import time
-        import queue
-        import random
-        
-        # 多对多
-        q = queue.Queue(maxsize=10)
-        count = 1
-        
-        def producer(name):
-            """生产者"""
-            global count
-            while True:
-                q.put(f'{count}')
-                print(f'生产了{count}个包子')
-                count += 1
-                time.sleep(random.random()*12)
-        
-        def consumer(name):
-            """消费者"""
-            while True:
-                print(f'{name}取出了第{q.get()}个包子')
-                time.sleep(random.random()*12)
-        
-        if __name__ == "__main__":
-            p1 = threading.Thread(target=producer, args=("厨师1", ))
-            p2 = threading.Thread(target=producer, args=("厨师2",))
-        
-            c1 = threading.Thread(target=consumer, args=("消费者1", ))
-            c2 = threading.Thread(target=consumer, args=("消费者2", ))
-            c3 = threading.Thread(target=consumer, args=("消费者3",))
-            c4 = threading.Thread(target=consumer, args=("消费者4",))
-        
-            p1.start()
-            p2.start()
-            c1.start()
-            c2.start()
-            c3.start()
-            c4.start()
-        """
-        生产了1个包子
-        生产了2个包子
-        消费者1取出了第1个包子
-        消费者2取出了第2个包子
-        生产了3个包子
-        消费者3取出了第3个包子
-        生产了4个包子
-        消费者4取出了第4个包子
-        生产了5个包子消费者2取出了第5个包子
-        
-        生产了6个包子
-        """
+      ```python
+      import threading
+      import time
+      import queue
+      import random
+      
+      # 多对多
+      q = queue.Queue(maxsize=10)
+      count = 1
+      
+      def producer(name):
+          """生产者"""
+          global count
+          while True:
+              q.put(f'{count}')
+              print(f'生产了{count}个包子')
+              count += 1
+              time.sleep(random.random()*12)
+      
+      def consumer(name):
+          """消费者"""
+          while True:
+              print(f'{name}取出了第{q.get()}个包子')
+              time.sleep(random.random()*12)
+      
+      if __name__ == "__main__":
+          p1 = threading.Thread(target=producer, args=("厨师1", ))
+          p2 = threading.Thread(target=producer, args=("厨师2",))
+      
+          c1 = threading.Thread(target=consumer, args=("消费者1", ))
+          c2 = threading.Thread(target=consumer, args=("消费者2", ))
+          c3 = threading.Thread(target=consumer, args=("消费者3",))
+          c4 = threading.Thread(target=consumer, args=("消费者4",))
+      
+          p1.start()
+          p2.start()
+          c1.start()
+          c2.start()
+          c3.start()
+          c4.start()
+      """
+      生产了1个包子
+      生产了2个包子
+      消费者1取出了第1个包子
+      消费者2取出了第2个包子
+      生产了3个包子
+      消费者3取出了第3个包子
+      生产了4个包子
+      消费者4取出了第4个包子
+      生产了5个包子消费者2取出了第5个包子
+      
+      生产了6个包子
+      """
       ```
+
+      
 
 ### threadLocal
 
@@ -459,32 +477,34 @@
 
 + 使用函数传参的方法 (局部变量在函数调用时传递比较麻烦, 层层传递)
 
-    ````
-    # threadLocal ① 函数传参
-    def process_student(num):
-        std = Student(name)
-        # std 是局部变量，但是每个函数都会使用 
-        do_task_1(std)
-        do_task_2(std)
-        
-        
-    def do_task_1(std):
-        do_subtask_1(std)
-        do_subtask_2(std)
-        
-    
-    def do_task_2(std):
-        do_subtask_2(std)
-        do_subtask_2(std)
-  ````
+  ```python
+  # threadLocal ① 函数传参
+  def process_student(num):
+      std = Student(name)
+      # std 是局部变量，但是每个函数都会使用 
+      do_task_1(std)
+      do_task_2(std)
+      
+      
+  def do_task_1(std):
+      do_subtask_1(std)
+      do_subtask_2(std)
+      
+  
+  def do_task_2(std):
+      do_subtask_2(std)
+      do_subtask_2(std)
+  ```
+
+  
 
 + 全局字典的方法 (全局字典存储所有 对象 ，然后以 thread 自身作为 key 获得线程对应的 对象)
 
-    + 优点 : 消除了局部定义中函数传递的问题
+  + 优点 : 消除了局部定义中函数传递的问题
 
-    + 缺点 : 每个函数获取的方式落后
+  + 缺点 : 每个函数获取的方式落后
 
-    ```
+    ```python
     # threadLocal ② 全局字典
     global_dict = {}
     
@@ -499,13 +519,15 @@
     def do_task_1():
         # 不传入 std, 根据当前线程查找
         std = global_dict[threading_dict_thread()]
-  ```
-  
+    ```
+
+    
+
 + 使用 threadLocal 方法 (定义在全局，每个 thread 都可以对它进行读写，处理属于自己的副本，但是互不影响，互不干扰)
 
-    + 常用地方是为每个线程绑定一个数据库连接,Http 请求，用户身份信息等
+  + 常用地方是为每个线程绑定一个数据库连接,Http 请求，用户身份信息等
 
-    ````
+    ```python
     import threading
     # threadLocal ③ threadLocal
     # 创建全局 threadLocal 对象
@@ -534,8 +556,10 @@
     hello, 学生1 (in 线程1)
     hello, 学生2 (in 线程2)
     """
-  ````
-  
+    ```
+
+    
+
 ### 全局解释器锁
 
 + python 的执行 : 由 Python 虚拟机 (解释器主循环) 控制。在主循环中同时只能有一个控制线程再执行；内存中可以有许多程序，但任意给定时刻只能有一个在运行

@@ -26,7 +26,7 @@
     re.fullmatch(patter, string) | 扫描**整个字符串string**，如果整个字符串都包含在正则表达式表示的范围中, 返回整个字符串, 否则返回None
     re.finditer(patter, string) | 扫描**整个字符串string**，将匹配到的字符保存在一个可以遍历的列表中
     
-    ````python
+    ```python
    import re
     
    string = "Hello Word"
@@ -64,8 +64,10 @@
    <re.Match object; span=(7, 8), match='o'>
    o
    """
-   ````
+   ```
 
+    
+    
 4. #### 字符串拆分替换函数
 
     函数 | 描述
@@ -89,6 +91,8 @@
    """
    ```
    
+   
+   
 5. #### 正则表达式元字符
    
     元字符 | 描述
@@ -105,7 +109,7 @@
      \b | 匹配一个单词的边界
      \B | 匹配不是单词的开头或结束位置
     
-     ````python
+    ```python
    import re
     
    # 正则表达式元字符
@@ -150,7 +154,9 @@
    []
    ['', '', '', '', '', '', '', '', '', '', '', '', '']
    """
-    ````
+   ```
+   
+   
    
 6. #### 正则表达式中的量词 (量词 : 用于限定字符出现数量的关键词)
 
@@ -211,14 +217,16 @@
    """
    ```
    
+   
+   
 8. #### 正则表达式分组 (再一次完整的匹配过程中，将匹配到的结果进行分组，细化对匹配结果的操作，正则表达式通过 () 分组，以提取匹配结果的部分结果)
 
-    分组 | 描述
-    :---: | :---:
-    (expression) | 使用圆括号直接分组; 正则表达式本身匹配的结果就是一个组，可以通过 group() 或 group(0) 获取; 然后正则表达式中包含的圆括号就是按照顺序从 1 开始编号的子组
-    (?P<name>expression) | 使用 圆括号分组, 然后给当前的圆括号表示的小组命名为 name ,可以通过 group(name) 进行数据的获取
+   分组 | 描述
+   :---: | :---:
+   (expression) | 使用圆括号直接分组; 正则表达式本身匹配的结果就是一个组，可以通过 group() 或 group(0) 获取; 然后正则表达式中包含的圆括号就是按照顺序从 1 开始编号的子组
+   (?P<name>expression) | 使用 圆括号分组, 然后给当前的圆括号表示的小组命名为 name ,可以通过 group(name) 进行数据的获取
 
-    ````python
+   ```python
    import re
     
    string = '<a href="http://www.baidu.com">百度</a><a href="http://www.mi.com">小米</a>'
@@ -251,7 +259,9 @@
    http://www.baidu.com
    百度
    """
-   ````
+   ```
+
+   
 
 9. #### 贪婪模式和懒惰模式
 
@@ -267,23 +277,25 @@
 
         + 懒惰模式就是从头向尾查找，找到匹配就返回，一直查找
         
-    ```python
-   import re
-    
-   # 贪婪和非贪婪
-   string = '<a href="http://www.baidu.com">百度</a><a href="http://www.mi.com">小米</a>'
-    
-   res_1 = re.findall('<a.*?>', string)
-   res_2 = re.findall('<.*>', string)
-    
-   print(res_1)
-   print(res_2)
-   """
-   ['<a href="http://www.baidu.com">', '<a href="http://www.mi.com">']
-   ['<a href="http://www.baidu.com">百度</a><a href="http://www.mi.com">小米</a>']
-   """
-   ```
-   
+          ```python
+         import re
+          
+         # 贪婪和非贪婪
+         string = '<a href="http://www.baidu.com">百度</a><a href="http://www.mi.com">小米</a>'
+          
+         res_1 = re.findall('<a.*?>', string)
+         res_2 = re.findall('<.*>', string)
+          
+         print(res_1)
+         print(res_2)
+         """
+         ['<a href="http://www.baidu.com">', '<a href="http://www.mi.com">']
+         ['<a href="http://www.baidu.com">百度</a><a href="http://www.mi.com">小米</a>']
+         """
+         ```
+       
+         
+       
 ### 迭代器
 
 1. #### 迭代器
@@ -313,7 +325,7 @@
 4. #### 应用场景
     + 数据类型转换就是使用的迭代器
 
-        ````
+      ```python
       str1 = 'Fibo'
       print(list(str1))
       print(tuple(str1))
@@ -321,23 +333,25 @@
       ['F', 'i', 'b', 'o']
       ('F', 'i', 'b', 'o')
       """
-      ````
-    
+      ```
+
+      
+
     + 斐波拉契数列
 
-        ```
+        ```python
         class Fibonacci:
-    
+        
         def __init__(self, all_num):
             self.all_num = all_num
             self.a = 1
             self.b = 1
             self.current_num = 0
-    
+        
         def __iter__(self):
             # 返回自己调用自己的 __next__() 方法
             return self
-    
+        
         def __next__(self):
             if self.all_num <= 2:
                 self.current_num += 1
@@ -352,11 +366,13 @@
                     return ret
                 else:
                     raise StopIteration
-    
-    
+                    
         for i in Fibonacci(100):
             print(i)
-      ```
+        ```
+
+        
+
 ### 生成器 (本质: 迭代器)
 
 + 项目中有大量数据需要存储
@@ -377,32 +393,34 @@
 
     4. yield 和 return 相同的是都可以返回值，不同的是 yield 不会结束函数
 
-    ````
-    def generator():
-        print('zzz')
-        yield
-    
-    
-    ret = generator()
-    print(ret)
-    # <generator object generator at 0x0000026FC9A12840>
-    print(ret.__next__())
-    # zzz
-    # None
-  ````
+       ```python
+       def generator():
+           print('zzz')
+           yield
+       
+       
+       ret = generator()
+       print(ret)
+       # <generator object generator at 0x0000026FC9A12840>
+       print(ret.__next__())
+       # zzz
+       # None
+     ```
   
-    ```
-  def generator():
-      print('zzz')
-      yield 1
-    
-    
-  res = generator()
-  ret = res.__next__()
-  print(ret)
-  # zzz
-  # 1
-    ```
+     ```python
+     def generator():
+         print('zzz')
+         yield 1
+       
+       
+     res = generator()
+     ret = res.__next__()
+     print(ret)
+     # zzz
+     # 1
+     ```
+  
+     
   
 + send() : 获取下一个值的效果和 next() 基本一致, 只是在获取下一个值的时候,给**上一个** yield 的位置传递一个数据 (如果没有上一个yield send(None))
 
@@ -411,55 +429,57 @@
         1. 第一次使用生成器的时候是用 next 获取下一个值
 
         2. 最后一个 yield 不能接受外部的值
-    
-    ````python
-  def generator():
-      print("a")
-      count = yield 1
-      print(f'---->, {count}')
-      print('b')
-      yield 2
-    
-    
-  g = generator()
-  next(g)
-  ret2 = g.send('123')
-  print(ret2)
-  """
-  a
-  ---->, 123
-  b
-  2
-  """
-  ````
-  
-  ```python
-  def fund():
-      print("爬取数据")
-      a = yield "爬取到的数据"
-      print(f'{a}是send传递的数据')
-    
-      yield 'over'
-    
-    
-  res =fund()
-    
-  print(res.send(None))
-  print(res.send('123'))
-  #  报错最后一个 yield 不能接受外部的值
-  print(res.send("2222"))
-  """
-  StopIteration
-  爬取数据
-  爬取到的数据
-  123是send传递的数据
-  over
-  """
-  ```
+        
+           ```python
+         def generator():
+             print("a")
+             count = yield 1
+             print(f'---->, {count}')
+             print('b')
+             yield 2
+           
+           
+         g = generator()
+         next(g)
+         ret2 = g.send('123')
+         print(ret2)
+         """
+         a
+         ---->, 123
+         b
+         2
+         """
+         ```
+      
+         ```python
+         def fund():
+             print("爬取数据")
+             a = yield "爬取到的数据"
+             print(f'{a}是send传递的数据')
+           
+             yield 'over'
+           
+           
+         res =fund()
+           
+         print(res.send(None))
+         print(res.send('123'))
+         #  报错最后一个 yield 不能接受外部的值
+         print(res.send("2222"))
+         """
+         StopIteration
+         爬取数据
+         爬取到的数据
+         123是send传递的数据
+         over
+         """
+         ```
+      
+         
   
 + yield from : 循环遍历容器类型
 
-    ````python
+  ```python
   def func():
       yield from range(1,10)
     
@@ -471,35 +491,39 @@
   <generator object func at 0x0000010DDF342840>
   [1, 2, 3, 4, 5, 6, 7, 8, 9]
   """
-  ````
+  ```
+
+  
 
 + 生成器表达式  (存储的是生成方式)
 
     + 格式 
 
         + 将列表解析式 [] 改为 () 即可
-
-        + 使用是可以遍历
-
++ 使用是可以遍历
+        
     ```python
-  import sys
-    
-  arr = [i for i in range(1000000)]
-    
-    
-  print(sys.getsizeof(arr))
-    
-  # 生成器
-    
-  tup = (i for i in range(1000000))
-    
-  print(sys.getsizeof(tup))
-  print(tup.__next__())
-  print(next(tup))
-  """
-  8697464
-  120
-  0
-  1
-  """
-  ```
+        import sys
+        
+      arr = [i for i in range(1000000)]
+        
+        
+      print(sys.getsizeof(arr))
+        
+      # 生成器
+        
+      tup = (i for i in range(1000000))
+        
+      print(sys.getsizeof(tup))
+      print(tup.__next__())
+      print(next(tup))
+      """
+      8697464
+      120
+      0
+      1
+      """
+      ```
+      
+      
+  
