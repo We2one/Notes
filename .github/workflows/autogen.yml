@@ -26,7 +26,8 @@ jobs:
       run: |
         git config --local user.email "1187985856@github.com"
         git config --local user.name "gentlemanhu"
-        git commit -m "generate summary" -a
+        git add -A
+        git commit -am "generate summary"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:

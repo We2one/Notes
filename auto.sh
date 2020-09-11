@@ -4,5 +4,12 @@
 #node generateSummary.js
 
 git add -A;
-git commit -am "update notes";
-git push ;
+
+if [[ ! $1 ]];then
+  git commit -am "$1"
+else
+  git commit -am "update notes"
+fi
+
+git push --all;
+# git push ;
