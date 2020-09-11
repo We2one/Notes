@@ -5,10 +5,10 @@
 
 git add -A;
 
-if [[ ! $1 ]];then
-  git commit -am "$1"
-else
+if [[ -z "$1" ]];then
   git commit -am "update notes"
+else
+  git commit -am "$1"
 fi
 
 git push --all;
