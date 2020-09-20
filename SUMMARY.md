@@ -1,6 +1,11 @@
 # Summary
 * [Introduction](README.md)
 
+## Golang basic notes
+* [Day 01](Golang-basic-notes/Day_01.md)
+* [Day 02](Golang-basic-notes/Day_02.md)
+* [Day 03](Golang-basic-notes/Day_03.md)
+
 ## Java ways
 * [Git](java-ways/git/README.md)
     * [Git basic](java-ways/git/git-basic.md)
