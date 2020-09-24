@@ -53,6 +53,8 @@
     * [Day 29](python-basic-notes/python-days/Day_29.md)
     * [Day 30](python-basic-notes/python-days/Day_30.md)
     * [Day 31](python-basic-notes/python-days/Day_31.md)
+    * [Day 32](python-basic-notes/python-days/Day_32.md)
+    * [Day 33](python-basic-notes/python-days/Day_33.md)
     * [Shell commit](python-basic-notes/python-days/SHELL_commit.md)
     * [Python base](python-basic-notes/python-days/python_base.md)
 
