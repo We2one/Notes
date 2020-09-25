@@ -3,7 +3,6 @@
 # 生成summary
 #node generateSummary.js
 
-git pull;
 git add -A;
 
 if [[ -z "$1" ]];then
