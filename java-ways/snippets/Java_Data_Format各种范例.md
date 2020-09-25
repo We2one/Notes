@@ -1,12 +1,12 @@
----
+```yaml
    Author: Gentleman.Hu
    Create Time: 2020-09-25 18:56:23
    Modified by: Gentleman.Hu
-   Modified time: 2020-09-25 19:01:01
+   Modified time: 2020-09-25 19:14:48
    Email: justfeelingme@gmail.com
    Home: https://crushing.xyz
    Description: Java中DateForamtt各种范例
- ---
+ ```
 
 ## Java中DateFormat各种范例
 
