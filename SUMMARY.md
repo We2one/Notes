@@ -11,7 +11,18 @@
     * [Git basic](java-ways/git/git-basic.md)
 
 * [Leetcode101](java-ways/leetcode101/README.md)
-    * [Find even digits](java-ways/leetcode101/Find_Even_Digits.md)
+    * [Explores](java-ways/leetcode101/explores/README.md)
+        * [Arrays explor](java-ways/leetcode101/explores/Arrays_Explor.md)
+    
+    * [Solutions](java-ways/leetcode101/solutions/README.md)
+        * [Find even digits](java-ways/leetcode101/solutions/Find_Even_Digits.md)
+    
+
+* [Snippets](java-ways/snippets/README.md)
+    * [Java data format各种范例](java-ways/snippets/Java_Data_Format各种范例.md)
+    * [Java与oracle数据库各种操作](java-ways/snippets/Java与Oracle数据库各种操作.md)
+    * [Maven初始化template](java-ways/snippets/Maven初始化template.md)
+    * [终端033颜色](java-ways/snippets/终端033颜色.md)
 
 * [Ways](java-ways/ways/README.md)
     * [Java ways 01](java-ways/ways/java-ways-01.md)
