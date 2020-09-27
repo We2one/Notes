@@ -32,10 +32,9 @@
          	# 动态追踪修改设置
          	SQLALCHEMY_TRACK_MODIFICATIONS = True
          ```
-      ```
       
-      ```
-   
+      
+      
    2. 在 app.py 内引用 SQLite 设置
    
          ```python
@@ -342,6 +341,7 @@
       ```python
       ## 职位
       class Position(Base):
+          __tablename__ = "position"
           p_name = db.Column(db.String(32))
           p_level = db.Column(db.Integer)
           p_person = db.relationship(
@@ -359,11 +359,200 @@
           score = db.Column(db.Float, nullable=True)
           
           # 声明p_position 是一个外键整型字段,对应 position 表的 id
-          p_position = db.Column(db.Integer, db.ForeignKey("position.idj"))
+          p_position = db.Column(db.Integer, db.ForeignKey("position.id"))
+      ```
+
+      + `__tablename__=""` : 表格名
+      + `p_position = db.Column(db.Integer, db.ForeignKey("position.id"))` : 声明p_position 是一个外键整型字段,对应 position 表的 id
+      + `p_person = db.relationship("Person", backref="our_position")` : 创建字段反向映射多表,backref 多表中操作一表数据的字段
+      + relationship : 单纯表象两个模型间关系,不体现在数据库的表结构中,只为实现一对多查询更加方便
+      + 一对一关系 : 增加列表项 `uselist=False`
+
+   3. 一对多操作增加
+
+      1. 使用外键字段增加数据
+
+         ```python
+         # 1. 增加职位,然后增加员工
+         pos = Position(p_name="员工", p_level=1)
+         pos.save()
+         # 增加员工李四
+         per = Person(username='李四', password="123456", nickname="小四", p_position=1)
+         per.save()
+         # 增加员工王五
+         position = Position.query.filter_by(p_name="员工").first()
+         per = Person(username='王五', password="123456", nickname="老五", p_position=position_id)
+         per.save()
+         ```
+
+      2. 使用 relationship 正向操作 (relationship 所在模型到另一个模型) 增加数据
+
+         ```python
+         # 2. 增加员工小王 为小组长
+         per = Person()
+         per.username = "小王"
+         per.password="12212"
+         per.nickname = "王组长"
+         # 不需要给外键字段赋值
+         per.save()
+         # 此操作将会删除之前的关系,重新建立关系
+         pos = Position.query.filter(Position.p_name="小组长").first()
+         pos.p_person = [per]
+         pos.save()
+         ```
+
+      3. 使用 relationship 反向操作 (另一个模型到relationship 所在模型) 增加数据
+
+         ```python
+         # 3. 增加小二为主任
+         per = Person()
+         per.username = "小二"
+         per.password="12212"
+         per.nickname = "二主任"
+         # 使用 backref 反向映射,值为职位对象
+         # 此操作将会删除之前的关系,重新建立关系
+         per.our_position = Position.query.filter_by(p_name="主任").first()
+         per.save()
+         ```
+
+         
+
+   4. 一对多查询
+
+      ```python
+      # 查询 id = 1 的员工的职位
+      ## 反向操作
+      person = Person.query.get(1)
+      pos = person.our_position.p_name
+      print(pos)
+      # 查询员工职位的员工
+      ## 正向操作
+      pos = Position.query.get(1)
+      person_list = pos.p_person
+      print(person_list)
       ```
 
       
 
-   3. 一对多操作增加
-
 2. 多对多关系
+
+   1. OA项目中的权限管理
+
+      1. 主任 : 查看部门考勤、组织部门会议
+      2. 经理 : 查看部门考勤、组织部门会议、招聘员工、开除员工
+      3. 表一 : 描述职位 (职位名称、职位等级)
+      4. 表二 : 描述权限 (权限名称)
+      5. 多对多 : 同一职位可以有多个权限,一个权限可以给多个人
+
+   2. 创建模型
+
+      1. 中间表创建 (必须如此创建)
+
+         ```python
+         # 创建中间表
+         pos_per = db.Table(
+         	'pos_per',  # 表名
+         	db.Column('pos_id', db.Integer, db.ForeignKey("position_id")),
+         	db.Column('per_id', db.Integer, db.ForeignKey('permission.id')),
+         )
+         ```
+
+      2. 创建职位表 (反向映射员工表与权限表)
+
+         ```python
+         # 创建职位表
+         class Position(Base):
+         	p_name = db.Column(db.String(32))
+         	p_level = db.Column(db.Integer)
+         	p_person = db.relationship(
+         		"Person",
+         		backref='our_position',
+         	)
+         	p_permission = db.relationship(
+         		"Permission",
+         		secondary=pos_per,
+         		backref="p_position",
+         	)
+         ```
+
+      3. 创建员工表 (外键连接职位表)
+
+         ```python
+         # 创建员工表
+         class Person(Base):
+         	username = db.Column(db.String(32), unique=True)
+         	password = db.Column(db.String(64))
+         	nickname = db.Column(db.String(32))
+         	age = db.Column(db.Integer)
+         	gender = db.Column(db.String(16))
+         	score = db.Column(db.Float)
+         
+         	p_position = db.Column(db.Integer, db.ForeignKey("position.id"))
+         ```
+
+      4. 创建权限表
+
+         ```python
+         # 创建权限表
+         class Permission(Base):
+         	per_name = db.Column(db.String(256))
+         ```
+
+   3. 多对多操作增加数据
+
+      1. 表中增加数据
+
+         ```python
+         # 插入权限
+         p_list = [
+             "查看部门考勤",
+             "组织部门会议",
+             "招聘员工",
+             "开除员工",
+         ]
+         for per in p_list:
+             p = Permission()
+             p.per_name = per
+             p.save()
+             # 插入职位
+             pos1 = Position(p_name="主任", p_level=1)
+             pos2 = Position(p_name="经理", p_level=2)
+             pos1.save()
+             pos2.save()
+         ```
+
+      2. 正向操作增加关系
+
+         ```python
+         # 正向操作增加关系  Position -> Permission
+         # 主任职位增加查看部门考勤权限
+         pos = Position.query.filter(Position.p_name=="主任").first()
+         per = Permission.query.filter(Permission.per_name=="查看部门考勤").first()
+         pos.p_permission = [per]
+         pos.save()
+         ```
+
+      3. 反向操作增加关系
+
+         ```python
+         # 反向操作,招聘员工权限中增加经理的角色
+         per = Permission.query.filter(Permission.per_name=="招聘员工").first()
+         pos = Position.query.filter(Position.p_name=="经理").first()
+         per.p_position = [pos]
+         per.save()
+         ```
+
+   4. 多对多操作查询
+
+      ```python
+      # 正向查询经理权限
+      pos = Position.query.filter(Position.p_name=="经理").first()
+      per = pos.p_permission
+      print(per)
+      # 反向查询拥有招聘员工的所有职位
+      per = Permission.query.filter(Permission.per_name=="招聘员工").first()
+      pos = per.p_position
+      print(pos)
+      ```
+
+      
