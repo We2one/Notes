@@ -15,6 +15,7 @@
         * [Arrays explor](java-ways/leetcode101/explores/Arrays_Explor.md)
     
     * [Solutions](java-ways/leetcode101/solutions/README.md)
+        * [Duplicate zeros](java-ways/leetcode101/solutions/Duplicate_Zeros.md)
         * [Find even digits](java-ways/leetcode101/solutions/Find_Even_Digits.md)
     
 
