@@ -5,6 +5,8 @@
 * [Day 01](Golang-basic-notes/Day_01.md)
 * [Day 02](Golang-basic-notes/Day_02.md)
 * [Day 03](Golang-basic-notes/Day_03.md)
+* [Day 04](Golang-basic-notes/Day_04.md)
+* [Day 05](Golang-basic-notes/Day_05.md)
 
 ## Java ways
 * [Git](java-ways/git/README.md)
