@@ -9,6 +9,11 @@
 * [Day 05](Golang-basic-notes/Day_05.md)
 
 ## Java ways
+* [101](java-ways/101/README.md)
+    * [Jdbc与连接池](java-ways/101/JDBC与连接池.md)
+    * [Java 函数式编程](java-ways/101/Java_函数式编程.md)
+    * [Spring框架基础](java-ways/101/Spring框架基础.md)
+
 * [Git](java-ways/git/README.md)
     * [Git basic](java-ways/git/git-basic.md)
 
