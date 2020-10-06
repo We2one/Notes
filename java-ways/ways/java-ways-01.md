@@ -1,6 +1,12 @@
----
-description: Way to be Java God.
----
+```yaml
+   Author: Gentleman.Hu
+   Create Time: 2020-09-19 20:20:08
+   Modified by: Gentleman.Hu
+   Modified time: 2020-09-25 19:15:22
+   Email: justfeelingme@gmail.com
+   Home: https://crushing.xyz
+   Description: Way to be Java God.
+ ```
 
 # Java Ways 01
 

@@ -1,3 +1,13 @@
+```yaml
+   Author: Gentleman.Hu
+   Create Time: 2020-09-19 20:20:08
+   Modified by: Gentleman.Hu
+   Modified time: 2020-09-26 19:31:32
+   Email: justfeelingme@gmail.com
+   Home: https://crushing.xyz
+   Description:
+ ```
+
 # Find even Digits
 
 > [source](https://leetcode.com/explore/learn/card/fun-with-arrays/521/introduction/3237)

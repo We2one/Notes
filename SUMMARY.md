@@ -1,12 +1,31 @@
 # Summary
 * [Introduction](README.md)
 
+## Golang basic notes
+* [Day 01](Golang-basic-notes/Day_01.md)
+* [Day 02](Golang-basic-notes/Day_02.md)
+* [Day 03](Golang-basic-notes/Day_03.md)
+* [Day 04](Golang-basic-notes/Day_04.md)
+* [Day 05](Golang-basic-notes/Day_05.md)
+
 ## Java ways
 * [Git](java-ways/git/README.md)
     * [Git basic](java-ways/git/git-basic.md)
 
 * [Leetcode101](java-ways/leetcode101/README.md)
-    * [Find even digits](java-ways/leetcode101/Find_Even_Digits.md)
+    * [Explores](java-ways/leetcode101/explores/README.md)
+        * [Arrays explor](java-ways/leetcode101/explores/Arrays_Explor.md)
+    
+    * [Solutions](java-ways/leetcode101/solutions/README.md)
+        * [Duplicate zeros](java-ways/leetcode101/solutions/Duplicate_Zeros.md)
+        * [Find even digits](java-ways/leetcode101/solutions/Find_Even_Digits.md)
+    
+
+* [Snippets](java-ways/snippets/README.md)
+    * [Java data format各种范例](java-ways/snippets/Java_Data_Format各种范例.md)
+    * [Java与oracle数据库各种操作](java-ways/snippets/Java与Oracle数据库各种操作.md)
+    * [Maven初始化template](java-ways/snippets/Maven初始化template.md)
+    * [终端033颜色](java-ways/snippets/终端033颜色.md)
 
 * [Ways](java-ways/ways/README.md)
     * [Java ways 01](java-ways/ways/java-ways-01.md)
@@ -47,6 +66,11 @@
     * [Day 28](python-basic-notes/python-days/Day_28.md)
     * [Day 29](python-basic-notes/python-days/Day_29.md)
     * [Day 30](python-basic-notes/python-days/Day_30.md)
+    * [Day 31](python-basic-notes/python-days/Day_31.md)
+    * [Day 32](python-basic-notes/python-days/Day_32.md)
+    * [Day 33](python-basic-notes/python-days/Day_33.md)
+    * [Day 34](python-basic-notes/python-days/Day_34.md)
+    * [Day 35](python-basic-notes/python-days/Day_35.md)
     * [Shell commit](python-basic-notes/python-days/SHELL_commit.md)
     * [Python base](python-basic-notes/python-days/python_base.md)
 
