@@ -12,6 +12,7 @@
 * [101](java-ways/101/README.md)
     * [Jdbc与连接池](java-ways/101/JDBC与连接池.md)
     * [Java 函数式编程](java-ways/101/Java_函数式编程.md)
+    * [Rxjava基础](java-ways/101/RxJava基础.md)
     * [Spring框架基础](java-ways/101/Spring框架基础.md)
 
 * [Git](java-ways/git/README.md)
