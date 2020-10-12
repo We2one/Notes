@@ -6,7 +6,7 @@
    Email: justfeelingme@gmail.com
    Home: https://crushing.xyz
    Description:
- ```
+```
 
 ## Duplicate_Zeros 
 > [ref](https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/3245/)
@@ -56,7 +56,9 @@ class Solution {
 }
 ```
 
-> this solution above won't accept by judge.Don't know why.
+> The solution above won't accept by judgement.Not figure out yet!.
+>
+> The solution below is accepted .
 
 ```java
 class Solution {
