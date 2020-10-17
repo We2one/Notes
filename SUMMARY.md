@@ -25,9 +25,11 @@
         * [Arrays explor](java-ways/leetcode101/explores/Arrays_Explor.md)
     
     * [Solutions](java-ways/leetcode101/solutions/README.md)
-        * [Duplicate zeros](java-ways/leetcode101/solutions/Duplicate_Zeros.md)
-        * [Find even digits](java-ways/leetcode101/solutions/Find_Even_Digits.md)
-        * [Reverse list](java-ways/leetcode101/solutions/Reverse_List.md)
+        * [Algorithms](java-ways/leetcode101/solutions/algorithms/README.md)
+            * [Duplicate zeros](java-ways/leetcode101/solutions/algorithms/Duplicate_Zeros.md)
+            * [Find even digits](java-ways/leetcode101/solutions/algorithms/Find_Even_Digits.md)
+            * [Reverse list](java-ways/leetcode101/solutions/algorithms/Reverse_List.md)
+            * [Index](java-ways/leetcode101/solutions/algorithms/index.md)
         
         * [Concurrency](java-ways/leetcode101/solutions/concurrency/README.md)
             * [Building h2o](java-ways/leetcode101/solutions/concurrency/Building_H2O.md)
@@ -35,6 +37,13 @@
             * [Print zero even odd](java-ways/leetcode101/solutions/concurrency/Print_Zero_Even_Odd.md)
             * [Print in order](java-ways/leetcode101/solutions/concurrency/Print_in_order.md)
             * [Index](java-ways/leetcode101/solutions/concurrency/index.md)
+        
+        * [Shell](java-ways/leetcode101/solutions/shell/README.md)
+            * [Index](java-ways/leetcode101/solutions/shell/index.md)
+        
+        * [Sql](java-ways/leetcode101/solutions/sql/README.md)
+            * [Combine two tables](java-ways/leetcode101/solutions/sql/Combine_Two_Tables.md)
+            * [Index](java-ways/leetcode101/solutions/sql/index.md)
         
     
 
