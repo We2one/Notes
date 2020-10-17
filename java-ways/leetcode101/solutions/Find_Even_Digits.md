@@ -16,7 +16,7 @@
 
 QUESTION:
 
--  Given an array `nums` of integers, return how many of thme contain an __even number__ of digits
+-  Given an array `nums` of integers, return how many of times contain an __even number__ of digits
 
 EXAMPLE 1:
 
