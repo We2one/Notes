@@ -2,7 +2,7 @@
    Author: Gentleman.Hu
    Create Time: 2020-10-17 15:01:32
    Modified by: Gentleman.Hu
-   Modified time: 2020-10-17 16:43:20
+   Modified time: 2020-10-17 17:21:45
    Email: justfeelingme@gmail.com
    Home: https://crushing.xyz
    Description: Leetcode of concurrency,Pirnt zero Even odd
@@ -51,3 +51,119 @@ Output: "0102030405"
 ### Java
 
 - 1. 
+
+> Answer below is not accepted! Correct it few later...
+
+```java
+class ZeroEvenOdd {
+    private int n;
+    private int number;
+    private Object lock;
+    private boolean zero,even,odd;
+    
+    public ZeroEvenOdd(int n) {
+        this.n = n;
+        this.lock = new Object();
+        this.zero = false;
+        this.even = false;
+        this.odd = false;
+        this.number = 1;
+    }
+
+    // printNumber.accept(x) outputs "x", where x is an integer.
+    public void zero(IntConsumer printNumber) throws InterruptedException {
+        synchronized(lock){
+            while(zero){
+                lock.wait();
+            }
+            printNumber.accept(0);
+            zero = true;
+            if(number%2==0){
+                odd = true;
+                even = false;
+            }else{
+                odd = false;
+                even = true;
+            }
+            lock.notifyAll();
+        }
+    }
+
+    public void even(IntConsumer printNumber) throws InterruptedException {
+        synchronized(lock){
+            while(zero&odd==false){
+                lock.wait();
+            }
+            if(number==n)
+                System.exit(0);
+            printNumber.accept(number);
+            number++;
+            even = true;
+            zero = false;
+            lock.notifyAll();
+        }
+    }
+
+    public void odd(IntConsumer printNumber) throws InterruptedException {
+        synchronized(lock){
+            while(zero&even==false){
+                lock.wait();
+            }
+            if(number==n)
+                System.exit(0);
+            printNumber.accept(number);
+            number++;
+            odd = true;
+            zero = false;
+            lock.notifyAll();
+        }
+    }
+}
+
+```
+
+- Solution below is accepted, but not optimized.
+
+```java
+class ZeroEvenOdd {
+    private int n;
+    private Semaphore zero;
+    private Semaphore odd; 
+    private Semaphore even;
+    
+    public ZeroEvenOdd(int n) {
+        this.n = n;
+        this.zero = new Semaphore(1);
+        this.odd = new Semaphore(1);
+        this.even = new Semaphore(0);
+    }
+
+    // printNumber.accept(x) outputs "x", where x is an integer.
+    public void zero(IntConsumer printNumber) throws InterruptedException {
+        for(int i =1; i<=n; i++){
+            zero.acquire();
+            printNumber.accept(0);
+            odd.release(1);
+            even.release(1);
+        }
+    }
+
+    public void even(IntConsumer printNumber) throws InterruptedException {
+        for( int i =2; i<=n; i+=2){
+            even.acquire(2);
+            printNumber.accept(i);
+            zero.release(1);
+        }
+    }
+
+    public void odd(IntConsumer printNumber) throws InterruptedException {
+        for( int i =1; i<=n; i+=2){
+            odd.acquire(2);
+            printNumber.accept(i);
+            zero.release(1);
+        }
+    }
+}
+
+```
+
