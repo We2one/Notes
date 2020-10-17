@@ -13,6 +13,7 @@
 * [101](java-ways/101/README.md)
     * [Jdbc与连接池](java-ways/101/JDBC与连接池.md)
     * [Java 函数式编程](java-ways/101/Java_函数式编程.md)
+    * [Java类加载相关](java-ways/101/Java类加载相关.md)
     * [Rxjava基础](java-ways/101/RxJava基础.md)
     * [Spring框架基础](java-ways/101/Spring框架基础.md)
 
@@ -26,6 +27,15 @@
     * [Solutions](java-ways/leetcode101/solutions/README.md)
         * [Duplicate zeros](java-ways/leetcode101/solutions/Duplicate_Zeros.md)
         * [Find even digits](java-ways/leetcode101/solutions/Find_Even_Digits.md)
+        * [Reverse list](java-ways/leetcode101/solutions/Reverse_List.md)
+        
+        * [Concurrency](java-ways/leetcode101/solutions/concurrency/README.md)
+            * [Building h2o](java-ways/leetcode101/solutions/concurrency/Building_H2O.md)
+            * [Print foobar alternately](java-ways/leetcode101/solutions/concurrency/Print_FooBar_Alternately.md)
+            * [Print zero even odd](java-ways/leetcode101/solutions/concurrency/Print_Zero_Even_Odd.md)
+            * [Print in order](java-ways/leetcode101/solutions/concurrency/Print_in_order.md)
+            * [Index](java-ways/leetcode101/solutions/concurrency/index.md)
+        
     
 
 * [Snippets](java-ways/snippets/README.md)
@@ -36,6 +46,10 @@
 
 * [Ways](java-ways/ways/README.md)
     * [Java ways 01](java-ways/ways/java-ways-01.md)
+    
+    * [Interview](java-ways/ways/interview/README.md)
+        * [Requirements](java-ways/ways/interview/requirements.md)
+    
 
 
 ## Play
