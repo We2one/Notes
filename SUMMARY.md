@@ -11,39 +11,49 @@
 
 ## Java ways
 * [101](java-ways/101/README.md)
-    * [Jdbc与连接池](java-ways/101/JDBC与连接池.md)
-    * [Java 函数式编程](java-ways/101/Java_函数式编程.md)
-    * [Java类加载相关](java-ways/101/Java类加载相关.md)
-    * [Rxjava基础](java-ways/101/RxJava基础.md)
-    * [Spring框架基础](java-ways/101/Spring框架基础.md)
-
-* [Git](java-ways/git/README.md)
-    * [Git basic](java-ways/git/git-basic.md)
-
-* [Leetcode101](java-ways/leetcode101/README.md)
-    * [Explores](java-ways/leetcode101/explores/README.md)
-        * [Arrays explor](java-ways/leetcode101/explores/Arrays_Explor.md)
+    * [Basis](java-ways/101/basis/README.md)
+        * [Jdbc与连接池](java-ways/101/basis/JDBC与连接池.md)
+        * [Java switch expression](java-ways/101/basis/Java_Switch_Expression.md)
+        * [Java threadlocal](java-ways/101/basis/Java_ThreadLocal.md)
+        * [Java 几种引用](java-ways/101/basis/Java_几种引用.md)
+        * [Java 函数式编程](java-ways/101/basis/Java_函数式编程.md)
+        * [Java类加载相关](java-ways/101/basis/Java类加载相关.md)
+        * [Rxjava基础](java-ways/101/basis/RxJava基础.md)
+        * [Spring框架基础](java-ways/101/basis/Spring框架基础.md)
     
-    * [Solutions](java-ways/leetcode101/solutions/README.md)
-        * [Algorithms](java-ways/leetcode101/solutions/algorithms/README.md)
-            * [Duplicate zeros](java-ways/leetcode101/solutions/algorithms/Duplicate_Zeros.md)
-            * [Find even digits](java-ways/leetcode101/solutions/algorithms/Find_Even_Digits.md)
-            * [Reverse list](java-ways/leetcode101/solutions/algorithms/Reverse_List.md)
-            * [Index](java-ways/leetcode101/solutions/algorithms/index.md)
+    * [Git](java-ways/101/git/README.md)
+        * [Git basic](java-ways/101/git/git-basic.md)
+    
+    * [Imp](java-ways/101/imp/README.md)
+        * [Lru](java-ways/101/imp/LRU.md)
+        * [Index](java-ways/101/imp/index.md)
+    
+    * [Leetcode101](java-ways/101/leetcode101/README.md)
+        * [Explores](java-ways/101/leetcode101/explores/README.md)
+            * [Arrays explor](java-ways/101/leetcode101/explores/Arrays_Explor.md)
         
-        * [Concurrency](java-ways/leetcode101/solutions/concurrency/README.md)
-            * [Building h2o](java-ways/leetcode101/solutions/concurrency/Building_H2O.md)
-            * [Print foobar alternately](java-ways/leetcode101/solutions/concurrency/Print_FooBar_Alternately.md)
-            * [Print zero even odd](java-ways/leetcode101/solutions/concurrency/Print_Zero_Even_Odd.md)
-            * [Print in order](java-ways/leetcode101/solutions/concurrency/Print_in_order.md)
-            * [Index](java-ways/leetcode101/solutions/concurrency/index.md)
-        
-        * [Shell](java-ways/leetcode101/solutions/shell/README.md)
-            * [Index](java-ways/leetcode101/solutions/shell/index.md)
-        
-        * [Sql](java-ways/leetcode101/solutions/sql/README.md)
-            * [Combine two tables](java-ways/leetcode101/solutions/sql/Combine_Two_Tables.md)
-            * [Index](java-ways/leetcode101/solutions/sql/index.md)
+        * [Solutions](java-ways/101/leetcode101/solutions/README.md)
+            * [Algorithms](java-ways/101/leetcode101/solutions/algorithms/README.md)
+                * [Duplicate zeros](java-ways/101/leetcode101/solutions/algorithms/Duplicate_Zeros.md)
+                * [Find even digits](java-ways/101/leetcode101/solutions/algorithms/Find_Even_Digits.md)
+                * [Reverse list](java-ways/101/leetcode101/solutions/algorithms/Reverse_List.md)
+                * [Index](java-ways/101/leetcode101/solutions/algorithms/index.md)
+            
+            * [Concurrency](java-ways/101/leetcode101/solutions/concurrency/README.md)
+                * [Building h2o](java-ways/101/leetcode101/solutions/concurrency/Building_H2O.md)
+                * [Design bounded blocking queue](java-ways/101/leetcode101/solutions/concurrency/Design_Bounded_Blocking_Queue.md)
+                * [Print foobar alternately](java-ways/101/leetcode101/solutions/concurrency/Print_FooBar_Alternately.md)
+                * [Print zero even odd](java-ways/101/leetcode101/solutions/concurrency/Print_Zero_Even_Odd.md)
+                * [Print in order](java-ways/101/leetcode101/solutions/concurrency/Print_in_order.md)
+                * [Index](java-ways/101/leetcode101/solutions/concurrency/index.md)
+            
+            * [Shell](java-ways/101/leetcode101/solutions/shell/README.md)
+                * [Index](java-ways/101/leetcode101/solutions/shell/index.md)
+            
+            * [Sql](java-ways/101/leetcode101/solutions/sql/README.md)
+                * [Combine two tables](java-ways/101/leetcode101/solutions/sql/Combine_Two_Tables.md)
+                * [Index](java-ways/101/leetcode101/solutions/sql/index.md)
+            
         
     
 
