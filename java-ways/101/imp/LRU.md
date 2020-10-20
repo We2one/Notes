@@ -2,7 +2,7 @@
    Author: Gentleman.Hu
    Create Time: 2020-10-19 17:35:22
    Modified by: Gentleman.Hu
-   Modified time: 2020-10-19 18:09:13
+   Modified time: 2020-10-20 15:01:46
    Email: justfeelingme@gmail.com
    Home: https://crushing.xyz
    Description: LRU算法实现
@@ -41,6 +41,44 @@ Least Recently Used
 
 ```java
 public class LRU<K,V>{
+  private static final float hashLoadFactory = 0.75f;
+  private LinkedHashMap<K,V> map;
+  private int cacheSize;
 
+  public LRU(int cacheSize){
+    this.cacheSize = cacheSize;
+    // Math.ceil(double x) - 返回参数值的
+    int capacity = (int)Math.ceil(cacheSize/hashLoadFactory)+1;
+    map = new LinkedHashMap<K,V>(capacity,hashLoadFactory,true){
+      private static final long serialVersionUID = 1L;
+      
+      @Override
+      protected boolean removeEldestEntry(Map.Entry eldest){
+        return size()>LRU.this.cacheSize;
+      }
+    };
+  }
+
+  public synchronized V get(K key){
+    return map.get(key);
+  }
+
+  public synchronized void put(K key,V value){
+    map.put(key,value);
+  }
+
+  public synchronized void clear(){
+    map.clear();
+  }
 }
 ```
+
+## References
+
+- Math.ceil()和Math.floor()和Math.round()区别
+
+这三个方法分别遵循下列舍入规则：
+
+- Math.ceil()执行向上舍入，即它总是将数值向上舍入为最接近的整数；
+- Math.floor()执行向下舍入，即它总是将数值向下舍入为最接近的整数；
+- Math.round()执行标准舍入，即它总是将数值四舍五入为最接近的整数(这也是我们在数学课上学到的舍入规则)。
