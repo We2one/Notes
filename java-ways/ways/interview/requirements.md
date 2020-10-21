@@ -2,7 +2,7 @@
    Author: Gentleman.Hu
    Create Time: 2020-10-13 19:40:21
    Modified by: Gentleman.Hu
-   Modified time: 2020-10-19 16:56:00
+   Modified time: 2020-10-20 17:33:32
    Email: justfeelingme@gmail.com
    Home: https://crushing.xyz
    Description: My interview requirements all in one
@@ -21,6 +21,7 @@
 - Spring全家桶使用及其原理理解
 - 多线程,IO,AIO,BIO等,JUC,JMM,JVM等知识
 - 设计模式和原则
+- 数据库三大范式
 - 大数据相关
   - HDSF
   - Hadoop

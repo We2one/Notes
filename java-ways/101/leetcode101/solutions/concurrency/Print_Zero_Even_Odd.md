@@ -2,7 +2,7 @@
    Author: Gentleman.Hu
    Create Time: 2020-10-17 15:01:32
    Modified by: Gentleman.Hu
-   Modified time: 2020-10-17 17:21:45
+   Modified time: 2020-10-21 17:50:29
    Email: justfeelingme@gmail.com
    Home: https://crushing.xyz
    Description: Leetcode of concurrency,Pirnt zero Even odd
@@ -59,63 +59,50 @@ class ZeroEvenOdd {
     private int n;
     private int number;
     private Object lock;
-    private boolean zero,even,odd;
+    private int next;
     
     public ZeroEvenOdd(int n) {
         this.n = n;
         this.lock = new Object();
-        this.zero = false;
-        this.even = false;
-        this.odd = false;
-        this.number = 1;
+        this.next = 1;
     }
 
     // printNumber.accept(x) outputs "x", where x is an integer.
     public void zero(IntConsumer printNumber) throws InterruptedException {
         synchronized(lock){
-            while(zero){
-                lock.wait();
+            for(int i=1;i<=this.n;i++){
+                while(next!=0){
+                    lock.wait();
+                }
+                next = i%2==0 ? 2: 1;
+                lock.notifyAll();
             }
-            printNumber.accept(0);
-            zero = true;
-            if(number%2==0){
-                odd = true;
-                even = false;
-            }else{
-                odd = false;
-                even = true;
-            }
-            lock.notifyAll();
         }
     }
 
     public void even(IntConsumer printNumber) throws InterruptedException {
         synchronized(lock){
-            while(zero&odd==false){
-                lock.wait();
+            for(int i=2;i<=this.n;i+=2){
+                while(next!=2){
+                    lock.wait();
+                }
+                next = 0;
+                printNumber.accept(i);
+                lock.notifyAll();
             }
-            if(number==n)
-                System.exit(0);
-            printNumber.accept(number);
-            number++;
-            even = true;
-            zero = false;
-            lock.notifyAll();
         }
     }
 
     public void odd(IntConsumer printNumber) throws InterruptedException {
         synchronized(lock){
-            while(zero&even==false){
-                lock.wait();
+            for(int i=1;i<=this.n;i+=2){
+                while(next!=1){
+                    lock.wait()
+                }
+                next = 0;
+                printNumber.accept(i);
+                lock.notifyAll();
             }
-            if(number==n)
-                System.exit(0);
-            printNumber.accept(number);
-            number++;
-            odd = true;
-            zero = false;
-            lock.notifyAll();
         }
     }
 }
