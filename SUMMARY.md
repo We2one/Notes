@@ -58,6 +58,7 @@
     
 
 * [Snippets](java-ways/snippets/README.md)
+    * [Jpa和spring系列注解表](java-ways/snippets/JPA和Spring系列注解表.md)
     * [Java data format各种范例](java-ways/snippets/Java_Data_Format各种范例.md)
     * [Java与oracle数据库各种操作](java-ways/snippets/Java与Oracle数据库各种操作.md)
     * [Maven初始化template](java-ways/snippets/Maven初始化template.md)
