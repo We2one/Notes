@@ -34,6 +34,7 @@
         
         * [Solutions](java-ways/101/leetcode101/solutions/README.md)
             * [Algorithms](java-ways/101/leetcode101/solutions/algorithms/README.md)
+                * [Climbing stairs](java-ways/101/leetcode101/solutions/algorithms/Climbing_Stairs.md)
                 * [Duplicate zeros](java-ways/101/leetcode101/solutions/algorithms/Duplicate_Zeros.md)
                 * [Find even digits](java-ways/101/leetcode101/solutions/algorithms/Find_Even_Digits.md)
                 * [Reverse list](java-ways/101/leetcode101/solutions/algorithms/Reverse_List.md)
@@ -42,6 +43,7 @@
             * [Concurrency](java-ways/101/leetcode101/solutions/concurrency/README.md)
                 * [Building h2o](java-ways/101/leetcode101/solutions/concurrency/Building_H2O.md)
                 * [Design bounded blocking queue](java-ways/101/leetcode101/solutions/concurrency/Design_Bounded_Blocking_Queue.md)
+                * [Fizz buzz multithreaded](java-ways/101/leetcode101/solutions/concurrency/Fizz_Buzz_Multithreaded.md)
                 * [Print foobar alternately](java-ways/101/leetcode101/solutions/concurrency/Print_FooBar_Alternately.md)
                 * [Print zero even odd](java-ways/101/leetcode101/solutions/concurrency/Print_Zero_Even_Odd.md)
                 * [Print in order](java-ways/101/leetcode101/solutions/concurrency/Print_in_order.md)
@@ -68,6 +70,7 @@
     * [Java ways 01](java-ways/ways/java-ways-01.md)
     
     * [Interview](java-ways/ways/interview/README.md)
+        * [Question](java-ways/ways/interview/question.md)
         * [Requirements](java-ways/ways/interview/requirements.md)
     
 
