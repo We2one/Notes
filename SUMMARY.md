@@ -14,30 +14,34 @@
     * [Basis](java-ways/101/basis/README.md)
         * [Index](java-ways/101/basis/index.md)
         
-        * [Concurrency](java-ways/101/basis/concurrency/README.md)
-            * [Java threadlocal](java-ways/101/basis/concurrency/Java_ThreadLocal.md)
-            * [Java thread相关](java-ways/101/basis/concurrency/Java_Thread相关.md)
+        * [Java](java-ways/101/basis/Java/README.md)
+            * [Concurrency](java-ways/101/basis/Java/concurrency/README.md)
+                * [Java threadlocal](java-ways/101/basis/Java/concurrency/Java_ThreadLocal.md)
+                * [Java thread相关](java-ways/101/basis/Java/concurrency/Java_Thread相关.md)
+            
+            * [Frameworks](java-ways/101/basis/Java/frameworks/README.md)
+                * [Jdbc与连接池](java-ways/101/basis/Java/frameworks/JDBC与连接池.md)
+                * [Rxjava基础](java-ways/101/basis/Java/frameworks/RxJava基础.md)
+                * [Spring框架基础](java-ways/101/basis/Java/frameworks/Spring框架基础.md)
+            
+            * [Java extend](java-ways/101/basis/Java/java_extend/README.md)
+                * [Java 几种引用](java-ways/101/basis/Java/java_extend/Java_几种引用.md)
+                * [Java类加载相关](java-ways/101/basis/Java/java_extend/Java类加载相关.md)
+            
+            * [Sugar&skill](java-ways/101/basis/Java/sugar&skill/README.md)
+                * [Java switch expression](java-ways/101/basis/Java/sugar&skill/Java_Switch_Expression.md)
+                * [Java 函数式编程](java-ways/101/basis/Java/sugar&skill/Java_函数式编程.md)
+            
         
-        * [Frameworks](java-ways/101/basis/frameworks/README.md)
-            * [Jdbc与连接池](java-ways/101/basis/frameworks/JDBC与连接池.md)
-            * [Rxjava基础](java-ways/101/basis/frameworks/RxJava基础.md)
-            * [Spring框架基础](java-ways/101/basis/frameworks/Spring框架基础.md)
+        * [Cs](java-ways/101/basis/cs/README.md)
+            * [Imp](java-ways/101/basis/cs/imp/README.md)
+                * [Lru](java-ways/101/basis/cs/imp/LRU.md)
+                * [Index](java-ways/101/basis/cs/imp/index.md)
+            
         
-        * [Java extend](java-ways/101/basis/java_extend/README.md)
-            * [Java 几种引用](java-ways/101/basis/java_extend/Java_几种引用.md)
-            * [Java类加载相关](java-ways/101/basis/java_extend/Java类加载相关.md)
+        * [Git](java-ways/101/basis/git/README.md)
+            * [Git basic](java-ways/101/basis/git/git-basic.md)
         
-        * [Sugar&skill](java-ways/101/basis/sugar&skill/README.md)
-            * [Java switch expression](java-ways/101/basis/sugar&skill/Java_Switch_Expression.md)
-            * [Java 函数式编程](java-ways/101/basis/sugar&skill/Java_函数式编程.md)
-        
-    
-    * [Git](java-ways/101/git/README.md)
-        * [Git basic](java-ways/101/git/git-basic.md)
-    
-    * [Imp](java-ways/101/imp/README.md)
-        * [Lru](java-ways/101/imp/LRU.md)
-        * [Index](java-ways/101/imp/index.md)
     
     * [Leetcode101](java-ways/101/leetcode101/README.md)
         * [Explores](java-ways/101/leetcode101/explores/README.md)
