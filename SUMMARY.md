@@ -11,9 +11,6 @@
 
 ## Java ways
 * [101](java-ways/101/README.md)
-    * [A empty](java-ways/101/a_empty/README.md)
-        * [Index](java-ways/101/a_empty/index.md)
-    
     * [Basis](java-ways/101/basis/README.md)
         * [Index](java-ways/101/basis/index.md)
         
@@ -36,14 +33,14 @@
                 * [Java 函数式编程](java-ways/101/basis/Java/sugar&skill/Java_函数式编程.md)
             
         
-        * [Cs](java-ways/101/basis/cs/README.md)
-            * [Imp](java-ways/101/basis/cs/imp/README.md)
-                * [Lru](java-ways/101/basis/cs/imp/LRU.md)
-                * [Index](java-ways/101/basis/cs/imp/index.md)
-            
-        
         * [Git](java-ways/101/basis/git/README.md)
             * [Git basic](java-ways/101/basis/git/git-basic.md)
+        
+    
+    * [Cs](java-ways/101/cs/README.md)
+        * [Imp](java-ways/101/cs/imp/README.md)
+            * [Lru](java-ways/101/cs/imp/LRU.md)
+            * [Index](java-ways/101/cs/imp/index.md)
         
     
     * [Leetcode101](java-ways/101/leetcode101/README.md)
