@@ -2,7 +2,7 @@
    Author: Gentleman.Hu
    Create Time: 2020-10-21 08:56:42
    Modified by: Gentleman.Hu
-   Modified time: 2020-10-21 09:56:15
+   Modified time: 2020-10-22 10:32:21
    Email: justfeelingme@gmail.com
    Home: https://crushing.xyz
    Description: #70 Climbing Stairs
@@ -13,8 +13,10 @@
 
 - 最优子结构
 - 边界
-- 转台转移函数
+- 状态转移函数
   
+![](https://cdn.acwing.com/media/article/image/2019/09/13/1833_e192f0d8d6-Snipaste_2019-09-13_17-06-58.png)
+
 ## Climbing Stairs
 
 > [source](https://leetcode.com/problems/climbing-stairs/)
