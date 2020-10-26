@@ -11,6 +11,9 @@
 
 ## Java ways
 * [101](java-ways/101/README.md)
+    * [A empty](java-ways/101/a_empty/README.md)
+        * [Index](java-ways/101/a_empty/index.md)
+    
     * [Basis](java-ways/101/basis/README.md)
         * [Index](java-ways/101/basis/index.md)
         
