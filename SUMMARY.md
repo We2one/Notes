@@ -12,6 +12,8 @@
 ## Java ways
 * [101](java-ways/101/README.md)
     * [Basis](java-ways/101/basis/README.md)
+        * [Index](java-ways/101/basis/index.md)
+        
         * [Concurrency](java-ways/101/basis/concurrency/README.md)
             * [Java threadlocal](java-ways/101/basis/concurrency/Java_ThreadLocal.md)
             * [Java thread相关](java-ways/101/basis/concurrency/Java_Thread相关.md)
