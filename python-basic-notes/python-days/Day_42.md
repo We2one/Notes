@@ -456,8 +456,6 @@
       }
       ```
 
-      
-
 3. 视图类
 
    1. 继承 APIView 类 : APIView 对 Django 的 django.views.View 类进一步封装
@@ -534,7 +532,7 @@
 
       1. viewSet 视图类 是对通用视图的进一步封装
 
-         ```python
+         ````python
          from rest_framework import viewsets
          
          class MoreListViewSet(viewsets.ReadOnlyModelViewSet):
@@ -559,15 +557,12 @@
              'get': 'list',
          })
          
-         
          urlpatterns = [
              ...
              path('more_list_view/', more_list)
          ]
          
-         ```
-
-         
+         ````
 
       2. 使用 DRF 路由器替代 Django 路由
 
