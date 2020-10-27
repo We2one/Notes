@@ -179,34 +179,29 @@
 
 + 匹配实例
 
-  ```python
+  ````python
   import tornado.web
   import tornado.ioloop
 
-  
   class MainHandler(tornado.web.RequestHandler):
   
   	def get(self):
   		self.write('hello world')
-  
   
   class ReMainHandler(tornado.web.RequestHandler):
   
   	def get(self):
   		self.write('hello world I am re')
   
-  
   class ReGroupMainHandler(tornado.web.RequestHandler):
   
   	def get(self, args):
   		self.write('I am %s' %args)
   
-  
   class ReNameGroupMainHandler(tornado.web.RequestHandler):
   
   	def get(self, name):
   		self.write('my name is %s' %name)
-  
   
   if __name__ == '__main__':
   
@@ -223,7 +218,7 @@
   
   	app.listen(8000)
   	tornado.ioloop.IOLoop.current().start()
-  ```
+  ````
   
   
 
