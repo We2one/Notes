@@ -463,11 +463,10 @@
 
 1. `app.py` : 创建数据库引擎和服务
 
-   ```python
+   ````python
    import tornado.web
    from urls import urlpatters
    from settings import debug_config
-   
    
    def make_app():
        app = tornado.web.Application(
@@ -475,8 +474,7 @@
    	    **debug_config,
        )
        return app
-   
-   ```
+   ````
 
    
 
