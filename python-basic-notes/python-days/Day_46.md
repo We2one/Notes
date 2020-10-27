@@ -326,9 +326,8 @@
 
 + 返回 JSON
 
-  ```python
+  ````python
   import json
-  
   
   class JsonHandler(tornado.web.RequestHandler):
   
@@ -336,7 +335,7 @@
   		self.set_header('Content-Type', 'application/json; charset=UTF-8')
   		self.write(json.dumps({'message': 'ok'}))
   		self.finish()
-  ```
+  ````
 
 #### Tornado 数据库操作
 
