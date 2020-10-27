@@ -406,7 +406,7 @@
 
    + **Django 的 CSRF 验证使用**
 
-     1. 在 form 表单内部第一行, 插入 CSRF 校验, 使用 `{% csrf_token %}`
+     1. 在 form 表单内部第一行, 插入 CSRF 校验, 使用 `\{% csrf_token %\}`
 
         ```html
         <form action="" method='post'>
@@ -415,9 +415,9 @@
         </form>
         ```
 
-     2. 返回 post 页面时一定要使用 **render** 方法,render 方法 与 render_response 方法功能类似,但是 render 会在第一个参数返回 request, 如果不返回 request, 前端无法使用 `{% csrf_token %}`
+     2. 返回 post 页面时一定要使用 **render** 方法,render 方法 与 render_response 方法功能类似,但是 render 会在第一个参数返回 request, 如果不返回 request, 前端无法使用 `\{% csrf_token %\}`
 
-     3. `{% csrf_token %}` 标签实际是在前端 form 表单生成一个 hidden 隐藏域, name 为 csrf-middlewaretoken, value 值是 CSRF 校验值
+     3. `\{% csrf_token %\}` 标签实际是在前端 form 表单生成一个 hidden 隐藏域, name 为 csrf-middlewaretoken, value 值是 CSRF 校验值
 
 ##### Django 表单类
 
@@ -455,7 +455,7 @@
 
    1. 创建表单类 : forms.py
 
-      ```python
+      ````python
       class SellerForm(forms.Form):
           username = forms.CharFiled(required=True, error_messages={'required': '必填'})
           password = forms.CharFiled(required=True, min_length=6, error_messages={'required': '必填', 'min_length': '长度至少为 6 位'})
@@ -465,9 +465,8 @@
               username = self.cleaned_data.get('username')
               if 'sb' in username:
                   raise ValidationError('包含敏感词汇')
-      ```
+      ````
 
-      
 
    2. 视图
 
