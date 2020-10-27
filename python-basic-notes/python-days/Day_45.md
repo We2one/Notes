@@ -109,7 +109,7 @@
 
    + 修改配置文件 `nginx.conf` (部署项目时要删除注释的空格)
 
-     ```
+     ````
      http {
      	# 文件拓展名与文件类型映射表
      	include		mime.types;
@@ -133,7 +133,6 @@
          # 设置支持压缩的 content-type
          gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
          
-         
          server {
          	# 端口号
          	listen		80;
@@ -156,8 +155,7 @@
          	
          }
      }
-     ```
-
+     ````
      
 
 2. 启动项目
