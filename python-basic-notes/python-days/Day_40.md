@@ -460,13 +460,11 @@
           username = forms.CharFiled(required=True, error_messages={'required': '必填'})
           password = forms.CharFiled(required=True, min_length=6, error_messages={'required': '必填', 'min_length': '长度至少为 6 位'})
       
-          
       	def clean_username(self):
               username = self.cleaned_data.get('username')
               if 'sb' in username:
                   raise ValidationError('包含敏感词汇')
       ````
-
 
    2. 视图
 
