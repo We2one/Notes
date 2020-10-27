@@ -175,15 +175,14 @@
 
       1. 实例
 
-         ```python
+         ````python
          class StoreUser(models.Model):
              ...
-         
-             
+           
          class Store(models.Model):
              ...
              store_user = models.OneToOneField(to=StoreUser, on_delete=models.CASCADE)
-         ```
+         ````
 
       2. 增加店铺
 
