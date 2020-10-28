@@ -84,7 +84,7 @@
 
   + 视图函数
 
-    ```python
+    ````python
     # 分页测试
     @userbp.route('/fytest/')
     def fytest():
@@ -106,7 +106,6 @@
         for page in pagination_obj.iter_pages():
             print(page)
         return '分页...'
-    
     
     @userbp.route('/person_list/')
     @login_check
@@ -133,9 +132,7 @@
         return render_template('person.html', person_obj_list=person_obj_list, page_page=page_page,
                                pagination_obj=pagination_obj)
     
-    ```
-
-    
+    ````
 
   + html
 
