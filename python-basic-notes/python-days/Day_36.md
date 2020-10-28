@@ -50,7 +50,6 @@
     ```python
     import os
     
-    
     class Config:
     	path = os.path.abspath(os.path.dirname(__file__))
     	SQLALCHEMY_DATABASE_PATH = 'sqlite:///' + os.path.join(path, 'mysqlite.sqlite')
@@ -63,7 +62,6 @@
 
     ```python
     from demo01.views import db
-    
     
     class Base(db.Model):
     	__abstract__ = True
@@ -81,14 +79,11 @@
     		db.session.commit()
     ```
 
-    
-
   + `views.py` : 视图文件
 
     ```python
     from demo01.app import *
     from demo01.models import *
-    
     
     @app.route('/add_info/')
     def add_info():
@@ -101,7 +96,6 @@
 
   ```python
   from demo01.views import db, app
-  
   
   if __name__ == '__main__':
   	# db.drop_all()
