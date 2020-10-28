@@ -116,7 +116,6 @@
      hobby = ["sing", "writing", "reading"]
      score = {"python": 100, "java": 120, "c++": 150}
      
-     
      class Persion:
      	def __init__(self, name, age):
      		self.name = name
@@ -126,8 +125,6 @@
          	
      persion = Persion("张三", 15)
      ```
-
-     
 
      + `{{ 变量名, 索引 }}` 或 `{{ 变量名[索引] }}` : 索引获取可迭代元素
 
