@@ -37,7 +37,7 @@
       
    2. 在 app.py 内引用 SQLite 设置
    
-         ```python
+         ````python
          from flask import Flask
          from flask_sqlalchemy import SQLAlchemy
          from db_setting import Config
@@ -52,13 +52,12 @@
          	id = db.Column(db.Integer, primary_key=True)
          	name = db.Column(db.String(32))
          
-         
          # 同步表结构
          db.create_all()
          
          if __name__ == '__main__':
          	app.run()
-      ```
+      ````
    
 2. 链接 MySQL 数据库
    
@@ -89,7 +88,7 @@
          1. 执行 `.create_all()` 方法将被创建的模型同步生成表结构
          2. 注意 : `.create_all()`方法只能将新创建的模型同步表结构,如果模型修改或删除,`.create_all()`不会同步字段和属性
          
-         ```python
+         ````python
          from flask import Flask
          from flask import render_template
          from flask_sqlalchemy import SQLAlchemy
@@ -106,15 +105,12 @@
          	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
          	name = db.Column(db.String(32))
          
-         
          # 创建表
          db.create_all()
          # 删除表
          db.drop_all()
-         ```
+         ````
          
-         
-
 ##### 1.3 数据库建模
 
 + SQLALCHEMY 建模常用字段
@@ -190,21 +186,16 @@
 
 3. models.py : 模型文件 (存放数据库模型)
 
-   ```python
+   ````python
    from __init__ import db
-   
    
    class Student(db.Model):
    	id = db.Column(db.Integer, primary_key=True)
    	name = db.Column(db.String(32))
    
-   
    # 同步表结构
    db.create_all()
-   ```
-
-   
-
+   ````
 4. views.py : 视图文件 (存放引用视图)
 
    ```python
