@@ -121,7 +121,6 @@
   # 创建蓝图对象
   bp = Blueprint('bp', __name__)
   
-  
   # 使用蓝图
   @bp.route('/index/')
   def index():
