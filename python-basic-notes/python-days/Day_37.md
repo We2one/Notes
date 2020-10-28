@@ -32,7 +32,7 @@
 
 + 实例
 
-  ```python
+  ````python
   from flask import Flask
   from flask_script import Manager, Command
   
@@ -40,32 +40,27 @@
   
   manager = Manager(app)
   
-  
   # 增加命令 hello
   class Hello(Command):
       def run(self):
           print('hello, world')
   
-  
   class Runserver(Command):
       def run(self):
           app.run(port=8000)
-  
   
   # 添加命令, 执行 python xxx.py hello 输出 hello world
   manager.add_command('hello', Hello)
   # 添加命令, 执行 python xxx.py runserver8000 项目开始监听 8000 端口
   manager.add_command('runserver8000', Runserver)
   
-  
   @app.route('/index/')
   def index():
       return "你看"
   
-  
   if __name__ == '__main__':
       manager.run()
-  ```
+  ````
 
 #### Flask-Migrate
 
@@ -88,7 +83,6 @@
   # 实例化
   migrate = Migrate()
   
-  
   def creeateApp(obj):
       app = Flask(__name__)
       app.config.from_object(obj)
@@ -104,11 +98,9 @@
       return app
   ```
 
-  
-
 + `main.py` 
 
-  ```python
+  ````python
   from blueprintproject import creatApp
   from config import Config
   from flask_script import Manager, Command
@@ -123,11 +115,9 @@
       def run(self):
           print('hello, world')
   
-  
   class Runserver(Command):
       def run(self):
           app.run(port=8000)
-  
   
   # 添加命令, 执行 python xxx.py hello 输出 hello world
   manager.add_command('hello', Hello)
@@ -136,17 +126,13 @@
   # 安装命令
   manager.add_command('db', MigrateCommand)
   
-  
   @app.route('/index/')
   def index():
       return "你看"
   
-  
   if __name__ == '__main__':
       manager.run()
-  ```
-
-  
+  ````
 
 ##### 执行数据迁移
 
