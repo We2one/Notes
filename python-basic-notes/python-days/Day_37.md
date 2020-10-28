@@ -193,10 +193,9 @@
 
      + 除了对应 Form 类的后端校验进行 csrftoken 之外，其他的 post 请求不进行校验
 
-     ```python
+     ````python
      from flask import render_template, request
      from .forms import UserForm
-     
      
      @user_bl.route('/register/', method=['GET', 'POST'])
      def register():
@@ -205,7 +204,7 @@
      		data = request.form
      		print(data)
      	return render_template('register.html', **locals())
-     ```
+     ````
 
 3. 后端校验
 
