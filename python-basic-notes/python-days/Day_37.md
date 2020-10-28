@@ -166,13 +166,12 @@
 
 1. 创建 forms.py
 
-   ```python
+   ````python
    from flask_wtf import FlaskForm
    import wtforms
    # 校验器
    from wtforms import validators
    from wtforms import ValidationError
-   
    
    class UserForm(FlaskForm):
    	# 对填写的数据进行校验
@@ -184,7 +183,7 @@
    		]
    	)
    	password = wtforms.PasswordField(label="密码")
-   ```
+   ````
 
 2. 视图 : 实例化 Form 类, 将 Form 类对象渲染到模板中
 
