@@ -95,7 +95,7 @@
    def hello_world():
    	name = "张三"
    	age = 18
-   	return render_template("xxx.html", **licals())
+   	return render_template("xxx.html", **locals())
    ```
 
    ```
