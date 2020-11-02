@@ -9,6 +9,7 @@
 * [Day 05](Golang-basic-notes/Day_05.md)
 * [Day 06](Golang-basic-notes/Day_06.md)
 * [Day 07](Golang-basic-notes/Day_07.md)
+* [Day 08](Golang-basic-notes/Day_08.md)
 
 ## Java ways
 * [101](java-ways/101/README.md)
