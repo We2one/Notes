@@ -34,8 +34,14 @@
                 * [Java 函数式编程](java-ways/101/basis/Java/sugar&skill/Java_函数式编程.md)
             
         
-        * [Git](java-ways/101/basis/git/README.md)
-            * [Git basic](java-ways/101/basis/git/git-basic.md)
+        * [Tool](java-ways/101/basis/tool/README.md)
+            * [Docker](java-ways/101/basis/tool/docker/README.md)
+                * [Docker basis](java-ways/101/basis/tool/docker/docker-basis.md)
+                * [Kubernetes play](java-ways/101/basis/tool/docker/kubernetes-play.md)
+            
+            * [Git](java-ways/101/basis/tool/git/README.md)
+                * [Git basic](java-ways/101/basis/tool/git/git-basic.md)
+            
         
     
     * [Cs](java-ways/101/cs/README.md)
