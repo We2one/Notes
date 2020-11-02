@@ -2,7 +2,7 @@
    Author: Gentleman.Hu
    Create Time: 2020-10-26 22:00:50
    Modified by: Gentleman.Hu
-   Modified time: 2020-10-26 22:11:06
+   Modified time: 2020-10-26 22:46:09
    Email: justfeelingme@gmail.com
    Home: https://crushing.xyz
    Description: Java中Thread和线程锁之类问题
@@ -15,6 +15,7 @@
 ## 线程中止
 
 > [cn_blogs_interrupt](https://www.cnblogs.com/onlywujun/p/3565082.html)
+> [join](https://www.cnblogs.com/huangzejun/p/7908898.html)
 
 ## 内存屏障和CPU缓存
 
