@@ -7,26 +7,55 @@
 * [Day 03](Golang-basic-notes/Day_03.md)
 * [Day 04](Golang-basic-notes/Day_04.md)
 * [Day 05](Golang-basic-notes/Day_05.md)
+* [Day 06](Golang-basic-notes/Day_06.md)
+* [Day 07](Golang-basic-notes/Day_07.md)
+* [Day 08](Golang-basic-notes/Day_08.md)
+* [Day 09](Golang-basic-notes/Day_09.md)
+* [Day 10](Golang-basic-notes/Day_10.md)
 
 ## Java ways
 * [101](java-ways/101/README.md)
-    * [Jdbc与连接池](java-ways/101/JDBC与连接池.md)
-    * [Java 函数式编程](java-ways/101/Java_函数式编程.md)
-    * [Spring框架基础](java-ways/101/Spring框架基础.md)
-
-* [Git](java-ways/git/README.md)
-    * [Git basic](java-ways/git/git-basic.md)
-
-* [Leetcode101](java-ways/leetcode101/README.md)
-    * [Explores](java-ways/leetcode101/explores/README.md)
-        * [Arrays explor](java-ways/leetcode101/explores/Arrays_Explor.md)
+    * [Basis](java-ways/101/basis/README.md)
+        * [Index](java-ways/101/basis/index.md)
+        
+        * [Java](java-ways/101/basis/Java/README.md)
+            * [Concurrency](java-ways/101/basis/Java/concurrency/README.md)
+                * [Java threadlocal](java-ways/101/basis/Java/concurrency/Java_ThreadLocal.md)
+                * [Java thread相关](java-ways/101/basis/Java/concurrency/Java_Thread相关.md)
+            
+            * [Frameworks](java-ways/101/basis/Java/frameworks/README.md)
+                * [Jdbc与连接池](java-ways/101/basis/Java/frameworks/JDBC与连接池.md)
+                * [Rxjava基础](java-ways/101/basis/Java/frameworks/RxJava基础.md)
+                * [Spring框架基础](java-ways/101/basis/Java/frameworks/Spring框架基础.md)
+            
+            * [Java extend](java-ways/101/basis/Java/java_extend/README.md)
+                * [Java 几种引用](java-ways/101/basis/Java/java_extend/Java_几种引用.md)
+                * [Java类加载相关](java-ways/101/basis/Java/java_extend/Java类加载相关.md)
+            
+            * [Sugar&skill](java-ways/101/basis/Java/sugar&skill/README.md)
+                * [Java switch expression](java-ways/101/basis/Java/sugar&skill/Java_Switch_Expression.md)
+                * [Java 函数式编程](java-ways/101/basis/Java/sugar&skill/Java_函数式编程.md)
+            
+        
+        * [Tool](java-ways/101/basis/tool/README.md)
+            * [Docker](java-ways/101/basis/tool/docker/README.md)
+                * [Docker basis](java-ways/101/basis/tool/docker/docker-basis.md)
+                * [Kubernetes play](java-ways/101/basis/tool/docker/kubernetes-play.md)
+            
+            * [Git](java-ways/101/basis/tool/git/README.md)
+                * [Git basic](java-ways/101/basis/tool/git/git-basic.md)
+            
+        
     
-    * [Solutions](java-ways/leetcode101/solutions/README.md)
-        * [Duplicate zeros](java-ways/leetcode101/solutions/Duplicate_Zeros.md)
-        * [Find even digits](java-ways/leetcode101/solutions/Find_Even_Digits.md)
+    * [Cs](java-ways/101/cs/README.md)
+        * [Imp](java-ways/101/cs/imp/README.md)
+            * [Lru](java-ways/101/cs/imp/LRU.md)
+            * [Index](java-ways/101/cs/imp/index.md)
+        
     
 
 * [Snippets](java-ways/snippets/README.md)
+    * [Jpa和spring系列注解表](java-ways/snippets/JPA和Spring系列注解表.md)
     * [Java data format各种范例](java-ways/snippets/Java_Data_Format各种范例.md)
     * [Java与oracle数据库各种操作](java-ways/snippets/Java与Oracle数据库各种操作.md)
     * [Maven初始化template](java-ways/snippets/Maven初始化template.md)
@@ -34,6 +63,42 @@
 
 * [Ways](java-ways/ways/README.md)
     * [Java ways 01](java-ways/ways/java-ways-01.md)
+    
+    * [Interview](java-ways/ways/interview/README.md)
+        * [Question](java-ways/ways/interview/question.md)
+        * [Requirements](java-ways/ways/interview/requirements.md)
+    
+    * [Leetcode101](java-ways/ways/leetcode101/README.md)
+        * [Explores](java-ways/ways/leetcode101/explores/README.md)
+            * [Arrays explor](java-ways/ways/leetcode101/explores/Arrays_Explor.md)
+        
+        * [Solutions](java-ways/ways/leetcode101/solutions/README.md)
+            * [Algorithms](java-ways/ways/leetcode101/solutions/algorithms/README.md)
+                * [Climbing stairs](java-ways/ways/leetcode101/solutions/algorithms/Climbing_Stairs.md)
+                * [Duplicate zeros](java-ways/ways/leetcode101/solutions/algorithms/Duplicate_Zeros.md)
+                * [Find even digits](java-ways/ways/leetcode101/solutions/algorithms/Find_Even_Digits.md)
+                * [Reverse list](java-ways/ways/leetcode101/solutions/algorithms/Reverse_List.md)
+                * [Index](java-ways/ways/leetcode101/solutions/algorithms/index.md)
+            
+            * [Concurrency](java-ways/ways/leetcode101/solutions/concurrency/README.md)
+                * [Building h2o](java-ways/ways/leetcode101/solutions/concurrency/Building_H2O.md)
+                * [Design bounded blocking queue](java-ways/ways/leetcode101/solutions/concurrency/Design_Bounded_Blocking_Queue.md)
+                * [Fizz buzz multithreaded](java-ways/ways/leetcode101/solutions/concurrency/Fizz_Buzz_Multithreaded.md)
+                * [Print foobar alternately](java-ways/ways/leetcode101/solutions/concurrency/Print_FooBar_Alternately.md)
+                * [Print zero even odd](java-ways/ways/leetcode101/solutions/concurrency/Print_Zero_Even_Odd.md)
+                * [Print in order](java-ways/ways/leetcode101/solutions/concurrency/Print_in_order.md)
+                * [The dining philosophers](java-ways/ways/leetcode101/solutions/concurrency/The_Dining_Philosophers.md)
+                * [Index](java-ways/ways/leetcode101/solutions/concurrency/index.md)
+            
+            * [Shell](java-ways/ways/leetcode101/solutions/shell/README.md)
+                * [Index](java-ways/ways/leetcode101/solutions/shell/index.md)
+            
+            * [Sql](java-ways/ways/leetcode101/solutions/sql/README.md)
+                * [Combine two tables](java-ways/ways/leetcode101/solutions/sql/Combine_Two_Tables.md)
+                * [Index](java-ways/ways/leetcode101/solutions/sql/index.md)
+            
+        
+    
 
 
 ## Play
@@ -76,6 +141,19 @@
     * [Day 33](python-basic-notes/python-days/Day_33.md)
     * [Day 34](python-basic-notes/python-days/Day_34.md)
     * [Day 35](python-basic-notes/python-days/Day_35.md)
+    * [Day 36](python-basic-notes/python-days/Day_36.md)
+    * [Day 37](python-basic-notes/python-days/Day_37.md)
+    * [Day 38](python-basic-notes/python-days/Day_38.md)
+    * [Day 39](python-basic-notes/python-days/Day_39.md)
+    * [Day 40](python-basic-notes/python-days/Day_40.md)
+    * [Day 41](python-basic-notes/python-days/Day_41.md)
+    * [Day 42](python-basic-notes/python-days/Day_42.md)
+    * [Day 43](python-basic-notes/python-days/Day_43.md)
+    * [Day 44](python-basic-notes/python-days/Day_44.md)
+    * [Day 45](python-basic-notes/python-days/Day_45.md)
+    * [Day 46](python-basic-notes/python-days/Day_46.md)
+    * [Day 47](python-basic-notes/python-days/Day_47.md)
+    * [Day 48](python-basic-notes/python-days/Day_48.md)
     * [Shell commit](python-basic-notes/python-days/SHELL_commit.md)
     * [Python base](python-basic-notes/python-days/python_base.md)
 
