@@ -22,7 +22,7 @@
 + 初始化数组
 
   ```go
-  func main()  {%T, strArr: %T", arr1, arr2, strArr)
+  //func main()  {%T, strArr: %T", arr1, arr2, strArr)
   	var arr1 [4]int
   	var strArr [3]string
   
