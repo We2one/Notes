@@ -2,7 +2,7 @@
    Author: Gentleman.Hu
    Create Time: 2020-11-06 16:17:19
    Modified by: Gentleman.Hu
-   Modified time: 2020-11-06 17:21:24
+   Modified time: 2020-11-06 17:26:13
    Email: justfeelingme@gmail.com
    Home: https://crushing.xyz
    Description: 一些vim进阶用法
@@ -43,6 +43,17 @@
 - 其他慢慢探索
 
 ## Macro用例实践
+
+> 在spacevim中录制macro
+
+| Key                | Mode   | Action                           |
+| ------------------ | ------ | -------------------------------- |
+| `<leader>` + `qr`  | Normal | Same as native `q`               |
+| `<leader>` + `qr/` | Normal | Same as native `q/`, open cmdwin |
+| `<leader>` + `qr?` | Normal | Same as native `q?`, open cmdwin |
+| `<leader>` + `qr:` | Normal | Same as native `q:`, open cmdwin |
+
+> 普通vim直接`q`即可进入录制,spacevim改变了映射,`qr`刻可进入录制
 
 - 简单加引号
 
