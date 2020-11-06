@@ -22,6 +22,7 @@
         * [Front](java-ways/101/basis/Front/README.md)
             * [Angular](java-ways/101/basis/Front/Angular/README.md)
                 * [Angular start 01](java-ways/101/basis/Front/Angular/Angular-start-01.md)
+                * [Angular start 02](java-ways/101/basis/Front/Angular/Angular-start-02.md)
             
         
         * [Java](java-ways/101/basis/Java/README.md)
@@ -50,6 +51,9 @@
             
             * [Git](java-ways/101/basis/tool/git/README.md)
                 * [Git basic](java-ways/101/basis/tool/git/git-basic.md)
+            
+            * [Vim](java-ways/101/basis/tool/vim/README.md)
+                * [Vim advance](java-ways/101/basis/tool/vim/vim-advance.md)
             
         
     
