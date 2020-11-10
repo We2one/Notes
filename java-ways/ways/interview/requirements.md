@@ -2,7 +2,7 @@
    Author: Gentleman.Hu
    Create Time: 2020-10-13 19:40:21
    Modified by: Gentleman.Hu
-   Modified time: 2020-10-20 17:33:32
+   Modified time: 2020-11-07 22:24:23
    Email: justfeelingme@gmail.com
    Home: https://crushing.xyz
    Description: My interview requirements all in one
@@ -76,3 +76,25 @@ another
 5.熟悉日常的Linux操作命令
 6.熟悉I/O、多线程、集合等基础框架，熟悉分布式、缓存、消息机制等。具备高效解决问题的能力
 ```
+
+Lazada,Java一般开发岗
+
+```yaml
+2. 2年及以上使用JAVA开发的经验，JAVA基础扎实，理解io、多线程、集合等基础框架，对JVM原理有一定的了解，对Spring,ibatis,struts等开源框架熟悉；
+3. 熟悉分布式系统的设计和应用，熟悉分布式、缓存、消息等机制；能对分布式常用技术进行合理应用，解决问题；
+4. 掌握多线程及高性能的设计与编码及性能调优；有高并发应用开发经验；
+5. 掌握Linux 操作系统和大型数据库（Oracle、MySql）；对sql优化有丰富的经验；
+6. 学习能力强，适应能力好，有强烈的责任心，具备耐心/细心的品质；
+7. 有良好英语沟通者优先考虑。
+```
+
+```yaml
+2.熟悉linux的编程环境，了解Linux日常运维的基本命令，数据shell脚本更佳
+3.熟悉Mysql及sql语言，了解no-sql、key-value 存储原理。能进行基本的数据分析和sql语句的编程
+4.熟悉Java及Web应用的开发，了解spring，ibatis，cache，rpc，jvm等机制与代码，有了解源码者优先考虑
+5.java基础扎实，熟练掌握网络和多线程编程，对tcp/ip,http协议有很深刻的了解，并了解xml和html语言
+6.熟悉基本的设计模式，了解分布式
+7.有一定的自学能力，积极向上
+8.英文听说读写能力优秀者优先
+```
+
