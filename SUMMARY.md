@@ -24,6 +24,10 @@
                 * [Angular start 01](java-ways/101/basis/Front/Angular/Angular-start-01.md)
                 * [Angular start 02](java-ways/101/basis/Front/Angular/Angular-start-02.md)
             
+            * [Typescript](java-ways/101/basis/Front/TypeScript/README.md)
+                * [Index](java-ways/101/basis/Front/TypeScript/index.md)
+                * [Ts 01](java-ways/101/basis/Front/TypeScript/ts-01.md)
+            
         
         * [Java](java-ways/101/basis/Java/README.md)
             * [Concurrency](java-ways/101/basis/Java/concurrency/README.md)
@@ -36,6 +40,7 @@
                 * [Spring框架基础](java-ways/101/basis/Java/frameworks/Spring框架基础.md)
             
             * [Java extend](java-ways/101/basis/Java/java_extend/README.md)
+                * [Jvm internals](java-ways/101/basis/Java/java_extend/JVM_Internals.md)
                 * [Java 几种引用](java-ways/101/basis/Java/java_extend/Java_几种引用.md)
                 * [Java类加载相关](java-ways/101/basis/Java/java_extend/Java类加载相关.md)
             
@@ -69,6 +74,7 @@
     * [Java data format各种范例](java-ways/snippets/Java_Data_Format各种范例.md)
     * [Java与oracle数据库各种操作](java-ways/snippets/Java与Oracle数据库各种操作.md)
     * [Maven初始化template](java-ways/snippets/Maven初始化template.md)
+    * [Nginx配置](java-ways/snippets/Nginx配置.md)
     * [终端033颜色](java-ways/snippets/终端033颜色.md)
 
 * [Ways](java-ways/ways/README.md)
@@ -79,6 +85,10 @@
         * [Requirements](java-ways/ways/interview/requirements.md)
     
     * [Leetcode101](java-ways/ways/leetcode101/README.md)
+        * [Acwing](java-ways/ways/leetcode101/acwing/README.md)
+            * [Index](java-ways/ways/leetcode101/acwing/index.md)
+            * [背包问题](java-ways/ways/leetcode101/acwing/背包问题.md)
+        
         * [Explores](java-ways/ways/leetcode101/explores/README.md)
             * [Arrays explor](java-ways/ways/leetcode101/explores/Arrays_Explor.md)
         
