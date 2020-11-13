@@ -75,6 +75,7 @@
     * [Java与oracle数据库各种操作](java-ways/snippets/Java与Oracle数据库各种操作.md)
     * [Maven初始化template](java-ways/snippets/Maven初始化template.md)
     * [Nginx配置](java-ways/snippets/Nginx配置.md)
+    * [Nginx反代后配置自动ssl续签](java-ways/snippets/nginx反代后配置自动ssl续签.md)
     * [终端033颜色](java-ways/snippets/终端033颜色.md)
 
 * [Ways](java-ways/ways/README.md)
