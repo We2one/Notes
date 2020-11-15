@@ -75,6 +75,7 @@
     * [Java与oracle数据库各种操作](java-ways/snippets/Java与Oracle数据库各种操作.md)
     * [Maven初始化template](java-ways/snippets/Maven初始化template.md)
     * [Nginx配置](java-ways/snippets/Nginx配置.md)
+    * [Nginx反代后配置自动ssl续签](java-ways/snippets/nginx反代后配置自动ssl续签.md)
     * [终端033颜色](java-ways/snippets/终端033颜色.md)
 
 * [Ways](java-ways/ways/README.md)
@@ -177,6 +178,8 @@
     * [Day 49](python-basic-notes/python-days/Day_49.md)
     * [Day 50](python-basic-notes/python-days/Day_50.md)
     * [Day 51](python-basic-notes/python-days/Day_51.md)
+    * [Day 52](python-basic-notes/python-days/Day_52.md)
+    * [Day 53](python-basic-notes/python-days/Day_53.md)
     * [Shell commit](python-basic-notes/python-days/SHELL_commit.md)
     * [Python base](python-basic-notes/python-days/python_base.md)
 
