@@ -193,6 +193,10 @@
     * [Day 61](python-basic-notes/python-days/Day_61.md)
     * [Day 62](python-basic-notes/python-days/Day_62.md)
     * [Day 63](python-basic-notes/python-days/Day_63.md)
+    * [Day 64](python-basic-notes/python-days/Day_64.md)
+    * [Day 65](python-basic-notes/python-days/Day_65.md)
+    * [Day 66](python-basic-notes/python-days/Day_66.md)
+    * [Day 67](python-basic-notes/python-days/Day_67.md)
     * [Shell commit](python-basic-notes/python-days/SHELL_commit.md)
     * [Python base](python-basic-notes/python-days/python_base.md)
 
