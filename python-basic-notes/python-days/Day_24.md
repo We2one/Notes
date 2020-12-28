@@ -85,8 +85,8 @@
  1. ##### 视图的定义
 
      	1. **视图是一个虚拟的表**,**从一个或者多个表中导出来的数据组成的虚拟的表**.并不在库中真是存在,作用和真是的表一样,包含一些列带有行和列的数据.
-     	2. 视图中的数据依赖源表当源表中的数据发生变化时,视图中的数据也会发生变化.
-     	3. 视图中的数据默认是只读的,不允许通过视图直接进行数据改动.
+          	2. 视图中的数据依赖源表当源表中的数据发生变化时,视图中的数据也会发生变化.
+          	3. 视图中的数据默认是只读的,不允许通过视图直接进行数据改动.
 
  2. ##### 视图的定义
 
@@ -313,34 +313,28 @@
       res = cursor.fetchone()
       ```
 
-      
-
    2.  获取指定条数据
 
       ```
-      res = cursor.fetchmany(size)
+   res = cursor.fetchmany(size)
       ```
-
+   
       ```
-      res = cursor.fetchmany(2)
+   res = cursor.fetchmany(2)
       print(res)
       """
       ((10001, datetime.date(1953, 9, 2), 'Georgi', 'Facello', 'M', datetime.date(1986, 6, 26)), (10002, datetime.date(1964, 6, 2), 'Bezalel', 'Simmel', 'F', datetime.date(1985, 11, 21)))
       """
       ```
-
-      
-
+   
    3. 获取所有数据
 
       ```
-      res = cursor.fetchall()
+   res = cursor.fetchall()
       ```
 
       
-
    
-
 8. ##### 退出数据库,关闭游标与数据库
 
    ```

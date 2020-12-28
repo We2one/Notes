@@ -315,6 +315,41 @@
       7. 自增约束 (AUTO_INCREMENT) : 标注当前字段数据默认 +1 一般配合主键使用
       8. 无符号 (UNSIGNED) : 数值类型，无符号代表正数
 
+#### 导出数据为 CSV 文件
+
+1. ##### 方法一、导出时包括列名
+
+   + 必须在 **git bash** 内运行 win 下没有 **sed**
+
+   + 实例
+
+     ```
+     mysql -u root -p -e "select * from db_name.table_name" | sed -e "s/\t/,/g" -e "s/NULL/  /g" -e "s/\n/\r\n/g" > d:/test.csv
+     ```
+
+   + `sed -e "s/\t/,/g" -e "s/NULL/  /g" -e "s/\n/\r\n/g"` 
+
+     + `-e "s/\t/,/g"` : 将 数据库中 **列**转化为 **,** 隔开
+     + `-e "s/NULL/  /g"` : 将 数据库中 的 **NULL** 数据转化到 csv 文件中为 **空**
+     + `-e "s/\n/\r\n/g"` : 将数据库中的 每一**列**数据 转化到 csv 中 用 **\n** 换行
+
+2. ##### 方法二、mysql 语句导出，不包含列名
+
+   + **select .... into outfile** : 直接在mysql的交互界面使用select命令导出数据到文件
+
+   + 实例 -- > 保存为 csv
+
+     ```
+     select * from table_name
+     into outfile "/db/test1.csv"
+     fields terminated by "," # 描述字段的分隔符，默认情况下是tab字符（\t） 
+     optionally enclosed by '"' # 描述的是字段的括起字符。
+     escaped by "\" # 描述的转义字符。默认的是反斜杠（backslash：\ )
+     lines terminated by "\n"; # 行与行之间的分隔
+     ```
+
+3. ##### 方法三、Navicat 导出
+
 #### 数据 CRUD
 
 1. ##### INSERT 增加数据
@@ -550,7 +585,7 @@
     1. count() : 按照指定的条件,查询数据表中所有记录数
       
        + 基本语法
-        
+       
             ```mysql
             SELECT count(col_name\*) FROM tab_name;
          ```
