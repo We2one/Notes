@@ -31,7 +31,6 @@
   }
   ```
 
-  
 
 #### Scrapy 自定义文件和图片下载类
 
@@ -94,7 +93,6 @@
     from ..items import DowmMatplotlibItem
     from scrapy.linkextractors import LinkExtractor
     
-    
     class MatplotlibSpiderSpider(scrapy.Spider):
         name = 'matplotlib_spider'
         # allowed_domains = ['www']
@@ -122,12 +120,11 @@
             item['file_urls'] = [new_url]
             yield item
     ```
-
+    
 2. 更改 **items.py**
 
    ```python
    import scrapy
-   
    
    class DowmMatplotlibItem(scrapy.Item):
        # define the fields for your item here like:
@@ -136,7 +133,7 @@
        files = scrapy.Field()
        # pass
    ```
-
+   
 3. 配置 item 管道 : **settings.py**
 
    ```python
@@ -159,7 +156,6 @@
    from itemadapter import ItemAdapter
    from scrapy.pipelines.files import FilesPipeline
    
-   
    class DowmMatplotlibPipeline(FilesPipeline):
    
        def file_path(self, request, response=None, info=None, *, item=None):
@@ -174,7 +170,6 @@
 1. 修改 **mysettings.py** 作为下载图片配置
 
    ```python
-   
    custom_settings = {
    	'ROBOTSTXT_OBEY': False,
    	# 'COOKIES_ENABLED': False,
@@ -207,15 +202,14 @@
    
    }
    ```
-
    
 
+   
 2. 编写代码 ,返回 item 
 
    ```python
    import scrapy
    from ..mysettings import custom_settings
-   
    
    class ImgSpiderSpider(scrapy.Spider):
        name = 'img_spider'
@@ -233,8 +227,8 @@
            item['image_urls'] = [data['url'] for data in response.json()['data']]
            yield item
    ```
-
    
+
 
 #### Scrapy 传入 cookies
 
@@ -297,9 +291,7 @@
   	# 'LOG_ENCODING':'utf-8',#日志的编码
   	# 'LOG_FILE':'hupu.log',#日志文件的保存文件名
   	# 'LOG_LEVEL':'DEBUG',#日志级别
-  
   }
-  
   
   class Proxy_Middle(object):
   
@@ -338,7 +330,7 @@
   		user_agent = random.choice(self.USER_AGENT)
   		request.headers.setdefault('user-agent', user_agent)
   ```
-
+  
 + 在 spider 中调用 简便配置 : `from ..mysettings import custom_settings`
 
   ```python
