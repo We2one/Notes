@@ -180,14 +180,12 @@
    
    import "fmt"
    
-   
    // 第三种写法 : 返回值类型相同时只写最后一个返回值的类型
    func calc2(x, y int) (sum, sub int) {
    	sum = x + y
    	sub = x - y
    	return
    }
-   
    
    func main()  {
    	// 仅获取需要的返回值,不需要的用 _ 代替
@@ -196,7 +194,6 @@
    }
    ```
 
-   
 
 #### 6. 函数类型与变量
 
@@ -264,7 +261,6 @@
    package main
    
    import "fmt"
-   
    
    func add(x, y int) int {
    	return x+y
@@ -499,7 +495,6 @@
       fmt.Println(f3())  // 1
       fmt.Println(f4())  // 6
   }
-  
   ```
 
 + defer 注册要延时执行的函数时该函数的所有参数都需要确定其值
@@ -557,8 +552,6 @@
   	x = 10
   	defer calc("BB", x, calc("B", x, y))
   	y = 20
-  
-  
   }
   ```
 
@@ -677,8 +670,5 @@
 
 + defer、panic、recover 结合使用抛出异常
 
-  ```go
-  
-  ```
 
   
