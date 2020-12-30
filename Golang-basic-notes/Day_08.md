@@ -141,7 +141,6 @@
    	return
    }
    
-   
    func main()  {
    	a, b := calc1(34, 12)
    	fmt.Println(a, b)  // 46 22
@@ -155,14 +154,12 @@
    
    import "fmt"
    
-   
    // 第三种写法 : 返回值类型相同时只写最后一个返回值的类型
    func calc2(x, y int) (sum, sub int) {
    	sum = x + y
    	sub = x - y
    	return
    }
-   
    
    func main()  {
    	a, b := calc2(34, 12)
