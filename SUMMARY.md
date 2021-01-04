@@ -12,11 +12,25 @@
 * [Day 08](Golang-basic-notes/Day_08.md)
 * [Day 09](Golang-basic-notes/Day_09.md)
 * [Day 10](Golang-basic-notes/Day_10.md)
+* [Day 11](Golang-basic-notes/Day_11.md)
+* [Day 12](Golang-basic-notes/Day_12.md)
+* [Day 13](Golang-basic-notes/Day_13.md)
+* [Day 14](Golang-basic-notes/Day_14.md)
 
 ## Java ways
 * [101](java-ways/101/README.md)
     * [Basis](java-ways/101/basis/README.md)
         * [Index](java-ways/101/basis/index.md)
+        
+        * [Front](java-ways/101/basis/Front/README.md)
+            * [Angular](java-ways/101/basis/Front/Angular/README.md)
+                * [Angular start 01](java-ways/101/basis/Front/Angular/Angular-start-01.md)
+                * [Angular start 02](java-ways/101/basis/Front/Angular/Angular-start-02.md)
+            
+            * [Typescript](java-ways/101/basis/Front/TypeScript/README.md)
+                * [Index](java-ways/101/basis/Front/TypeScript/index.md)
+                * [Ts 01](java-ways/101/basis/Front/TypeScript/ts-01.md)
+            
         
         * [Java](java-ways/101/basis/Java/README.md)
             * [Concurrency](java-ways/101/basis/Java/concurrency/README.md)
@@ -29,6 +43,7 @@
                 * [Spring框架基础](java-ways/101/basis/Java/frameworks/Spring框架基础.md)
             
             * [Java extend](java-ways/101/basis/Java/java_extend/README.md)
+                * [Jvm internals](java-ways/101/basis/Java/java_extend/JVM_Internals.md)
                 * [Java 几种引用](java-ways/101/basis/Java/java_extend/Java_几种引用.md)
                 * [Java类加载相关](java-ways/101/basis/Java/java_extend/Java类加载相关.md)
             
@@ -45,6 +60,9 @@
             * [Git](java-ways/101/basis/tool/git/README.md)
                 * [Git basic](java-ways/101/basis/tool/git/git-basic.md)
             
+            * [Vim](java-ways/101/basis/tool/vim/README.md)
+                * [Vim advance](java-ways/101/basis/tool/vim/vim-advance.md)
+            
         
     
     * [Cs](java-ways/101/cs/README.md)
@@ -59,6 +77,8 @@
     * [Java data format各种范例](java-ways/snippets/Java_Data_Format各种范例.md)
     * [Java与oracle数据库各种操作](java-ways/snippets/Java与Oracle数据库各种操作.md)
     * [Maven初始化template](java-ways/snippets/Maven初始化template.md)
+    * [Nginx配置](java-ways/snippets/Nginx配置.md)
+    * [Nginx反代后配置自动ssl续签](java-ways/snippets/nginx反代后配置自动ssl续签.md)
     * [终端033颜色](java-ways/snippets/终端033颜色.md)
 
 * [Ways](java-ways/ways/README.md)
@@ -69,6 +89,10 @@
         * [Requirements](java-ways/ways/interview/requirements.md)
     
     * [Leetcode101](java-ways/ways/leetcode101/README.md)
+        * [Acwing](java-ways/ways/leetcode101/acwing/README.md)
+            * [Index](java-ways/ways/leetcode101/acwing/index.md)
+            * [背包问题](java-ways/ways/leetcode101/acwing/背包问题.md)
+        
         * [Explores](java-ways/ways/leetcode101/explores/README.md)
             * [Arrays explor](java-ways/ways/leetcode101/explores/Arrays_Explor.md)
         
@@ -154,6 +178,19 @@
     * [Day 46](python-basic-notes/python-days/Day_46.md)
     * [Day 47](python-basic-notes/python-days/Day_47.md)
     * [Day 48](python-basic-notes/python-days/Day_48.md)
+    * [Day 49](python-basic-notes/python-days/Day_49.md)
+    * [Day 50](python-basic-notes/python-days/Day_50.md)
+    * [Day 51](python-basic-notes/python-days/Day_51.md)
+    * [Day 52](python-basic-notes/python-days/Day_52.md)
+    * [Day 53](python-basic-notes/python-days/Day_53.md)
+    * [Day 54](python-basic-notes/python-days/Day_54.md)
+    * [Day 55](python-basic-notes/python-days/Day_55.md)
+    * [Day 56](python-basic-notes/python-days/Day_56.md)
+    * [Day 57](python-basic-notes/python-days/Day_57.md)
+    * [Day 58](python-basic-notes/python-days/Day_58.md)
+    * [Day 59](python-basic-notes/python-days/Day_59.md)
+    * [Day 60](python-basic-notes/python-days/Day_60.md)
+    * [Day 61](python-basic-notes/python-days/Day_61.md)
     * [Shell commit](python-basic-notes/python-days/SHELL_commit.md)
     * [Python base](python-basic-notes/python-days/python_base.md)
 
