@@ -8,6 +8,8 @@
 
   * [Day_02](/Golang-basic-notes/Day_02.md)
 
+  * [Day_03](/Golang-basic-notes/Day_03.md)
+
   * [Day_04](/Golang-basic-notes/Day_04.md)
 
   * [Day_05](/Golang-basic-notes/Day_05.md)
@@ -29,6 +31,12 @@
   * [Day_13](/Golang-basic-notes/Day_13.md)
 
   * [Day_14](/Golang-basic-notes/Day_14.md)
+
+  * [Day_15](/Golang-basic-notes/Day_15.md)
+
+  * [Day_16](/Golang-basic-notes/Day_16.md)
+
+  * [Day_17](/Golang-basic-notes/Day_17.md)
 
 * [java-ways](/java-ways/README.md)
 
@@ -516,6 +524,14 @@
 
   * [index](/java-ways/ways/leetcode101/solutions/sql/index.md)
 
+* [leecode](/leecode/README.md)
+
+* [leecode/221_Weekly_competition](/leecode/221_Weekly_competition/README.md)
+
+* [leecode/牛客](/leecode/牛客/README.md)
+
+* [leecode/牛客/剑指Offer](/leecode/牛客/剑指Offer/README.md)
+
 * [play](/play/README.md)
 
   * [youtube离线下载](/play/youtube离线下载.md)
@@ -640,6 +656,18 @@
 
   * [Day_61](/python-basic-notes/python-days/Day_61.md)
 
+  * [Day_62](/python-basic-notes/python-days/Day_62.md)
+
+  * [Day_63](/python-basic-notes/python-days/Day_63.md)
+
+  * [Day_64](/python-basic-notes/python-days/Day_64.md)
+
+  * [Day_65](/python-basic-notes/python-days/Day_65.md)
+
+  * [Day_66](/python-basic-notes/python-days/Day_66.md)
+
+  * [Day_67](/python-basic-notes/python-days/Day_67.md)
+
   * [SHELL_commit](/python-basic-notes/python-days/SHELL_commit.md)
 
   * [python_base](/python-basic-notes/python-days/python_base.md)
@@ -763,6 +791,18 @@
   * [Day_60](/python-basic-notes/python-days/Day_60.md)
 
   * [Day_61](/python-basic-notes/python-days/Day_61.md)
+
+  * [Day_62](/python-basic-notes/python-days/Day_62.md)
+
+  * [Day_63](/python-basic-notes/python-days/Day_63.md)
+
+  * [Day_64](/python-basic-notes/python-days/Day_64.md)
+
+  * [Day_65](/python-basic-notes/python-days/Day_65.md)
+
+  * [Day_66](/python-basic-notes/python-days/Day_66.md)
+
+  * [Day_67](/python-basic-notes/python-days/Day_67.md)
 
   * [SHELL_commit](/python-basic-notes/python-days/SHELL_commit.md)
 
