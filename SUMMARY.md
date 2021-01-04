@@ -16,6 +16,7 @@
 * [Day 12](Golang-basic-notes/Day_12.md)
 * [Day 13](Golang-basic-notes/Day_13.md)
 * [Day 14](Golang-basic-notes/Day_14.md)
+* [Day 15](Golang-basic-notes/Day_15.md)
 
 ## Java ways
 * [101](java-ways/101/README.md)
@@ -125,6 +126,16 @@
     
 
 
+## Leecode
+* [221 weekly competition](leecode/221_Weekly_competition/README.md)
+    
+
+* [牛客](leecode/牛客/README.md)
+    * [剑指offer](leecode/牛客/剑指Offer/README.md)
+        
+    
+
+
 ## Play
 * [Youtube离线下载](play/youtube离线下载.md)
 
@@ -191,6 +202,12 @@
     * [Day 59](python-basic-notes/python-days/Day_59.md)
     * [Day 60](python-basic-notes/python-days/Day_60.md)
     * [Day 61](python-basic-notes/python-days/Day_61.md)
+    * [Day 62](python-basic-notes/python-days/Day_62.md)
+    * [Day 63](python-basic-notes/python-days/Day_63.md)
+    * [Day 64](python-basic-notes/python-days/Day_64.md)
+    * [Day 65](python-basic-notes/python-days/Day_65.md)
+    * [Day 66](python-basic-notes/python-days/Day_66.md)
+    * [Day 67](python-basic-notes/python-days/Day_67.md)
     * [Shell commit](python-basic-notes/python-days/SHELL_commit.md)
     * [Python base](python-basic-notes/python-days/python_base.md)
 
