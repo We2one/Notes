@@ -17,6 +17,8 @@
 * [Day 13](Golang-basic-notes/Day_13.md)
 * [Day 14](Golang-basic-notes/Day_14.md)
 * [Day 15](Golang-basic-notes/Day_15.md)
+* [Day 16](Golang-basic-notes/Day_16.md)
+* [Day 17](Golang-basic-notes/Day_17.md)
 
 ## Java ways
 * [101](java-ways/101/README.md)
