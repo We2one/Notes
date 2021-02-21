@@ -2,7 +2,8 @@
 
 ## 函数
 
-+ 闭包函数 : (在函数中定义的函数！通过闭包将不同功能模块分离)
++ **闭包函数** : (在函数中定义的函数！通过闭包将不同功能模块分离)
+    
     + 必要条件:
         + 函数的嵌套的定义
         + 内部函数使用外部函数的变量
@@ -14,7 +15,8 @@
         + 对于程序拓展 -->  开放
         + 对程序修改  -->  关闭
     
-+ 装饰器
++ **装饰器**
+    
     + 语法: 必须是嵌套函数
         ```
       def 装饰器名称(fn):
@@ -25,38 +27,43 @@
         return res
       return wrapper
       ```
+      
     + 装饰器的应用 : 身份验证、授权验证、资源访问、日志记录、时间统计
         + 装饰器的添加
+        
         + 目标函数的参数
-            ```
-         def wrap(fn):
-           def inner(name, age):
-               print(f"修改前年龄{age}")
-               age -= 2
-               fn(name, age)
-           return inner
-                 
-         @wrap
-         def func(name, age):
-           print(f"name: {name}, age: {age}")
+            ```python
+        def wrap(fn):
+               def inner(name, age):
+                   print(f"修改前年龄{age}")
+                   age -= 2
+                   fn(name, age)
+               return inner
+           
+           @wrap      
+           def func(name, age):
+           	print(f"name: {name}, age: {age}")
+           
+           func("小明", 21)
+           ```
+           
+           
         
-         func("小明", 21)
-          ```
-            + 外函数接收功能
-            + 内函数接收参数
+        + 外函数接收功能
+        + 内函数接收参数
+        
         + 目标函数返回值
-        
 ## 模块和包的引用方式
 + 模块的命名
     + 根据软件中不同功能命名
-    + 不能以中文命名
-    + 不要与系统模块名冲突
+    + <span style="background: rgba(255, 255, 0, 0.7)">不能以中文命名</span>
+    + <span style="background: rgba(255, 255, 0, 0.7)">不要与系统模块名冲突</span>
 
 + 模块中的代码
     + 文档注释 : 描述模块的版本、功能、开发者、修改日期
     
 + 引入模块
-    + 绝对引入方式，import 导入
+    + 绝对引入方式: `import 导入`
         + 导入三个路径
             1. 系统的 sys.path 路径
             2. 环境变量 PythonPATH 路径 [通常没有配置]
@@ -80,7 +87,7 @@
                 
 ## 包 
 + 包 (Package) : 程序包的简称，通过文件夹管理 Python 模块
-    + 标准程序包 : 包含一个 \_\_init__.py 模块 (包声明模块)                
+    + 标准程序包 : 包含一个 \_\_init__.py 模块 (包声明模块,可以为空)                
     
     + 绝对引入
         + 绝对引入 [推荐]
@@ -91,38 +98,39 @@
             + 语法 : `from . import 模块`
         + 偷懒引入
             + 语法 : `from 模块 import *`
-            
     + 相对引入
         + 相对引入
             + `from . import 模块`
         + 相对引入 |
             + `from .包 import 模块`
-        
-    + \_\_name__ (当前文件名) : 如果当前文件被当做模块使用，判断是否允许被执行
+    + \_\_name\_\_ (当前文件名) : 如果当前文件被当做模块使用，判断是否允许被执行
         `if __name__ == "main": 代码`
-        
 ## 内置模块
 
-+ random 模块 (随机模块)
++ **random 模块** (随机模块)
+    
     + 随机小数
     
-        + random() : 产生 0-1 之间的随机小数 
-        + uniform(a, b) : 指定范围随机小数
+        + `random()` : 产生 0-1 之间的随机小数 
+        + `uniform(a, b)` : 指定范围随机小数
         
     + 随机整数
-    + randint(a, b) : 指定范围随机整数，包含开头结尾
-        
-    + randrange(start, stop, [step]) : start, stop 范围内间隔指定步长 (step) 的整数，包含开头不包含结尾
-        
-    + 随机选择一个数据
-        + random.choice(lst) : 随即返回可迭代序列的一个数据
-            ```python
-          # from random import choice
-          import random
-          lst = [1,2,3,4,5]
-          random.choice(lst)
-          # choice(lst)
+        + `randint(a, b)` : 指定范围随机整数，包含开头结尾
+          
+        + `randrange(start, stop, [step])` : start, stop 范围内间隔指定步长 (step) 的整数，包含开头不包含结尾
+          
+        + 随机选择一个数据
+            + `random.choice(lst)` : 随机返回可迭代序列的一个数据
+                
+              ```python
+              # from random import choice
+              import random
+              lst = [1,2,3,4,5]
+              random.choice(lst)
+              # choice(lst)
           ```
+            
     
     + 打乱
-        + shuffle() : 打乱列表顺序
+        
+        + `random.shuffle(可迭代序列)` : 打乱列表顺序
