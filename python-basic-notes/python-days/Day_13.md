@@ -1,12 +1,12 @@
 ## 反射方法 
 + 通过字符串的形式，操作对象相关的属性,多人开发中，每人负责一个或多个功能是，使用判断其他人是否完成，若完成，执行
-    
+  
     魔术方法|描述
     :---:|:---:
-    hasattr(obj, name) | 判断是否包含名称为name的属性
-    setattr(obj, name, value) | 给名称为name的属性设置value数据
-    getattr(obj, name) | 获取名称为name的属性的具体数据
-    delattr(obj, name) | 删除名称为name的属性
+    hasattr(obj, name) | **判断**是否包含名称为name的属性 
+    setattr(obj, name, value) | 给名称为name的属性**设置**value数据 
+    getattr(obj, name) | **获取**名称为name的属性的具体数据 
+    delattr(obj, name) | **删除**名称为name的属性 
 
 + 设计模式
     + 被反复使用的、多数人知晓的、代码设计经验 的总结，合理使用设计模式能有效解决很多问题
@@ -19,37 +19,47 @@
         + 单一职责原则
     + 23 种常用设计模式
         + 创建型模式 : 一般是创建时使用
-            + 单例模式、工厂方法模式、抽象工厂模式、建造者模式、原型模式
-                + 单例模式
-                    + 需求: 项目中的某个类中处理项目中的公共数据，此时需要该类型创建的对象在任何其他对象访问时，任何时候任何方式获取到的都是同一个对象，以保证数据的一致性。
+            + **单例模式**、**工厂方法模式**、抽象工厂模式、建造者模式、原型模式
+
+                + **单例模式**
+                    
+                    + 需求: 项目中的某个类中处理项目中的公共数据，此时需要该类型创建的对象在任何其他对象访问时，任何时候任何方式获取到的都是同一个对象，以**保证数据的一致性**。
+                    
                     + 实现: 单例模式
-                        ```
+                        ```python
                       # 单例模式
                       class MyData:
-                        """单例类"""
-                        __ins = None
-                        
-                        def __new__(cls, *args, **kwargs):
-                            if not cls.__ins:
-                                cls.__ins == object.__new__(cls)
-                            return cls.__ins
+                      	"""单例类"""
+                      	__ins = None
+                          
+                          def __new__(cls, *args, **kwargs):
+                      		if not cls.__ins:
+                      			cls.__ins == object.__new__(cls)
+                      		return cls.__ins
                       ```
-                + 工厂模式 : 将复杂对象的创建过程封装在方法的内部，提供了一个简单的创建方式给用户使用
-                    ```
+                      
+                      
+                    
+                + **工厂模式** : 将复杂对象的创建过程封装在方法的内部，提供了一个简单的创建方式给用户使用
+
+                  ```python
                   # 用户只需要在工厂类中进行操作就可以对其他操作进行
                   class Factory:
-
-                    def buy_vehicle(selfm, brand):
-                        if brand == 1:
-                            return Motorbike()
-                        elif brand == 2:
-                            return Minibus()
-                        elif brand == 3:
-                            return Sedan()
-                        else:
-                            return "没有你需要的车"
+                  
+                  	def buy_vehicle(selfm, brand):
+                  		if brand == 1:
+                  			return Motorbike()
+                          elif brand == 2:
+                  			return Minibus()
+                  		elif brand == 3:
+                  			return Sedan()
+                  		else:
+                  			return "没有你需要的车"
                   ```
+
+                  
         + 结构型模式 : 将问题结构化
+            
             + 适配器模式、装饰模式、桥接模式、组合模式、享元模式、代理模式、外观模式
         + 行为型模式 : 将问题的算法和结构分离
             + 观察者模式、访问者模式、中介者模式、解释器模式、迭代器模式
@@ -68,8 +78,9 @@
         + 图片、音频、视频...
 
 2. 读写文件简单操作
-    + 读取文件  `open(file, mode='r', buffering=None, encoding=None, errors=None, newline=None, closefd=True)`
-
+    
++ 读取文件  `open(file, mode='r', buffering=None, encoding=None, errors=None, newline=None, closefd=True)`
+    
 3. 文件权限 : 文件不存在会自动创建 (不会创建目录)
 
     读写方式  |  可否读写    |   若文件不存在   |  写入方式
@@ -90,7 +101,8 @@
 4. 文件操作
 
     + 读操作
-        + read(self, n: int = -1)
+        + **read(self, n: int = -1)**
+            
             + 一次性读取文件全部内容 (大于 10G 会超出内存) ，反复调用read(size) 方法，size 是每次最多读取内容
                 ```python
               file = open('../../../js_note.txt', encoding="utf-8")
@@ -106,7 +118,8 @@
               <li></li>  加标注的换行
               """  
               ```
-        + readline(self, limit: int = -1) -> AnyStr
+        + **readline(self, limit: int = -1) -> AnyStr**
+            
             + 每次读取一行，自动换行并在每一行末尾添加(\n)
                 ```python
               file = open('../../../js_note.txt', encoding="utf-8")
@@ -124,8 +137,9 @@
                 
                 "<b
               """
-              ```  
-        + readlines(self, hint: int = -1) -> List[AnyStr]
+              ```
+        + **readlines(self, hint: int = -1) -> List[AnyStr]**
+            
             + 一次性以行的形式读取文件所有内容，返回一个 list, 自动换行并在每一行末尾添加(\n), 使用时可遍历读取
                 ```python
               file = open('../../../js_note.txt', encoding="utf-8")
@@ -141,14 +155,15 @@
                 ```python
               files = open('../../../js_note.txt', encoding="utf-8")
               for file in files:
-                  print(files)
+              print(files)
               files.close()
-                ```
-    
+              ```
+        
     + 写操作
-    
-        + write(self, s: AnyStr) -> int
-            ```python
+
+        + **write(self, s: AnyStr) -> int**
+            
+          ```python
           files = open("test.txt", mode='w')
           files.write("1111")
           files.write("222")
@@ -157,7 +172,8 @@
           1111222
           """
           ```
-        + writelines(self, lines: List[AnyStr]) -> None
+        + **writelines(self, lines: List[AnyStr]) -> None**
+            
             + 将 列表中数据一次性多行写入
                 ```python
               files = open("test.txt", mode='w')
@@ -169,9 +185,9 @@
               firstsecond
               """
               ```
-              
+        
     + CSV 文件读写 `import csv` (reader 和 write 定义了 CSV 文件的读写)
-        ```
+      ```
       >>> import csv
       >>> dir(csv)
       ['Dialect', 'DictReader', 'DictWriter', 'Error', 'OrderedDict', 'QUOTE_ALL', 'QUOTE_MINIMAL', 'QUOTE_NONE', 'QUOTE_NONNUMERIC', 'Sniffer', 'StringIO', '_Dialect', '__all__', '__builtin
@@ -179,51 +195,59 @@
       're', 'reader', 'register_dialect', 'unix_dialect', 'unregister_dialect', 'writer']
       ```
         + 写入 CSV 文件 (必须先创建 CSV 模块对应的 writer 对象，通过 writer 对象实现对文件内容读写)
-            + writer(fileobj, dialect='excel', *args, **kwargs)
-            + writerow(self, row: Iterable[Any]) -> Any
-            + writerows(self, rows: Iterable[Iterable[Any]])
+          + **writer(fileobj, dialect='excel', *args, \*\*kwargs)**
+
+          + **writerow(self, row: Iterable[Any]) -> Any**
+
+          + **writerows(self, rows: Iterable[Iterable[Any]])**
+
             ```python
-          import csv
+            import csv
+              
+            with open("data.csv", mode='w', encoding="utf-8", newline="") as f:
+                # 获取 writer 对象
+                writer = csv.writer(f)
+                # 写入 CSV 标题
+                writer.writerow(
+                    ["id", "姓名", "性别", "年龄"]
+                )
+                writer.writerows(
+                    [
+                        [1, "小二", "男", 18],
+                        [2, "张三", "男", 19],
+                        [3, "赵红", "女", 24]
+                    ]
+                )
+            """
+            id,姓名,性别,年龄
+            1,小二,男,18
+            2,张三,男,19
+            3,赵红,女,24
+            """
+            ```
+
             
-          with open("data.csv", mode='w', encoding="utf-8", newline="") as f:
-              # 获取 writer 对象
-              writer = csv.writer(f)
-              # 写入 CSV 标题
-              writer.writerow(
-                  ["id", "姓名", "性别", "年龄"]
-              )
-              writer.writerows(
-                  [
-                      [1, "小二", "男", 18],
-                      [2, "张三", "男", 19],
-                      [3, "赵红", "女", 24]
-                  ]
-              )
-          """
-          id,姓名,性别,年龄
-          1,小二,男,18
-          2,张三,男,19
-          3,赵红,女,24
-          """
-          ```
-        
+
         + 读取 CSV 文件 (主要通过 reader 对象完成，加载文件数据到 reader 下，然后按照固定格式读取)
-            + reader(iterable, dialect='excel', *args, **kwargs)
+          + **reader(iterable, dialect='excel', *args, **kwargs)**
+
             ```python
-          import csv
+            import csv
+              
+            with open("data.csv", mode="r", encoding="utf-8") as f:
+                render = csv.reader(f)
+                for row in render:
+                    print(row)
+            """
+            ['id', '姓名', '性别', '年龄']
+            ['1', '小二', '男', '18']
+            ['2', '张三', '男', '19']
+            ['3', '赵红', '女', '24']
+            """
+            ```
+
             
-          with open("data.csv", mode="r", encoding="utf-8") as f:
-              render = csv.reader(f)
-              for row in render:
-                  print(row)
-          """
-          ['id', '姓名', '性别', '年龄']
-          ['1', '小二', '男', '18']
-          ['2', '张三', '男', '19']
-          ['3', '赵红', '女', '24']
-          """
-          ``` 
-        
+
 5. with (with 方法对文件操作，会自动关闭文件，不必特意关闭)
     + 格式 
         ```
@@ -238,143 +262,169 @@
             ...
       ```
 
-7. os模块
+7. os模块: `import os`
 
-    1. os.rename(src, dst) : 重命名文件, src 旧文件或目录名, dst 新文件或目录名
-          ```python
+    1. **os.rename(src, dst)** : 重命名文件, src 旧文件或目录名, dst 新文件或目录名
+          
+       ```python
        import os
         
        os.rename("test.txt", "test1.txt")
-          ```
-    2. os.remove(path) : 删除文件, Path 为文件路径
-    
+       ```
+       
+    2. **os.remove(path)** : 删除文件, Path 为文件路径
+
           ```python
        import os
             
        os.remove("test1.txt")
-          ```
+       ```
       
-    3. os.mkdir(path) : 创建目录 (文件夹)
-    
+    3. **os.mkdir(path)** : 创建目录 (文件夹)
+
           ```python
        import os
             
        os.mkdir("../text.txt")
-          ```
-    
-    4. os.makedirs(name, mode=0o777, exist_ok=False) : 递归创建多级目录，如果已存在则报错 (exist_ok=True 不报错)
-        
+       ```
+
+    4. **os.makedirs(name, mode=0o777, exist_ok=False)** : 递归创建多级目录，如果已存在则报错 (exist_ok=True 不报错)
+       
         ```python
        import os
        # 在当前路径下创建, 没有 . 是在根路径下创建
        os.makedirs("./test/test1/test2", )
-        ```
-    5. os.rmdir(path) : 删除一层空目录, 仅删除路径底端的那个文件夹
-        ```python
-       import os
-
+       ```
+       
+    5. **os.rmdir(path)** : 删除一层空目录, 仅删除路径底端的那个文件夹
+        
+       ```python
+    import os
+       
        os.rmdir("./test/test1/test2")
        ```
-    6. os.removedirs(name) : 删除多级空目录，删除路径上的空文件夹 (若目录为空，删除，向上递归，如果是空，删除，直至上层目录不为空)
-        ```python
+       
+    6. **os.removedirs(name)** : 删除多级空目录，删除路径上的空文件夹 (若目录为空，删除，向上递归，如果是空，删除，直至上层目录不为空)
+        
+       ```python
        import os
         
        os.removedirs('./test/test1')
-        ```
-    7. os.getcwd() : 获取当前所在目录
-        ```python
+       ```
+       
+    7. **os.getcwd()** : 获取当前所在目录
+        
+       ```python
        import os
         
        print(os.getcwd())
        # E:\python_study\思维导图\python_zhonggong_study\Day_13
        ```
        
-    8. os.listdir(path) : 获取目录列表，当前目录下所有文件
-        ```python
+    8. **os.listdir(path)** : 获取目录列表，当前目录下所有文件
+        
+       ```python
        import os
         
        print(os.listdir(os.getcwd()))
        # ['data.csv', 'Day_13.md', 'Day_13.py', 'read_csv.py', 'test1.txt', '~$笔记.docx', '文本读取.py', '笔记.docx']
+    ```
+        
+    9. **os.chdir(path)** : 切换所在目录, 常用于改变工作目录，脚本执行目录等
+        
        ```
-    
-    9. os.chdir(path) : 切换所在目录, 常用于改变工作目录，脚本执行目录等
-        ```
        >>> import os
        >>> os.getcwd()
        'E:\\python_study'
        >>> os.chdir("./思维导图/python_zhonggong_study/Day_13")
        >>> os.getcwd()
        'E:\\python_study\\思维导图\\python_zhonggong_study\\Day_13'
-       ``` 
-   
-    10. os.path.exists(path: Text) -> bool : 判断文件或文件夹是否存在
-          ````
-           import os
+       ```
+       
+    10.  **os.path.exists(path: Text) -> bool** : 判断文件或文件夹是否存在
+
+        ```python
+        import os
                 
-           print(os.path.exists("./test"))
-           print(os.path.exists("test1.txt"))
-           """
-           False
-           True
-           """
-         ````
-    
-    11. os.path.isfile(path: AnyPath) -> bool : 判断是否为文件
-          ```
-           import os
-            
-           print(os.path.isfile("test1.txt"))
-           print(os.path.isfile("../Day_13"))
-           """
-           True
-           False
-           """
-          ```
-   
-    12. os.path.isdir() : 判断是否为目录
-          ```
-           import os
-            
-           print(os.path.isdir("test1.txt"))
-           print(os.path.isdir("../Day_13"))
-           """
-           False
-           True
-           """
+        print(os.path.exists("./test"))
+        print(os.path.exists("test1.txt"))
+        """
+        False
+        True
+        """
+        ```
+
+        
+
+    11.  **os.path.isfile(path: AnyPath) -> bool** : 判断是否为文件
+         ```python
+         import os
+             
+         print(os.path.isfile("test1.txt"))
+         print(os.path.isfile("../Day_13"))
+         """
+         True
+         False
+         """
          ```
-       
-    13. os.path.isabs(s: AnyPath) -> bool : 判断是否为绝对路径
-          ```
-           import os
-            
-           print(os.path.isabs("../Day_13"))
-           # False
+
+         
+
+    12.  **os.path.isdir()** : 判断是否为目录
+         ```python
+         import os
+             
+         print(os.path.isdir("test1.txt"))
+         print(os.path.isdir("../Day_13"))
+         """
+         False
+         True
+         """
          ```
-    
-    14. os.path.abspath(path: AnyStr) -> AnyStr : 获取绝对路径
-          ```
-           import os
-            
-           print(os.path.abspath("test1.txt"))
-           # E:\python_study\思维导图\python_zhonggong_study\Day_13\test1.txt
+
+         
+
+    13.  **os.path.isabs(s: AnyPath) -> bool** : 判断是否为绝对路径
+         ```python
+         import os
+             
+         print(os.path.isabs("../Day_13"))
+         # False
          ```
-       
-    15. os.path.basename(p: AnyStr) -> AnyStr : 获取路径中的最后部分
-          ```
-           import os
-            
-           print(os.path.basename("E:\python_study\思维导图\python_zhonggong_study\Day_13\\test1.txt"))
-           # test1.txt
-          ```
-       
-    16. os.path.dirname(p: AnyStr) -> AnyStr : 获取路径中的路径部分 (路径部分 : 路径中不包含文件名的部分) (获取父目录部分)
-          ```
-           import os
-            
-           print(os.path.dirname("E:\python_study\思维导图\python_zhonggong_study\Day_13\\test1.txt"))
-           # E:\python_study\思维导图\python_zhonggong_study\Day_13
-          ```
-    
+
+         
+
+    14.  **os.path.abspath(path: AnyStr) -> AnyStr** : 获取绝对路径
+         ```python
+         import os
+             
+         print(os.path.abspath("test1.txt"))
+         # E:\python_study\思维导图\python_zhonggong_study\Day_13\test1.txt
+         ```
+
+         
+
+    15.  **os.path.basename(p: AnyStr) -> AnyStr** : 获取路径中的最后文件名部分
+
+         ```python
+         import os
+             
+         print(os.path.basename("E:\python_study\思维导图\python_zhonggong_study\Day_13\\test1.txt"))
+         # test1.txt
+         ```
+
+         
+
+    16.  **os.path.dirname(p: AnyStr) -> AnyStr** : 获取路径中的路径部分 (路径部分 : 路径中不包含文件名的部分) (获取父目录部分)
+         ```python
+         import os
+             
+         print(os.path.dirname("E:\python_study\思维导图\python_zhonggong_study\Day_13\\test1.txt"))
+         # E:\python_study\思维导图\python_zhonggong_study\Day_13
+         ```
+
+         
+
 8. 异常
 
 9. 异常捕获

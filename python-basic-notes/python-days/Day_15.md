@@ -1,6 +1,6 @@
-# 坦克大战面向对象设计思路
+## 坦克大战面向对象设计思路
 
-## 分析
+### 分析
 
 1. #### 导入 pygame 包用于程序主体框架设计与实现
    #### 导入 random 模块用于生成随机三个位置的敌人
@@ -14,13 +14,12 @@
     + ##### 障碍物(与地图边缘设置的状况一致)
     + ##### 引擎类(控制游戏的开始结束)
     
-## 编写
+### 编写
 
 1. #### 创建公共精灵类，将共同对象放入进行初始化 
     ```
    import pygame
    import random
-   
    
    class GameSprite(pygame.sprite.Sprite):
        
@@ -29,28 +28,28 @@
            if speed is None:
                speed = {"x": 0, "y": 0}
            if position is None:
-			    position = {"x": 0, "y": 0}
-           self.image = images  # 传进来的图片
+   		    position = {"x": 0, "y": 0}
+	        self.image = images  # 传进来的图片
            self.position = position  # 图片的位置
            self.rect = self.image.get_rect()  # 区域 图像宽度 坐标位置
            self.rect.x = self.position["x"]  # 设置元素的坐标
            self.rect.y = self.position["y"]
            self.speed = speed
-
-	def move(self):
+   
+def move(self):
 		pass
-
-	def event(self):
+	
+def event(self):
 		pass
-
-	def stop(self):
+	
+def stop(self):
 		pass
-
-	def update(self):
+	
+def update(self):
 		"""我们在去调用分组的update时,会自动执行"""
 		self.event()
 		self.move()
-    ```
+	```
    
 2. #### 创建引擎类，初始化项目的标题信息、坦克数量等、对各种元素进行分组
     + 创建游戏开始与游戏结束标志

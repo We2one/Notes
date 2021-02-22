@@ -3,65 +3,67 @@
 + #### 单元测试 : 用来对一个模块/一个函数/一个类来进行正确性检验的测试工作
 
     + ##### 核心四个概念
-        1. test case : (测试用例)
+        1. **test case** : (测试用例)
             + 一个 test case 的实例就是一个测试用例。测试前准备环境的搭建 (setUp), 执行测试代码 (run), 测试后环境的还原 (tearDown)
         
-        2. test suite : (测试套件)
+        2. **test suite** : (测试套件)
             + 多个测试用例的结合
         
-        3. test runner : (测试运行器)
-            + test loader : 用来加载 test case 到 test suite 里
+        3. **test runner** : (测试运行器)
+            + **test loader** : 用来加载 test case 到 test suite 里
             + 测试执行, 其中 run(test) 会执行 test suite /test case 中的 run(result) 方法
             
-        4. test fixture : (测试环境数据准备和数据清理或者测试脚手架)
+        4. **test fixture** : (测试环境数据准备和数据清理或者测试脚手架)
             + 测试用例环境的搭建和销毁
             + setUp 加载初始数据
             + tearDown 释放数据
-    
+
     + ##### unittest 的使用
-    
-        1. 步骤
-           
-            1. 导入 unittest 模块, 被检测文件或者其中的类
-            
-            2. 创建一个测试类, 被继承 unittest.TestCase
-            
-            3. 重写 setUp 和 tearDown 方法 (如果有初始化条件和结束条件)
-            
-            4. 定义测试函数,函数名以test_开头,测试用例
-            
-            5. 在函数体中使用断言来测试测试结果是否符合预期结果
-            
-            6. 调用 unittest.main() 方法运行测试用例,无此方法也可运行
-            
-        2. 设置 setUp 和 tearDown : 每次用例执行前都会执行初始化条件和结束条件
-        
-        3. 设置 setupClass 和 teardownClass : 执行所有测试用例, 仅执行一次初始化条件和结束条件
-        
-        4. 断言 Assert ---- 结果对比的函数 (当一条测试用例执行失败,不会影响其他测试用例的执行)
-            + 也可以直接用 >= / = / <= 判断
-            
-            方法 | 判断
-            :---: | :---:
-            assertEqual(a, b) : 相等 | a == b
-            assertNotEqual(a, b) | a != b
-            assertTrue(x) | bool(x) is True
-            assertFalse(x) | bool(x) is False
-            assertls(a, b) | a is b : 判断是否是同一对象 [id(a), 从存储地址上] 
-            assertNottls(a, b) | a is not b  [id(a), 从存储地址上] 
-            assertlsNone(x) | x is None
-            assertlsNotNone | x is not None
-            assertin(a, b) | a in b : 判断 a 是否在 b 中
-            assertNotin(a, b) | a not in b
-            assertlsInstance(a, b) | isInstance(a, b) : 实例对象
-            assertNotlsInstance(a, b) | not isInstance(a, b) 
-        
-        ````
+
+      1. 步骤
+         
+          1. 导入 unittest 模块, 被检测文件或者其中的类
+          
+          2. 创建一个测试类, 被继承 unittest.TestCase
+          
+          3. 重写 setUp 和 tearDown 方法 (如果有初始化条件和结束条件)
+          
+          4. 定义测试函数,函数名以test_开头,测试用例
+          
+          5. 在函数体中使用断言来测试测试结果是否符合预期结果
+          
+          6. 调用 unittest.main() 方法运行测试用例,无此方法也可运行
+          
+      2. 设置 setUp 和 tearDown : 每次用例执行前都会执行初始化条件和结束条件
+
+      3. 设置 setupClass 和 teardownClass : 执行所有测试用例, 仅执行一次初始化条件和结束条件
+
+      4. 断言 Assert ---- 结果对比的函数 (当一条测试用例执行失败,不会影响其他测试用例的执行)
+          + 也可以直接用 >= / = / <= 判断
+          
+          方法 | 判断
+          :---: | :---:
+          assertEqual(a, b) : 相等 | a == b
+          assertNotEqual(a, b) | a != b
+          assertTrue(x) | bool(x) is True
+          assertFalse(x) | bool(x) is False
+          assertls(a, b) | a is b : 判断是否是同一对象 [id(a), 从存储地址上] 
+          assertNottls(a, b) | a is not b  [id(a), 从存储地址上] 
+          assertlsNone(x) | x is None
+          assertlsNotNone | x is not None
+          assertin(a, b) | a in b : 判断 a 是否在 b 中
+          assertNotin(a, b) | a not in b
+          assertlsInstance(a, b) | isInstance(a, b) : 实例对象
+          assertNotlsInstance(a, b) | not isInstance(a, b) 
+
+      + 实例
+
+        ```python
         """
         基本测试流程语法
         """
         import unittest
-
+        
         # 创建类,继承unittest.TestCase
         class MyTest(unittest.TestCase):
         
@@ -86,11 +88,13 @@
                 b = 2
                 res = 3
                 self.assertEqual(a+b, res)
-
+        
         if __name__ == '__main__':
             # 调用测试用例,main自动执行test_开头的方法
             unittest.main()
-      ````
+        ```
+
+        
 
 ### Python2 / Python3区别
 
@@ -193,82 +197,90 @@
 
     + CentOS 6 关闭防火墙 [老版防火墙 : iptables，新版防火墙 : firewalld]
         + 关闭防火墙 : 
-            + service stop firewalld
-            + service iptables stop
+            + **`service stop firewalld`**
+            + **`service iptables stop`**
         + 关闭开机启动
-            + chkconfig firewalld off
-            + chkconfig iptables off
+            + **`chkconfig firewalld off`**
+            + **`chkconfig iptables off`**
         
     + CentOS 7 关闭防火墙
         + 关闭防火墙
-            + systemctl stop firewalld
+            + **`systemctl stop firewalld`**
         + 关闭开机启动
-            + systemctl disabled firewalld
+            + **`systemctl disabled firewalld`**
         + 查看关闭状态
-            + systemctl status firewalld
+            + **`systemctl status firewalld`**
     
 + #### 命令操作 (命令基本格式 : 命令 [-选项] [参数] 可选)
     1. 帮助使用命令
-        + 快捷键:  清屏  ctrl+l   /  clear
-        + -h 或者 --help : 查看指定命令的帮助信息
+        + 快捷键:  清屏  **ctrl+l   /  clear**
+        + **-h 或者 --help** : 查看指定命令的帮助信息
+            
             + 格式
                 ```
               ls --help
               ```
-        + which : 查看指定命令在文件系统环境变量中的位置
+        + **which** : 查看指定命令在文件系统环境变量中的位置
+            
             + 格式 
                 ```
               which 命令
               ```
-        + whereis : 查看指定命令在文件系统的位置
+        + **whereis** : 查看指定命令在文件系统的位置
+            
             + 格式
                 ```
               whereis 命令
               ```
     2. 系统常见命令
     
-        + ls : 查看指定路径中的文件
+        + **ls : 查看指定路径中的文件**
+            
             + `ls path` : 查看指定路径 path 下的文件列表
             + -a : 查看路径下所有文件,包含隐藏文件
             + -l : 列表形式查看文件信息, 包含文件权限、所属用户/组、文件大小、文件名称等
-            + -R : 递归方式查看当前文件夹下所有的子文件、子文件中的子文件
-        
-        + cd : 改变当前工作路径
+        + -R : 递归方式查看当前文件夹下所有的子文件、子文件中的子文件
+            
+        + **cd : 改变当前工作路径**
+            
             + `cd path ` : 在命令行切换不同的路径
             + cd / : 进入系统根目录
             + cd ~ : 进入系统当前用户目录
             + cd . : 一个符号 . 表示当前路径
-            + cd .. : 两个符号 .. 表示上级/父级路径
+        + cd .. : 两个符号 .. 表示上级/父级路径
+            
+        + **pwd : 查看当前工作路径**
         
-        + pwd : 查看当前工作路径
+        + **ifconfig : 查看当前网络配置信息** (linux  系统中查看网卡网络信息的命令)
         
-        + ifconfig : 查看当前网络配置信息 (linux  系统中查看网卡网络信息的命令)
+        + **poweroff : 关闭计算机** (CentOS 中关机)
         
-        + poweroff : 关闭计算机 (CentOS 中关机)
-        
-        + shutdown : 关闭计算机 (执行命令后会延时关机) 
+        + **shutdown : 关闭计算机** (执行命令后会延时关机) 
+            
             + `shutdown -r now` : 立刻重启计算机
             + `shutdown -r 10` : 10 分钟后重启系统
             + `shutdown -r 20:35` : 指定时间重启系统
             + `shutdown -h now` : 立刻关闭计算机
             + `shutdown -h 10` : 10 分钟后关闭计算机
-            + `shutdown -c` : 取消 shutdown 命令执行的操作
+        + `shutdown -c` : 取消 shutdown 命令执行的操作
+            
+        + **reboot : 重启计算机**
         
-        + reboot : 重启计算机
-        
-        + grep : 数据检索命令 (用于过滤/搜索特定字符 (串)，常配合管道命令使用)
+        + **grep : 数据检索命令** (用于过滤/搜索特定字符 (串)，常配合管道命令使用)
+            
             + `grep 需要搜索的字符串/要被搜索的文件`
-            + -i | -ignore-case : 忽略字符大小写
-        
-        + | : 管道符号, 连接多个命令 (将第一个命令的输出结果，作为第二个命令的输入)
+        + **-i | -ignore-case** : 忽略字符大小写
             
-        + 基本语法 : `$ 命令1 | 命令2 | 命令3`
+        + **| : 管道符号, 连接多个命令** (将第一个命令的输出结果，作为第二个命令的输入)
+          
+          + 基本语法 : `$ 命令1 | 命令2 | 命令3`
+          
+        + **find : 文件检索命令**
             
-        + find : 文件检索命令
-            + 语法格式 : `$ find path -option [-print] [-exec -ok command] {} \`
+            + 语法格式 : `find path -option [-print] [-exec -ok command]`
                 + path : 命令所查找的目录路径
                 + -print : 命令将匹配的文件输出到标准输出
-                + -exec : 命令对匹配的文件执行该参数所给出的 shell 命令, 相应命令的形式为 ' command' {} \
+                + -exec : 命令对匹配的文件执行该参数所给出的 shell 命令, 相应命令的形式为 ' command'
                 + -ok : 和 -exec 的作用相同,只不过以一种更为安全的模式来执行该参数所给出的 shell 命令, 在执行每一个命令时，都会给出提示
                 + -name filename : 查找名为 filename 的文件
                 + -type b/d/c/p/l/f : 按照文件类型查询指定的文件
