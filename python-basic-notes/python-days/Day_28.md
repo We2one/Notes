@@ -48,7 +48,7 @@
 
 ##### display 属性
 
-+ display 属性 : 设置元素类型及隐
++ display 属性 : 设置元素类型及隐藏
 
   | 常用属性              | 描述                    |
   | --------------------- | ----------------------- |
@@ -72,8 +72,8 @@
 
 + text-overflow : 当文本溢出包含元素时发生的事情
 
-  + `text-overflow: ellipsis` : 在一行显示内容超出后以 "..." 代表之后内容
-  + `white-space: nowrap` : 强制显示在一行
+  + **`text-overflow: ellipsis`** : 在一行显示内容超出后以 "..." 代表之后内容
+  + **`white-space: nowrap`** : 强制显示在一行
 
 #### 浮动
 
