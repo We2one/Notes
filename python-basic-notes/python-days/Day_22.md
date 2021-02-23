@@ -38,11 +38,11 @@
 
 4. ##### 安装MySQL服务 : 以管理员运行cmd,执行切换到解压文件的bin目录下，执行mysqld --install MySQL
 
-5. ##### 初始化安装MySQL数据库在bin目录下执行 mysqld --initialize-insecure，无密码安装
+5. ##### 初始化安装MySQL数据库在bin目录下执行 `mysqld --initialize-insecure`，无密码安装
 
-6. ##### 启动 MySQL 服务 : net start mysql
+6. ##### 启动 MySQL 服务 : `net start mysql`
 
-7. #####  MySQL连接测试 mysql -uroot -p
+7. #####  MySQL连接测试 `mysql -u root -p`
 
 8. ##### 修改密码 
 
@@ -56,7 +56,7 @@
 
 #### 数据库卸载
 
-1. ##### 1、停止服务，删除mysql目录下剩余了所有文件，把mysql文件夹也删了,以管理员身份打开cmd然后执行下面的命令
+1. ##### 停止服务，删除mysql目录下剩余的所有文件，把mysql文件夹也删了,以管理员身份打开cmd然后执行下面的命令
 
    ```
    net stop mysql
@@ -125,20 +125,20 @@
 
  1. ##### 数据类型
 
-     1. 数值型
+    1. 数值型
 
-        ​	
+       ​	
 
-        |   类型    | 字节  |                    描述                     |
-        | :-------: | :---: | :-----------------------------------------: |
-        |  TINYINT  | 1字节 |                 (-128, 127)                 |
-        | SMALLINT  | 2字节 |               (-32768, 32767)               |
-        | MEDIUMINT | 3字节 |            (-83388608, 83388607)            |
-        |  **INT**  | 4字节 |                    整数                     |
-        |  BIGINT   | 8字节 |                                             |
-        | **FLOAT** | 4字节 |                                             |
-        |  DOUBLE   | 8字节 |                   浮点数                    |
-        |  DECIMAL  |       | DECIMAL(M,D),M>D为M+2否则为D+2 [自定义精度] |
+       |   类型    | 字节  |                    描述                     |
+       | :-------: | :---: | :-----------------------------------------: |
+       |  TINYINT  | 1字节 |                 (-128, 127)                 |
+       | SMALLINT  | 2字节 |               (-32768, 32767)               |
+       | MEDIUMINT | 3字节 |            (-83388608, 83388607)            |
+       |  **INT**  | 4字节 |                    整数                     |
+       |  BIGINT   | 8字节 |                                             |
+       | **FLOAT** | 4字节 |                                             |
+       |  DOUBLE   | 8字节 |                   浮点数                    |
+       |  DECIMAL  |       | DECIMAL(M,D),M>D为M+2否则为D+2 [自定义精度] |
 
     2. 时间日期型
 
@@ -165,10 +165,11 @@
        | MEDIUMTEXT  | 0-16777215 字节   |       中等长度文本数据        |
        | LONGTEXT    | 0-4294967295 字节 |         极大文本数据          |
 
-    3. VARCHAR 、CHAR 与 TEXT
-       + CHAR : 定长格式,长度范围 0-255,不足255长度的字符时,MySQL会用空格填充剩下字符,读取数据时,char 类型数据要进行处理,把后面空格去除
-       + VARCHAR : V5.0.3 以下版本最大长度限制 255;V5.0.3以上版本最大长度限制 65532 (起始结束位占3个字节) 字节 
-       + TEXT : 不可以有默认值数据,最大长度 2^16-1
+    3. **VARCHAR 、CHAR 与 TEXT**
+       
+       + **CHAR** : 定长格式,长度范围 0-255,不足255长度的字符时,MySQL会用空格填充剩下字符,读取数据时,char 类型数据要进行处理,把后面空格去除
+       + **VARCHAR** : V5.0.3 以下版本最大长度限制 255;V5.0.3以上版本最大长度限制 65532 (起始结束位占3个字节) 字节 
+       + **TEXT** : 不可以有默认值数据,最大长度 2^16-1
        + 尽量使用 VARCHAR, 经常变化的字段使用 VARCHAR ,可以使用 VARCHAR 就不要使用 TEXT，超过 255 字符的只能用 VARCHAR 与 TEXT,知道固定长度用CHAR
 
 2. ##### 查询数据表
@@ -210,110 +211,105 @@
       + 基本语法
 
         ```mysql
-        ALTER TABLE tab_name ADD col_name 列定义 [FIRST | AFTER old_col_name]
-        ```
-
-      + 案例
-
-        1. 末尾增加一列
-
+        ALTER TABLE tab_name 
+        	ADD col_name 列定义 [FIRST | AFTER old_col_name]
+     ```
+   
+   + 案例
+   
+     1. 末尾增加一列
+   
            ```mysql
            ALTER TABLE tab_name
            	ADD col_name VARCHAR(200);
-           ```
-
-        2. 开头位置增加列
-
+        ```
+   
+     2. 开头位置增加列
+   
            ```mysql
            ALTER TABLE tab_name
            	ADD col_name VARCHAR(200) FIRST;
-           ```
-
-        3. 指定位置增加一列 (emp_name 列后增加的)
-
+        ```
+   
+     3. 指定位置增加一列 (emp_name 列后增加的)
+   
            ```mysql
            ALTER TABLE tab_name
            	ADD col_name VARCHAR(200)
            	AFTER emp_name;
-           ```
-
-   2. 删除列字段
-
-      + 基本语法
-
+        ```
+   
+2. 删除列字段
+   
+   + 基本语法
+   
         ```mysql
         ALTER TABLE tab_name DROP col_name;
-        ```
-
-      + 操作案例
-
-        ```mysql
-        ALTER TABLE tab_name DROP col_name;
-        ```
-
-   3. 修改列字段
-
+     ```
+   
+3. 修改列字段
+   
       + 基本语法
-
-        ```mysql
+   
+     ```mysql
         ALTER TABLE tab_name
-        	CHANGE old_col_name new_col_name 列定义 字段类型约束
+     	CHANGE old_col_name new_col_name 列定义 字段类型约束
         
-        ALTER TABLE tab_name
+     ALTER TABLE tab_name
         	MODIFY col_name 列定义 字段类型约束
         ```
-
+   
       + 操作案例
-
+   
         1. 设置列默认值
-
-           ```mysql
+   
+        ```mysql
            ALTER TABLE tab_name
-           	ALTER col_name SET DEFAULT "默认值";
+        	ALTER col_name SET DEFAULT "默认值";
            ```
 
         2. 修改列类型
-
+   
            ```mysql
            ALTER TABLE tab_name
-           	MODIFY col_name VARCHAR(200);
+        	MODIFY col_name VARCHAR(200);
            ```
 
         3. 修改列名
-
+   
            ```mysql
            ALTER TABLE tab_name
-           	CHANGE old_col_name new_col_name VARCHAR(100);
+        	CHANGE old_col_name new_col_name VARCHAR(100);
            ```
 
    5. ##### 重命名数据表
-
+   
       + 基本语法
-
-        ```mysql
+   
+     ```mysql
         ALTER TABLE old_tab_name RENAME AS/TO new_tab_name;
-        ```
-
-   6. ##### 删除数据表
-
+     ```
+   
+6. ##### 删除数据表
+   
       + 基本语法
-
-        ```mysql
+   
+     ```mysql
         DROP TABLE tab_name;
-        ```
-
-   6. ##### 数据表约束
-
-      1. 表约束 : 对数据格式和数据内容的限制
-      2. 主键约束 (PRIMARY KEY) :  标注表中每条记录都是唯一的标识
-      3. 外键约束 (FOREIGN KEY) : 标注当前数据表与其他数据表之间的关联关系
+     ```
+   
+6. ##### 数据表约束
+   
+      1. **表约束** : 对数据格式和数据内容的限制
+      2. **主键约束 (PRIMARY KEY)** :  标注表中每条记录都是唯一的标识
+   3. **外键约束 (FOREIGN KEY)** : 标注当前数据表与其他数据表之间的关联关系
          + 逻辑外键 : 在逻辑上有关联关系 (外键字段不加约束)
-         + 物理外键 : 外键字段添加约束，删除时如果与其他表有外键约束,无法删除
-      4. 唯一约束 (UNIQUE) : 标注当前字段数据的唯一性
-      5. 默认约束 (DEFAULT) : 标注当前字段默认数据
-      6. 非空约束 (NOT NULL) : 标注当前字段数据不能为空
-      7. 自增约束 (AUTO_INCREMENT) : 标注当前字段数据默认 +1 一般配合主键使用
-      8. 无符号 (UNSIGNED) : 数值类型，无符号代表正数
+      + 物理外键 : 外键字段添加约束，删除时如果与其他表有外键约束,无法删除
+      4. **唯一约束 (UNIQUE)** : 标注当前字段数据的唯一性
+      5. **默认约束 (DEFAULT)** : 标注当前字段默认数据
+      6. **非空约束 (NOT NULL)** : 标注当前字段数据不能为空
+      7. **自增约束 (AUTO_INCREMENT)** : 标注当前字段数据默认 +1 一般配合主键使用
+      8. **无符号 (UNSIGNED)** : 数值类型，无符号代表正数
 
 #### 导出数据为 CSV 文件
 
@@ -419,25 +415,25 @@
 
    1. 全表删除 (清空表中数据)
 
-      1. TRUNCATE TABLE [tab_name] : 删除表中数据,包括重置主键编号等，变为空表
+      1. **`TRUNCATE TABLE [tab_name]`** : 删除表中数据,包括重置主键编号等，变为空表
 
          ```mysql
          TRUNCATE TABLE tab_name;
          ```
 
-      2. DELETE FROM [tab_name] :  仅仅删除表中数据,其他标的特征信息不变
+      2. **`DELETE FROM [tab_name]`** :  仅仅删除表中数据,其他标的特征信息不变
 
          ```mysql
          DELECT FROM tab_name;
          ```
 
-   2. DELECT : 指定条件筛选删除,避免误伤 
+   2. **`DELECT`** : 指定条件筛选删除,避免误伤 
 
       ```mysql
       DELECT FROM tab_name WHERE 条件;
       ```
 
-   3. LIMIT : 指定删除数量,防止删除引起 CPU 大量占用
+   3. **`LIMIT`** : 指定删除数量,防止删除引起 CPU 大量占用
 
       ```mysql
       DELECT FROM tab_name LIMIT 删除数目n;

@@ -41,12 +41,12 @@
     ssh-keygen -t rsa
     ```
 
-	2. ##### 将本地公钥配置到远程服务器
+2. ##### 将本地公钥配置到远程服务器
 
-    ```
-    cat ~/.ssh/id_rsa.pub
-    # 查看本地公钥
-    ```
+   ```
+   cat ~/.ssh/id_rsa.pub
+   # 查看本地公钥
+   ```
 
 3. ##### 复制公钥信息到 github --> setting --> SSH and GPG keys
 
@@ -67,23 +67,23 @@
 
 #### 版本管理常用命令
 
- 1. ##### git status : 查看当前版本库中所有文件的状态
+ 1. ##### `git status` : 查看当前版本库中所有文件的状态
 
- 2. ##### git add 文件名/./*/-A : 添加文件到暂存区
+ 2. ##### `git add 文件名/./*/-A` : 添加文件到暂存区
 
- 3. ##### git commit -m “描述” 文件名/. : 提交指定的数据,生成新的版本
+ 3. ##### `git commit -m “描述” 文件名/.` : 提交指定的数据,生成新的版本
 
- 4. ##### git push : 将代码推送到远程仓库,方便其它开发人员下载开发
+ 4. ##### `git push` : 将代码推送到远程仓库,方便其它开发人员下载开发
 
- 5. ##### git diff : 查看新增的代码对于哪些文件作了修改
+ 5. ##### `git diff` : 查看新增的代码对于哪些文件作了修改
 
- 6. ##### git log / reflog : 查看历史提交信息
+ 6. ##### `git log / reflog` : 查看历史提交信息
 
- 7. ##### git reset --hard commit版本号 : **通过版本号**,完成代码的回滚
+ 7. ##### `git reset --hard commit版本号` : **通过版本号**,完成代码的回滚
 
- 8. ##### git restore <filename>  : 工作区修改的代码回退
+ 8. ##### `git restore <filename>`  : 工作区修改的代码回退
 
- 9. ##### git restore --staged <filename> : 暂存区修改的代码回退到工作区
+ 9. ##### `git restore --staged <filename>` : 暂存区修改的代码回退到工作区
 
 #### 分支管理 (不要在 master 分支直接修改边界内容)
 
@@ -97,11 +97,11 @@
 
 5. ##### 一般情况下不同分支的作用
 
-    + master 分支 : 比较完整的随时可发布, 注意永远不要在 master 分支上直接进行开发和提交代码,确保 master 上的代码一直可用
-    + develop 分支 : 平时开发的主分支,功能最新最全的分支
-    + feature 分支 : 主要用来开发新的功能
-    + release 分支 : 发布准备的专门分支
-    + hotfix 分支 : 修复线上代码的 bug,修复后放到 develop 分支, 然后提交到 master 分支
+    + **master 分支** : 比较完整的随时可发布, 注意永远不要在 master 分支上直接进行开发和提交代码,确保 master 上的代码一直可用
+    + **develop 分支** : 平时开发的主分支,功能最新最全的分支
+    + **feature 分支** : 主要用来开发新的功能
+    + **release 分支** : 发布准备的专门分支
+    + **hotfix 分支** : 修复线上代码的 bug,修复后放到 develop 分支, 然后提交到 master 分支
     
 6. ##### 分支的操作
 
@@ -110,26 +110,25 @@
         ```
         git branch -a
         ```
-
-
+        
     2. 添加一个新的分支
-
+    
        ```
        git branch <branchname>
        ```
-
+    
     3. 切换分支
-
+    
        ```
        git checkout <branchname>
        ```
-
+    
     4. 删除一个分支
-
+    
        ```
        git branch -d <branchname>
        ```
-
+    
 7. #### 合并分支 (将开发分支的内容合并到主分支)
 
    ```
@@ -180,6 +179,8 @@
    ```
    git remote remove origin
    ```
+
+   
 
    
 
