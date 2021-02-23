@@ -6,18 +6,21 @@
     + 包含了对数据表里的记录的指针,类似于字典的目录
     + 添加索引时, 会单独创建一张表去存储和和管理索引, 索引比原数据大,占用更多资源
 
-	2. ##### 索引的种类
+    2. ##### 索引的种类
 
-    	1. 普通索引 index
-        + index : 可以为空、可以重复
-    	2. 唯一索引 unique
-        + 可以为空但不可以重复
-    	3. 主键索引 primary key
-        + 不可以为空不可以重复
-    	4. 多列索引
-        + 为多个字段添加一个索引
+      1. 普通索引 index
+         + index : 可以为空、可以重复
 
-	3. ##### 索引的优缺点
+      2. 唯一索引 unique
+         + 可以为空但不可以重复
+
+      3. 主键索引 primary key
+         + 不可以为空不可以重复
+
+      4. 多列索引
+         + 为多个字段添加一个索引
+
+    3. ##### 索引的优缺点
 
     + 优点
       + 提升查询速度
@@ -27,46 +30,46 @@
       + 增加后期维护成本
       + 降低增删改操作的效率
 
-	4. ##### 索引是否越多越好？
+    4. ##### 索引是否越多越好？
 
-    + 数据量较大的时候可以使用索引
-    + 经常用 where 查询的字段添加索引
-    + 字段重复率过高就不推荐添加索引,添加会降低查询速度
-    + 使用索引时遵循 最左原则
-    + 多列索引查询时,注意字段顺序
+       + 数据量较大的时候可以使用索引
+       + 经常用 where 查询的字段添加索引
+       + 字段重复率过高就不推荐添加索引,添加会降低查询速度
+       + 使用索引时遵循 最左原则
+       + 多列索引查询时,注意字段顺序
 
-	5. ##### 索引操作
+    5. ##### 索引操作
 
-    	1. 添加索引
+      1. 添加索引
 
-        	1. 建表时添加索引 primary key
+           1. 建表时添加索引 primary key
 
-        	2. 表建好之后添加索引
+           2. 表建好之后添加索引
 
-            ```mysql
-            ALTER TABLE tab_name
-            ADD 索引类型 [索引名](字段名);
-            ```
+              ```mysql
+              ALTER TABLE tab_name
+              ADD 索引类型 [索引名](字段名);
+              ```
 
-    2. 查看索引
+      2. 查看索引
 
-       ```mysql
-       SHOW INDEX FROM tab_name;
-       ```
+         ```mysql
+         SHOW INDEX FROM tab_name;
+         ```
 
-    3. 删除索引
+      3. 删除索引
 
-       ```mysql
-       DROP INDEX 索引名 
-       ON tab_name;
-       ```
+         ```mysql
+         DROP INDEX 索引名 
+         ON tab_name;
+         ```
 
-    4. 删除主键索引 : 必须先去除主键索引的自增属性, 然后执行
+      4. 删除主键索引 : 必须先去除主键索引的自增属性, 然后执行
 
-       ```mysql
-       ALTER TABLE tab_name
-       DROP PRIMARY KEY;
-       ```
+         ```mysql
+         ALTER TABLE tab_name
+         DROP PRIMARY KEY;
+         ```
 
 6. ##### 索引的实现 (存储结构划分)
 
@@ -156,12 +159,14 @@
             ```
 
        2. 创建触发器
-       		1. 修改默认结束符 ";" 	
-       			```
-       			\d ||
-       		```
 
-			2. 创建触发器
+          1. 修改默认结束符 ";" 	
+
+             ```mysql
+             \d ||
+             ```
+
+          2. 创建触发器
               ```mysql
               create trigger tri_name 
               befor delete on 原表名
@@ -193,13 +198,13 @@
     CREATE USER '用户名'@'来源地' IDENTIFIED BY '密码';
     ```
 
-	2. ##### 删除用户
+2. ##### 删除用户
 
-    ```mysql
-    drop user '用户名'@'来源地'
-    ```
+   ```mysql
+   drop user '用户名'@'来源地'
+   ```
 
-2. ##### 授权操作  (\*.\* 库名.表名： 对当前所有库和表都具有权限)
+3. ##### 授权操作  (\*.\* 库名.表名： 对当前所有库和表都具有权限)
 
    ```mysql
    GRANT 权限 ON 库名.表名 TO '用户名'@'来源地';
@@ -215,7 +220,7 @@
    REVOKE UPDATE ON *.* FROM '用户名'@'来源地';
    ```
 
-4. ##### 修改密码
+5. ##### 修改密码
 
    1. 先查看 mysql 库中的 user 表中,用户是否有密码
 
@@ -225,8 +230,6 @@
       WHERE user='用户名'\G;
       ```
 
-      
-
    2. 如果有密码需要先删除 (置空)
 
       ```mysql
@@ -234,8 +237,6 @@
       SET authentication_string=""
       where user='user_name';
       ```
-
-      
 
    3. 重新设置新的密码
 
@@ -313,26 +314,28 @@
       res = cursor.fetchone()
       ```
 
-   2.  获取指定条数据
+   2. 获取指定条数据
 
       ```
-   res = cursor.fetchmany(size)
+      res = cursor.fetchmany(size)
       ```
    
-      ```
-   res = cursor.fetchmany(2)
-      print(res)
-      """
-      ((10001, datetime.date(1953, 9, 2), 'Georgi', 'Facello', 'M', datetime.date(1986, 6, 26)), (10002, datetime.date(1964, 6, 2), 'Bezalel', 'Simmel', 'F', datetime.date(1985, 11, 21)))
-      """
-      ```
+      + 实例
    
+        ```
+        res = cursor.fetchmany(2)
+        print(res)
+        """
+        ((10001, datetime.date(1953, 9, 2), 'Georgi', 'Facello', 'M', datetime.date(1986, 6, 26)), (10002, datetime.date(1964, 6, 2), 'Bezalel', 'Simmel', 'F', datetime.date(1985, 11, 21)))
+        """
+        ```
+
    3. 获取所有数据
-
+   
       ```
-   res = cursor.fetchall()
+res = cursor.fetchall()
       ```
-
+   
       
    
 8. ##### 退出数据库,关闭游标与数据库
