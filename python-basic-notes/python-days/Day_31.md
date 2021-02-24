@@ -70,26 +70,22 @@
       var width = $("#box").css("width")
       ```
 
-      
-
    2. CSS 方法如果只指出属性,给值,就修改样式
 
       ```
-      $("#box").css("width", 100)
+   $("#box").css("width", 100)
       ```
-
-      
-
+   
    3. CSS 方法也可以修改多个样式 
 
       ```
-      $("#box").css({"width": "100px",
+   $("#box").css({"width": "100px",
           "height": "100px",
-          "background-color": "red",
+       "background-color": "red",
           "border": "1px solid black"
       })
       ```
-
+   
 2. `.addClass()`,`.removeClass()`,`.toggleClass()` : 通过添加和减去class 属性值来修改样式
 
    1. 添加样式

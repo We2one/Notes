@@ -78,25 +78,24 @@
     re.sub(reg, repl, string) | 使用**指定的字符串 repl**来 替换 **目标字符串string** 中匹配 **正则表达式reg** 的字符
     
     + 实例
+    
+        ```python
+      import re
+           
+      string = "Hello Word"
+            
+      res_split = re.split('o', string)
+      res_sub = re.sub('o', 'M', string)
+            
+      print(res_split)
+      print(res_sub)
+      """
+      ['Hell', ' W', 'rd']
+      HellM WMrd	
+      ```
+
    
-  ```python
-     import re
-     
-     string = "Hello Word"
-      
-     res_split = re.split('o', string)
-     res_sub = re.sub('o', 'M', string)
-      
-     print(res_split)
-     print(res_sub)
-     """
-     ['Hell', ' W', 'rd']
-     HellM WMrd
-     """
-     ```
-   
-   
-   
+
 5. #### 正则表达式元字符
    
     元字符 | 描述
@@ -114,7 +113,7 @@
      \B | 匹配不是单词的开头或结束位置
     
     + 实例
-   
+    
      ```python
      import re
       
@@ -161,9 +160,9 @@
      ['', '', '', '', '', '', '', '', '', '', '', '', '']
      """
      ```
+
    
-   
-   
+
 6. #### 正则表达式中的量词 (量词 : 用于限定字符出现数量的关键词)
 
     量词 | 描述
@@ -191,7 +190,7 @@
     [^a-zA-Z0-9_] | 匹配一个非(数字\字母\下划线)中的任意一个字符 <==> \W
     
     + 实例
-   
+    
      ```python
      import re
       
@@ -223,9 +222,9 @@
      [' ', ' ', ' ', ' ', ' ']
      """
      ```
+
    
-   
-   
+
 8. #### 正则表达式分组 (再一次完整的匹配过程中，将匹配到的结果进行分组，细化对匹配结果的操作，正则表达式通过 () 分组，以提取匹配结果的部分结果)
 
    分组 | 描述
@@ -407,9 +406,9 @@
 
     + **通过列表生成式，直接创建列表存储**
 + 弊端 : 内存开销大，耗时长，只要创建无论数据是否被使用，都已经存储至内存
-        
+  
 + **通过生成器生成，优化**，**记录数据的生成**，需要时生成需要的数据，不是一次生成全部
-    
+  
 + 生成器函数 (一个包含 yield 关键字的函数就是一个生成器函数。并且 yield 不能与 return 共用, yield 只能用在函数内)
 
     1. 生成器函数执行之后会得到一个生成器作为返回值，并不会执行函数体
@@ -433,17 +432,14 @@
        # None
        
        def generator():
-     	print('zzz')
-       	yield 1
-       
+           print('zzz')
+           yield 1
        res = generator()
        ret = res.__next__()
        print(ret)
        # zzz
        # 1
        ```
-    
-     
     
 + **send()** : 获取下一个值的效果和 next() 基本一致, 只是在获取下一个值的时候,给**上一个** yield 的位置传递一个数据 (如果没有上一个yield send(None))
 
@@ -471,14 +467,11 @@
            b
            2
            """
-           
            def fund():
-         	print("爬取数据")
+               print("爬取数据")
                a = yield "爬取到的数据"
                print(f'{a}是send传递的数据')
-           
-               yield 'over'
-               
+              	yield 'over'
            res =fund()
            
            print(res.send(None))
@@ -494,7 +487,6 @@
            """
            ```
         
-         
     
 + **yield from** : 循环遍历容器类型
 

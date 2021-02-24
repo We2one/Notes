@@ -20,7 +20,6 @@
          ```python
          import os
          
-         
          class Config:
          	# 获取项目所在绝对路径
              # __file__ : 获取现在文件路径
@@ -63,7 +62,7 @@
    
    1. 安装 PyMySQL : `pip install pymysql`
    
-   2.  `pymysql.install_as_MySQLdb()  # 2.x版本是内置的 MySQLdb 模块,3.x版本,MySQLdb 就不可以使用了`
+   2.  `pymysql.install_as_MySQLdb()`  #2.x版本是内置的 MySQLdb 模块,3.x版本,MySQLdb 就不可以使用了
    
    3. 数据库创建需要存储数据的库 : `CREATE DATABASE db_name charset=utf-8`
    
@@ -202,7 +201,6 @@
    from __init__ import app
    from flask import render_template
    
-   
    @app.route('/')
    def hello_world():
    	return 'Hello World!'
@@ -262,7 +260,7 @@
       | `group_by(db_name.分组条件)`                                 | 分组查询                                                     | 需要先引入 func 函数 `from sqlalchemy import func`<br/>查询男女个数<br/>`result = db.session.query(Person.gender, func.count(Persion.id)).group_by(Persion.gender).all()` |
       | `and_()`、`or_()`、`not_()`                                  | 逻辑查询                                                     | 需要先引入 函数 `from sqlalchemy import and_,or_,not_`<br>查询所有吴姓同事或男同事<br>`person_list = Person.query.filter(or_(Person.gender=="男",Person.nickname.like("吴%")))` |
 
-   3. 修改
+   3. 修改 : `.session.commit()`
 
       ```python
       # 修改 id 为 5 的用户性别为男
@@ -296,28 +294,20 @@
              db.session.commit()
          ```
 
-         
-
-         
-
       2. 修改
 
          ```python
-         def update(self):
+   def update(self):
              db.session.commit()
-         ```
-
-         
-
+   ```
+      
       3. 删除
-
+      
          ```python
-         def update(self):
+   def update(self):
              db.session.delete()
-             db.session.commit()
+       db.session.commit()
          ```
-
-         
 
       4. 查询
 
@@ -406,12 +396,10 @@
          per.save()
          ```
 
-         
-
    4. 一对多查询
 
       ```python
-      # 查询 id = 1 的员工的职位
+   # 查询 id = 1 的员工的职位
       ## 反向操作
       person = Person.query.get(1)
       pos = person.our_position.p_name
@@ -422,9 +410,7 @@
       person_list = pos.p_person
       print(person_list)
       ```
-
-      
-
+   
 2. 多对多关系
 
    1. OA项目中的权限管理

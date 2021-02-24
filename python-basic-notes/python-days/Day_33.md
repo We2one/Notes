@@ -1,4 +1,4 @@
-### Flask 框架
+#### Flask 框架
 
 + 框架: 框架是一个半成品，已经对基础的代码进行了封装并提供相应的 API ，开发者在使用框架是直接调用封装好的 API 可以省去很多代码编写, 从而提高工作效率和开发速度
 
@@ -133,28 +133,22 @@
        {{ hobby[2] }} // "reading"
        ```
 
-       
-
      + `{{ 变量名["key值"] }}` : key 获取 字典内的值
 
        ```
-       {{ score["java"] }}
+  {{ score["java"] }}
        ```
-
-       
-
+     
      + `{{ 初始化类名.参数名 }}` : 获取类内参数 (类变量)
 
        ```
-       {{ persion.name }}
+  {{ persion.name }}
        ```
-
-       
 
      + `{{ 初始化类名.类方法名() }}` : 获取类方法返回值 (类方法使用)
-
+     
        ```
-       {{ persion.show() }}
+  {{ persion.show() }}
        ```
 
    + 使用 python 内置方法 --> upper, replace, lower 等
@@ -220,10 +214,10 @@
        def add(num1, num2, num3):
        	return num1+num2+num3
        app.add_template_filter(add, "Add")
-  ```
-     
-+ HTML 页面引用
-     
+       ```
+
+     + HTML 页面引用
+
        ```
        {{ value | add(1, 2, 3) }}
        ```

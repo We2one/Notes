@@ -32,13 +32,15 @@
    + Bootstrap 的 `package.json` 文件包含了一些额外的元数据：
      1. `less` - Bootstrap 源码的入口文件的路径
      2. `style` - Bootstrap 的未压缩 CSS 文件的路径
+     
+   + 下载方法
 
-   ```
-   // 下载 Bootstrap最新版
-   npm install bootstrap
-   // 下载 Bootstrap旧版 @版本号
-   npm install bootstrap@3
-   ```
+     ```
+     // 下载 Bootstrap最新版
+     npm install bootstrap
+     // 下载 Bootstrap旧版 @版本号
+     npm install bootstrap@3
+     ```
 
 2. 加载 Bootstrap (jQuery 加载必须在 bootstrap 之前)
 
@@ -54,7 +56,7 @@
 
 #### 2.栅格系统
 
-+ 栅格系统是 Bootstrap 推出的一种快速页面布局方案 --> 将真个页面的宽度分为 12 份,只需要设置每份之间的间距即可
++ 栅格系统是 Bootstrap 推出的一种快速页面布局方案 --> 将整个页面的宽度分为 12 份,只需要设置每份之间的间距即可
 
 + 栅格系统可以快速的进行布局
 
