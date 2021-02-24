@@ -35,22 +35,23 @@
            self.rect.x = self.position["x"]  # 设置元素的坐标
            self.rect.y = self.position["y"]
            self.speed = speed
+           
+       def move(self):
+   		pass
+   	
+       def event(self):
+           pass
    
-def move(self):
-		pass
-	
-def event(self):
-		pass
-	
-def stop(self):
-		pass
-	
-def update(self):
-		"""我们在去调用分组的update时,会自动执行"""
-		self.event()
-		self.move()
-	```
+       def stop(self):
+           pass
    
+       def update(self):
+               """我们在去调用分组的update时,会自动执行"""
+           self.event()
+           self.move()
+   
+   ```
+
 2. #### 创建引擎类，初始化项目的标题信息、坦克数量等、对各种元素进行分组
     + 创建游戏开始与游戏结束标志
     + 加载游戏背景地图
