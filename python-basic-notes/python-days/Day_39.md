@@ -116,7 +116,7 @@
 
 + 在 manage.py 同级下创建 文件夹 templates 存放 HTML 模板
 
-+ 在 setting,py 下进行读取模板配置
++ 在 setting.py 下进行读取模板配置
 
   ```python
   TEMPLATES = [
@@ -162,19 +162,15 @@
            })
        ```
 
-       
-
     2. 以 locals() 集体传参
 
        ```python
-       def index(request):
+   def index(request):
            uer_info = {'name': "张三", 'age': 12}
            hobbies = ['篮球', '足球']
            return render(request, 'index.html', locals())
        ```
-
-       
-
+    
   + 支持类型为 : 字符串、整型、列表、字典、元组
 
   + 变量为字典可以通过键取值
@@ -183,7 +179,7 @@
 
 + 标签
 
-  + 语法 : `{%  %}`
+  + 语法 : **{%  %}**
 
   + 结构
 
@@ -197,49 +193,43 @@
        {% endif %}
        ```
 
-       
-
-       
-
     2. ifequal 结构
 
        ```jinja2
-       {% ifequal age 19 %}
+   {% ifequal age 19 %}
        	<p>成年</p>
-       {% endifequal %}
+   {% endifequal %}
        ```
-
-       
-
+    
     3. for 循环结构
-
+    
        + forloop : 记录循环次数, 常与 if 一起使用
 
     4. for ... empty 循环
 
        ```jinja2
-       {% for i in arr %}
+   {% for i in arr %}
        	{{ i }}
-       {% empty %}
+   {% empty %}
        	列表内没有 i
-       {% endfor %}
+   {% endfor %}
        ```
-
+    
        
-
+    
     5. autoescape off 关闭自动转义
-
+    
        ```jinja2
-       {% autoescape on %}
+   {% autoescape on %}
        	{{ url }}
-       {% endautoescape %}
+   {% endautoescape %}
        {% autoescape off %}
-       	{{ url }}
+   	{{ url }}
        {% endautoescape %}
        ```
-
+    
        
-
+  
 + 过滤器
 
   + 语法 : `{{ name|过滤器方法: 传值 }}`  用于对传入视图函数值二次处理
