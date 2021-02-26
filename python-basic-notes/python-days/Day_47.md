@@ -45,12 +45,10 @@
       vi elasticsearch.yml
       ```
 
-      
-
    2. 配置服务名称
 
       ```
-      # ---------------------------------- Cluster -----------------------------------
+   # ---------------------------------- Cluster -----------------------------------
       #
       # Use a descriptive name for your cluster:
       #
@@ -58,15 +56,13 @@
       cluster.name: my-application  #取消注释
       #
       ```
-
-      
-
+   
    3. 配置节点名称
 
       ```
-      # ------------------------------------ Node ------------------------------------
+   # ------------------------------------ Node ------------------------------------
       #
-      # Use a descriptive name for the node:
+   # Use a descriptive name for the node:
       #
       #node.name: node-1
       node.name: node-1
@@ -77,17 +73,15 @@
       #
       
       ```
-
-      
-
+   
    4. 配置 es 数据 和 路径 的存放路径
-
+   
       ```
-      # ----------------------------------- Paths ------------------------------------
+   # ----------------------------------- Paths ------------------------------------
       #
-      # Path to directory where to store the data (separate multiple locations by comma):
+   # Path to directory where to store the data (separate multiple locations by comma):
       #
-      #path.data: /path/to/data
+   #path.data: /path/to/data
       path.data: /home/esdata/data
       #
       # Path to log files:
@@ -96,19 +90,17 @@
       path.logs: /home/esdata/log
       #
       ```
-
-      
-
+   
    5. 内存锁配置
-
+   
       ```
       # ----------------------------------- Memory -----------------------------------
       #
-      # Lock the memory on startup:
+   # Lock the memory on startup:
       #
-      #bootstrap.memory_lock: true
+   #bootstrap.memory_lock: true
       bootstrap.memory_lock: true
-      #
+   #
       # Make sure that the heap size is set to about half the memory available
       # on the system and that the owner of the process is allowed to use this
       # limit.
@@ -116,32 +108,28 @@
       # Elasticsearch performs poorly when the system is swapping the memory.
       #
       ```
-
-      
-
+   
    6. 配置服务的 ip 和端口
-
+   
       ```
       # ---------------------------------- Network -----------------------------------
       #
       # Set the bind address to a specific IP (IPv4 or IPv6):
       #
-      #network.host: 192.168.0.1
+   #network.host: 192.168.0.1
       network.host: 0.0.0.0
-      #
+   #
       # Set a custom port for HTTP:
-      #
+   #
       #http.port: 9200
       http.port: 9200
       #
       # For more information, consult the network module documentation.
       #
       ```
-
-      
-
+   
    7. 多节点配置
-
+   
       ```
       # --------------------------------- Discovery ----------------------------------
       #
@@ -149,20 +137,18 @@
       # The default list of hosts is ["127.0.0.1", "[::1]"]
       #
       #discovery.zen.ping.unicast.hosts: ["host1", "host2"]
-      discovery.zen.ping.unicast.hosts: ["host1", "host2"]
+   discovery.zen.ping.unicast.hosts: ["host1", "host2"]
       #
-      # Prevent the "split brain" by configuring the majority of nodes (total number of master-eligible nodes / 2 + 1):
+   # Prevent the "split brain" by configuring the majority of nodes (total number of master-eligible nodes / 2 + 1):
       #
-      #discovery.zen.minimum_master_nodes:
+   #discovery.zen.minimum_master_nodes:
       #
       # For more information, consult the zen discovery module documentation.
       #
       ```
-
-      
-
+   
    8. 路由节点个数 和 requires_name 配置
-
+   
       ```
       # ---------------------------------- Gateway -----------------------------------
       #
@@ -172,16 +158,16 @@
       gateway.recover_after_nodes: 1
       #
       # For more information, consult the gateway module documentation.
-      #
+   #
       # ---------------------------------- Various -----------------------------------
-      #
+   #
       # Require explicit names when deleting indices:
-      #
+   #
       #action.destructive_requires_name: true
       ```
-
+   
       
-
+   
 5. 配置系统参数
 
    1. `vim /etc/security/limits.conf` : 在文件最后添加
@@ -195,12 +181,10 @@
       
       ```
 
-      
-
    2. `vi /etc/sysctl.conf`
 
       ```
-      # sysctl settings are defined through files in
+   # sysctl settings are defined through files in
       # /usr/lib/sysctl.d/, /run/sysctl.d/, and /etc/sysctl.d/.
       #
       # Vendors settings live in /usr/lib/sysctl.d/.
@@ -212,7 +196,7 @@
       # For more information, see sysctl.conf(5) and sysctl.d(5).
       vm.max_map_count=262144
       ```
-
+   
    3. 执行命令 : 
 
       1. `sysctl -p`
@@ -220,22 +204,20 @@
       2. `visudo` : 添加允许 esuser 在任何地方执行命令
 
          ```
-         ## The COMMANDS section may have other options added to it.
+      ## The COMMANDS section may have other options added to it.
          ##
          ## Allow root to run any commands anywhere
          root    ALL=(ALL)       ALL
          esuser  ALL=(ALL)       ALL
          
          ```
-
-         
-
+   
    4. `vim /etc/security/limits.d/20-nproc.conf`
 
       ```
-      # Default limit for number of user's processes to prevent
+   # Default limit for number of user's processes to prevent
       # accidental fork bombs.
-      # See rhbz #432903 for reasoning.
+   # See rhbz #432903 for reasoning.
       
       *          soft    nproc     4096
       root       soft    nproc     unlimited
@@ -243,20 +225,18 @@
       * soft nproc 204800
       * hard nproc 204800
       ```
-
-      
-
+   
    5. `vim /etc/security/limits.d/def.conf` : 创建并编写,文件尾部编写
-
+   
       ```
-      * soft nofile 204800
+   * soft nofile 204800
       * hard nofile 204800
+   ~
       ~
-      ~
-      ```
-
+   ```
+   
       
-
+   
 6. 安装 1.8 以上版本的 java (`yum install java -y`) 并启动 
 
    + 进入 elasticsearch-6.3.1 的目录下 : `cd /home/elasticsearch-6.3.1/bin/`
@@ -764,12 +744,10 @@
       print(result["hits"]["hits"])
       ```
 
-      
-
    4. **must_not** : 非, 查询条件不成立
 
       ```python
-      from elasticsearch import Elasticsearch
+   from elasticsearch import Elasticsearch
       
       es = Elasticsearch(hosts="10.10.123.131", timeout=360)
       
@@ -787,20 +765,19 @@
       	}
       }
       
-      
       result = es.search(index="carlist", doc_type="car", body=body)
       # print(result)
       print(len(result["hits"]["hits"]))
       print(result["hits"]["hits"])
       ```
-
       
-
-   5. must 和 should 同时使用需要特殊语法 : 在 must 和 shoud 同时存在时,should 部分需要重写一个 bool 类型嵌套在 must 条件中
-
-      ```python
+   
+      
+5. must 和 should 同时使用需要特殊语法 : 在 must 和 shoud 同时存在时,should 部分需要重写一个 bool 类型嵌套在 must 条件中
+   
+   ```python
       from elasticsearch import Elasticsearch
-      
+   
       es = Elasticsearch(hosts="10.10.123.131", timeout=360)
       
       # 查询 18 万的宝马或大众
@@ -834,15 +811,13 @@
       	}
       }
       
-      
       result = es.search(index="carlist", doc_type="car", body=body)
       # print(result)
       print(len(result["hits"]["hits"]))
       print(result["hits"]["hits"])
       ```
-
       
-
+   
 9. 范围查询 **range**
 
    1. 符号属性
@@ -883,8 +858,6 @@
       print(result["hits"]["hits"])
       ```
 
-      
-
 10.  聚合查询 **aggs**
 
     1. 聚合函数
@@ -915,12 +888,10 @@
        }
        ```
 
-       
-
     3. 实例
 
        ```python
-       from elasticsearch import Elasticsearch
+   from elasticsearch import Elasticsearch
        
        es = Elasticsearch(hosts="10.10.123.131", timeout=360)
        
@@ -945,9 +916,7 @@
        print(len(result["hits"]["hits"]))
        print(result["aggregations"]["price_avg"]["value"])  # 均价
        ```
-
-       
-
+    
 11.  分组查询
 
     ```python

@@ -5,8 +5,8 @@
 ##### cookie 与 session
 
 1. 什么是 cookie 和 session
-   + cookie : 网站用来辨别身份,进行会话跟踪,存储在本地终端上的数据
-   + session : 主要用于在服务器端存储特定用户对象会话所需要的信息 (会话 : 本意是有始有终的一系列动作和消息)
+   + **cookie** : 网站用来辨别身份,进行会话跟踪,存储在本地终端上的数据
+   + **session** : 主要用于在服务器端存储特定用户对象会话所需要的信息 (会话 : 本意是有始有终的一系列动作和消息)
 2. cookie 和 session 产生的原因
    + http 协议是一个无状态协议,在特定的操作下需要保存信息,因此使用 cookie 和 session 保存信息
 3. cookie 原理
@@ -35,7 +35,7 @@
    ```python
    import requests
    
-   	cookie 登录
+   	# cookie 登录
    headers = {
    	'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36',
    	'Cookie': 'Cookie值'
@@ -144,16 +144,12 @@
       json_data = json.dumps(dic)
       ```
 
-      
-
    2. 将 json 字符串类型转换为 Python 类型 (字典或列表): `json.loads()`
 
       ```python
-      dic_data = json.loads(json_data)
+   dic_data = json.loads(json_data)
       ```
-
-      
-
+   
 2. Requests 方法
 
    + `requests.json()` : 直接获取json 数据对应的 python 数据类型

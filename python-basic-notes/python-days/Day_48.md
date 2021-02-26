@@ -35,7 +35,6 @@
   import tornado.web
   from elasticsearch import Elasticsearch
   
-  
   class MyHeadler(tornado.wewb.RequestHandler):
       
       def get(self):

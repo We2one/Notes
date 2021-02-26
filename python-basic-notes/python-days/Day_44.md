@@ -107,51 +107,51 @@
 
 ##### 基于 Django 的短信和邮箱注册
 
-1. 邮件注册
-   1. 步骤
-      1. 提交邮箱 (`settings.py` 设置)
+1. 邮件注册步骤
 
-         ```python
-         # 配置发送邮件信息
-         # 邮箱配置
-         EMAIL_HOST_USER = 'xxx' # 登录服务器的用户名
-         EMAIL_HOST_PASSWORD = 'xxxx' # 授权码
-         EMAIL_USE_SSL = True # SSL 表示更加安全
-         EMAIL_HOST = 'smtp.163.com' # 主机
-         EMAIL_PORT = 994 # 端口号
-         ```
+   1. 提交邮箱 (`settings.py` 设置)
 
-         
+      ```python
+      # 配置发送邮件信息
+      # 邮箱配置
+      EMAIL_HOST_USER = 'xxx' # 登录服务器的用户名
+      EMAIL_HOST_PASSWORD = 'xxxx' # 授权码
+      EMAIL_USE_SSL = True # SSL 表示更加安全
+      EMAIL_HOST = 'smtp.163.com' # 主机
+      EMAIL_PORT = 994 # 端口号
+      ```
 
-      2. 发送验证邮件 (验证码、链接)
+      
 
-         ```python
-         def email_test(request):
-         	email = EmailMultiAlternatives(subject='主题',
-         	                               body='欢迎收到我自己的邮件',
-         	                               from_email='163邮箱号',
-         	                               to=['接收邮箱号'],
-         	                               )
-         	email.send()
-         	return HttpResponse('发送成功')
-         ```
+   2. 发送验证邮件 (验证码、链接)
 
-         
+      ```python
+      def email_test(request):
+      	email = EmailMultiAlternatives(subject='主题',
+      	                               body='欢迎收到我自己的邮件',
+      	                               from_email='163邮箱号',
+      	                               to=['接收邮箱号'],
+      	                               )
+      	email.send()
+      	return HttpResponse('发送成功')
+      ```
 
-      3. 跳回网站、完成注册
-2. 短信注册
-   1. 步骤
-      1. 发送验证码
-         1. 前端 ajax get 请求获取验证码
-         2. 视图函数发送验证码
-         3. 视图保存验证码至数据库
-      2. 验证码入库
-      3. 提交验证码
-      4. 比对验证码,确认
-         1. 注册视图,获取验证码
-         2. 校验验证码
-            1. 检验验证按是否存在
-            2. 校验验证码是否在有效期内
+      
+
+   3. 跳回网站、完成注册
+2. 短信注册步骤
+
+   1. 发送验证码
+      1. 前端 ajax get 请求获取验证码
+      2. 视图函数发送验证码
+      3. 视图保存验证码至数据库
+   2. 验证码入库
+   3. 提交验证码
+   4. 比对验证码,确认
+      1. 注册视图,获取验证码
+      2. 校验验证码
+         1. 检验验证按是否存在
+         2. 校验验证码是否在有效期内
 
 ##### 异步通信框架 Celery
 

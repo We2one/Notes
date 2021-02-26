@@ -55,13 +55,13 @@
 1. **字符串响应**内容 : `response.text`
    + Requsets 会自动解码来自服务器的内容
    + response.text 获取的是页面字符内容
-2. **二进制响应**内容 : `response.content`ww
+2. **二进制响应**内容 : `response.content`
    + `response.content` 会自动解码 gzip 与 deflate 传输编码的响应数据
 3. **json 响应**内容 : `response.json`
    + Requests 内置 JSON 解码器,如果 JSON 解码失败会抛出异常
 4. **响应状态码** : `response.status_code`
 5. **响应头** : `response.headers`
-6. **页面乱码**ww问题 : 针对处理 字符串响应内容
+6. **页面乱码**问题 : 针对处理 字符串响应内容
    1. 设置正确的编码格式 : `response.encoding` 设置一个正确的编码,设置之后 `resonse.text` 就可以获得正确的内容
    2. 通过 `response.content.decode('编码格式')` 将二进制内容按照提供编码格式编码成 unicode 字符串并显示
 

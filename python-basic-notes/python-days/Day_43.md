@@ -96,13 +96,13 @@
 
 1. 中间件介绍
 
-   + 中间件介绍 : 中间件是处理 Django 请求和相应的框架级别 钩子, 是一个轻量、低级别的插件系统,用于全局范围改变 Django 的输入输出,每个中间件都有固定的功能,使用需要谨慎.解决了项目代码的冗余和一致性问问题
+   + 中间件介绍 : 中间件是处理 Django 请求和响应的框架级别 钩子, 是一个轻量、低级别的插件系统,用于全局范围改变 Django 的输入输出,每个中间件都有固定的功能,使用需要谨慎.解决了项目代码的冗余和一致性问问题
    + 中间件包含的方法 (中间件开发过程中,一次请求分为5 个部分)
-     1. process_request : 视图之前,请求开始
-     2. process_views : 视图中,请求开始
-     3. process_exception : 错误
-     4. process_template_response : 模板开始渲染,试图结束
-     5. process_response : 响应结束
+     1. **process_request** : 视图之前,请求开始
+     2. **process_views** : 视图中,请求开始
+     3. **process_exception** : 错误
+     4. **process_template_response** : 模板开始渲染,视图结束
+     5. **process_response** : 响应结束
 
 2. 中间件使用
 
@@ -321,51 +321,43 @@
              pass
          ```
 
-         
-
       2. 在路由中使用
 
          ```python
-         from django.views.decorators.cache import cache_page
+   from django.views.decorators.cache import cache_page
          
          urlpatterns = [
              path('index/', cache_page[15 * 60](index))  # 仅对当前路由缓存
          ]
          ```
-
-         
-
+      
       3. 在 HTML 中使用 缓存
 
          ```HTML
-         {% load cache %}
+   {% load cache %}
          {% cache 500 hsqcache %}  // 缓存时间 和 名称
-         <img src="" class="">
+   <img src="" class="">
          {% endcache %}
          ```
-
-         
-
+      
       4. 全局使用 : 在 setting.py 内注册 中间件
-
+      
          ```python
-         MIDDLEWARE = [
+   MIDDLEWARE = [
              'django.middleware.cache.FetchFromCacheMiddleware',
-         ]
+   ]
          ```
 
-         
-
       5. 底层 cache 使用
-
+      
          1. 导包 : `from django.core.cache import cache`
          2. cache 方法
             + `cache.get(key)` : 获取缓存
-            + `cache.set(key, value, timeout)` : 设置缓存
+      + `cache.set(key, value, timeout)` : 设置缓存
             + `cache.delete(key)` : 删除缓存
-         3. 设置缓存流程
+   3. 设置缓存流程
             + 请求数据
-              + 判断缓存中是否存在数据
+        + 判断缓存中是否存在数据
             + 存在数据
               + 返回数据
             + 不存在数据

@@ -67,9 +67,9 @@
    6. app.listen() : 设置访问监听的端口
    7. tornado.ioloop.IOLoop.current().start() : 启动 io 监听
 
-2. RequestHandler 内三个重写方法
+2. **RequestHandler 内三个重写方法**
 
-   1. Initialize() : 被子类重写, 用于请求类初始化,如果有参数需要在路由中传递
+   1. **Initialize()** : 被子类重写, 用于请求类初始化,如果有参数需要在路由中传递
 
       ```python
       import tornado.ioloop
@@ -100,12 +100,10 @@
           main()
       ```
 
-      
-
-   2. Prepare() : 请求之前执行的操作
+   2. **Prepare()** : 请求之前执行的操作
 
       ```python
-      import tornado.ioloop
+   import tornado.ioloop
       import tornado.web
       
       class MainHadler(tornado.web.RequestHandler):
@@ -132,15 +130,13 @@
       if __name__ == "__main__":
           main()
       ```
-
-      
-
-   3. On_finish() : 请求之后执行的操作
+   
+   3. **On_finish()** : 请求之后执行的操作
 
       ```python
-      import tornado.ioloop
+   import tornado.ioloop
       import tornado.web
-      
+   
       class MainHadler(tornado.web.RequestHandler):
           
           def get(self):
@@ -165,7 +161,7 @@
       if __name__ == "__main__":
           main()
       ```
-
+   
       
 
 ##### Tornado 路由解析
@@ -299,19 +295,17 @@
       		
       ```
 
-      
+      + 调用方式
 
-      | 调用方式                                                     | 描述         |
-      | ------------------------------------------------------------ | ------------ |
-      | `{% if result[" arg_true"] %}`<br>`{% end %}`                | 布尔值判断   |
-      | `{% if result[" arg_string"] == "字符串" %}`<br/>`{% end %}` | 字符串判断   |
-      | `{% if result[" arg_number"] == 5 %}`<br/>`{% end %}`        | 数字比较判断 |
-
-      
+        | 调用方式                                                     | 描述         |
+        | ------------------------------------------------------------ | ------------ |
+        | `{% if result[" arg_true"] %}`<br>`{% end %}`                | 布尔值判断   |
+        | `{% if result[" arg_string"] == "字符串" %}`<br/>`{% end %}` | 字符串判断   |
+        | `{% if result[" arg_number"] == 5 %}`<br/>`{% end %}`        | 数字比较判断 |
 
    2. for 标签, 结束符也是 end ( 可以使用enumerate 函数遍历列表 )
 
-   3. 模板继承与加载 `{% block 继承名 %} 模板页 {% end %}`、`{% extends "xxx.html" %}`、`{% include "xxx.html" %}`
+   3. 模板继承与加载 `{% block 继承名 %} 模板页 {% end %}`或`{% extends "xxx.html" %}`或`{% include "xxx.html" %}`
 
 ##### Tornado 请求响应
 

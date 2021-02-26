@@ -253,7 +253,7 @@
 
          
 
-##### REST （Django 中称为 DRF ）
+##### REST 风格
 
 + **REST** (Representational State Transfer , 变现层状态转移) 与技术无关, 是一种*软件架构风格*、*设计风格*,不是标准,只是一组设计原则和约束条件
 
@@ -381,7 +381,7 @@
 
      
 
-##### Django REST Framework 框架
+##### Django REST Framework (DRF) 框架
 
 1. 安装 DRF 框架
 
@@ -426,12 +426,10 @@
           serializer_class = MoreListlizers
       ```
 
-      
-
    3. 路由指出
 
       ```python
-      from rest_framework.routers import DefaultRouter
+   from rest_framework.routers import DefaultRouter
       
       router = DefaultRouter()
       router.register("goods", GoodsView)
@@ -442,20 +440,18 @@
       
       urlpatterns += router.urls
       ```
-
-      
-
+   
    4. 访问测试
 
    5. 简单的分页 : 解决 接口直接返回所有数据 的问题,通过DRF快速分页解决问题 (在 `setting.py` 中配置)
 
       ```python
-      REST_FRAMWORK = {
+   REST_FRAMWORK = {
           'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',  # 分页器
-          'PAGE_SIZE' = 10,
+       'PAGE_SIZE' = 10,
       }
       ```
-
+   
 3. 视图类
 
    1. 继承 APIView 类 : APIView 对 Django 的 django.views.View 类进一步封装
@@ -476,12 +472,10 @@
       path('xxx/', MoreListView.as_view())
       ```
 
-      
-
    2. 使用 mixins 类 : 对 views 进一步封装 ,  提高代码重用率
 
       ```python
-      from rest_framework import generics
+   from rest_framework import generics
       from rest_framework import mixins
       
       class MoreListView(mixins.ListModelMixin, generices.GenericAPIView):
@@ -503,15 +497,13 @@
       # 路由
       	path('xxx/', MoreListView.as_view())
       ```
-
-      
-
+   
    3. 通用视图类 : mixins 类的使用 使代码量减少,但是 使用 REST 框架的 通用混合视图 仍可以进一步减少 视图 的代码量
 
       ```python
-      class MoreListView(generics.ListAPIView):
+   class MoreListView(generics.ListAPIView):
           def get_queryset(self):
-              goodstype_id = self.request.GET.get('goodstype_id')
+           goodstype_id = self.request.GET.get('goodstype_id')
               goods_obj_list = Goods.objectsfilter(goodstype_id=goodstype_id).order_by('-id')
               return goods_obj_list
           
@@ -525,19 +517,17 @@
       # 路由
       	path('xxx/', MoreListView.as_view())
       ```
-
-      
-
+   
    4. viewSet 视图和路由器
-
+   
       1. viewSet 视图类 是对通用视图的进一步封装
 
          ````python
-         from rest_framework import viewsets
+      from rest_framework import viewsets
          
-         class MoreListViewSet(viewsets.ReadOnlyModelViewSet):
+      class MoreListViewSet(viewsets.ReadOnlyModelViewSet):
              def get_queryset(self):
-                 goodstype_id = self.request.GET.get('goodstype_id')
+              goodstype_id = self.request.GET.get('goodstype_id')
                  goods_obj_list = Goods.objectsfilter(goodstype_id=goodstype_id).order_by('-id')
                  return goods_obj_list
              
@@ -563,15 +553,15 @@
          ]
          
          ````
-
+   
       2. 使用 DRF 路由器替代 Django 路由
-
+   
          ```python
          from django.urls import path, include
          from buyer import views
-         from rest_framework.router import DefaultRouter
+      from rest_framework.router import DefaultRouter
          
-         # 创建路由
+      # 创建路由
          router = DefaultRouter()
          # 注册视图
          router.register('more_list_view', views.MoreListViewSet, basename='')
@@ -581,5 +571,5 @@
              path('', include(router.urls))
          ]
          ```
-
+   
          
