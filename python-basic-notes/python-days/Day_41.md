@@ -77,9 +77,9 @@
         </form>
         ```
 
-     2. 返回 post 页面时一定要使用 **render** 方法,render 方法 与 render_response 方法功能类似,但是 render 会在第一个参数返回 request, 如果不返回 request, 前端无法使用 `\{% csrf_token %\}`
+     2. 返回 post 页面时一定要使用 **render** 方法,render 方法 与 render_response 方法功能类似,但是 render 会在第一个参数返回 request, 如果不返回 request, 前端无法使用 `{% csrf_token %}`
 
-     3. `\{% csrf_token %\}` 标签实际是在前端 form 表单生成一个 hidden 隐藏域, name 为 csrf-middlewaretoken, value 值是 CSRF 校验值
+     3. `{% csrf_token %}` 标签实际是在前端 form 表单生成一个 hidden 隐藏域, name 为 csrf-middlewaretoken, value 值是 CSRF 校验值
 
 ##### Django 表单类
 
