@@ -31,6 +31,7 @@
         <td>匹配行首</td>
      </tr>
      <tr>
+        <br/>
         <td><b>$</b></td>
         <td>匹配行尾</td>
      </tr>
@@ -40,22 +41,27 @@
           <td>重复匹配 0 次或 1 次</td>
       </tr>
       <tr>
+          <br/>
           <td><b>*</b></td>
           <td>重复匹配 0 次或 更多次</td>
       </tr>
       <tr>
+          <br/>
           <td><b>+</b></td>
           <td>重复匹配 1 次或 更多次</td>
       </tr>
       <tr>
+          <br/>
           <td><b>{n, }</b></td>
           <td>重复 n 次或 更多次</td>
       </tr>
       <tr>
+          <br/>
           <td><b>{n, m}</b></td>
           <td>重复 n~m 次</td>
       </tr>
       <tr>
+          <br/>
           <td><b>{n}</b></td>
           <td>重复 n 次</td>
       </tr>
@@ -65,46 +71,57 @@
           <td>任意 a~z 的字母</td>
       </tr>
       <tr>
+          <br/>
           <td><b>[abc]</b></td>
           <td>a/b/c 中的任意一个字符</td>
       </tr>
       <tr>
+          <br/>
           <td><b>[^123abc]</b></td>
           <td>匹配除了 123abc 这几个字符以外的任意字符</td>
       </tr>
       <tr>
+          <br/>
           <td><b>.</b></td>
           <td>匹配除换行符以外的任意一个字符</td>
       </tr>
       <tr>
+          <br/>
           <td><b>\b</b></td>
           <td>匹配一个单词的边界</td>
       </tr>
       <tr>
+          <br/>
           <td><b>\B</b></td>
           <td>匹配不是单词的开始和结束位置</td>
       </tr>
       <tr>
+          <br/>
           <td><b>\d</b></td>
           <td>匹配数字</td>
       </tr>
       <tr>
+          <br/>
           <td><b>\D</b></td>
           <td>匹配任意非数字的字符</td>
       </tr>
       <tr>
+          <br/>
           <td><b>\w</b></td>
           <td>匹配字母、数字、下划线</td>
       </tr>
       <tr>
+          <br/>
           <td><b>\W</b></td>
           <td>匹配任意不是字母、数字、下划线的字符</td>
       </tr>
       <tr>
+          <br/>
           <td><b>\s</b></td>
           <td>匹配任意空白,包括空格、制表符、换行符</td>
       </tr>
       <tr>
+          <br/>
           <td><b>\S</b></td>
           <td>匹配任意不是空白符的字符</td>
       </tr>
@@ -114,6 +131,7 @@
           <td>匹配除了 a 以外的任意字符</td>
       </tr>
       <tr>
+          <br/>
           <td><b>123|abc</b></td>
           <td>匹配 123 或 abc</td>
       </tr>
