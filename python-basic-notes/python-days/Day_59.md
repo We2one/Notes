@@ -53,14 +53,12 @@
      }
      ```
 
-     
-
   2. 在配置文件 **settings.py** 中,使用 **FILE_STORE** 指定文件中的下载目录
 
      ```python
-     FILES_STORE = './Image/'
+   FILES_STORE = './Image/'
      ```
-
+  
   3. 在spider 解析一个包含文件下载链接的页面时,将所有需要的 url 地址收集到一个列表,赋值给 item 的 file_url 字段 (`item['file_urls']`).FilePipeline 在处理每一项 item 时,会读取 `item['file_urls']`,对其中每一个 url 进行下载
 
   4. 对于 ImagePipelines 还可以在 **settings.py** 内设置生成图片信息
@@ -68,20 +66,18 @@
      1. 为图片生成缩略图和大图,这样就会有三张下载图片 (原图、缩略图、大图)
 
         ```python
-        IMAGES_THUMBS = {
+      IMAGES_THUMBS = {
         	'small': (50, 50),
         	'big': (270, 270),
         }
         ```
-
-        
-
+  
      2. 过滤尺寸过小的图片
 
         ```python
-        IMAGES_MIN_WIDTH = 110
+   IMAGES_MIN_WIDTH = 110
         IMAGES_MIN_HEIGHT = 110
-        ```
+      ```
 
 ##### 文件下载
 

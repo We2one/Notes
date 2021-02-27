@@ -47,7 +47,7 @@
 + spider 类定义了如何爬取某个网站,包括 : 爬取动作(有无跟进链接)、提取内容(爬取 item)
 + **class Scrapy.spider** : 是最基本的类,所有编写爬虫必须继承这个类
 + 主要用到**函数**及**调用顺序**
-  1. `\_\_init__()` : 初始化爬虫命名以及 start_urls(开始 url) 列表
+  1. `__init__()` : 初始化爬虫命名以及 start_urls(开始 url) 列表
   2. `start_requests()` : 调用 `make_requests_from_url()` 生成 Requests 对象交给 Scrapy 下载并返回 response
   3. `parse()` : 解析 response, 并返回 item 或 Requests (需要指定回调函数).Item 传给 Item pipline 持久化, Requests 交给 Scrapy 下载,并通过指定的 回调函数处理 (默认为 parse()).一直进行循环,指导处理结束所有数据
 + 主要**属性**和**方法**

@@ -296,11 +296,9 @@
          	print(m.group())
          	return m.group(1) + '\t' + str(int(m.group(2)) + 200)
          
-         
          print(p.sub(func, s))  # zhangsan	20200,list	3200
          print(p.sub(func, s, 1))  # zhangsan	20200,list:3000
          ```
-
          
 
 5. 匹配中文 : 匹配中文的 unicode 编码,中文的 unicode 编码范围主要在 `[u4e00-u9fa5]` (不包括全角中文标点)

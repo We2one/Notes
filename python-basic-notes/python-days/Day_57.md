@@ -39,3 +39,5 @@
   + 生产者和消费者彼此之间不直接通讯,通过阻塞队列进行通讯,所以生产者生产完数据后不用等待消费者处理，直接扔给阻塞队列,消费者不找生产者要数据,而是直接从阻塞队列里取,阻塞队列相当于一个缓冲区,平衡了生产者和消费者的处理能力
 
 ##### 生产着消费者模式爬虫
+
++ [github 链接](https://github.com/Forgotten-Forever/scrapy-project/tree/main/producer%20consumer)

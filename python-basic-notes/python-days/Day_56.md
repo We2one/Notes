@@ -12,12 +12,14 @@
 
 ##### Fiddler 分析下载 QQ 音乐
 
++ 代码链接[QQmusic](https://github.com/Forgotten-Forever/scrapy-project/tree/main/QQMusic_fiddler)
+
 #### NoSQL 简介
 
 ##### NoSQL 简介
 
-+ NoSQL (NoSQL = Not Only SQL . 不仅仅是 SQL) : 非关系型数据库，对于不同于传统的关系型数据库的数据库的管理系统的统称
-+ NoSQL 用于超大规模数据的存储,这些数据存储不需要固定的格式,无需多余操作就可以横向拓展
++ NoSQL (NoSQL = Not Only SQL . 不仅仅是 SQL) : **非关系型数据库**，对于不同于传统的关系型数据库的数据库的管理系统的统称
++ NoSQL 用于**超大规模数据的存储**,这些数据存储**不需要固定的格式**,**无需多余操作就可以横向拓展**
 
 ##### RDBMS vs NoSQL
 
@@ -46,7 +48,7 @@
 
 ##### MongoDB 主要特点
 
-1. MongoDB 文档数据库,存储的是文档
+1. MongoDB **文档数据库**,存储的是文档
 2. MongoDB 内部执行引擎是 **JS解释器**.当我们存储一个文档时,文档将被保存为 BSON 格式,查询时将其转换为 JS 对象,可以通过 JS 语法操作
 3. MongoDB 数据库和集合可以隐式创建
 
@@ -112,7 +114,7 @@
 ##### MongoDB 创建数据库 与 删除数据库
 
 1. 创建数据库
-   + 语法 : MongoDB 创建数据库 (`use database_name`) 是隐式创建的, 如果数据库存在则切换到指定内容，如果不存在则创建
+   + 语法 : MongoDB 创建数据库 (`use database_name`) 是**隐式创建**的, 如果数据库存在则切换到指定内容，如果不存在则创建
 2. MongoDB 删除当前数据库
    1. 语法 : `db.dropDatabase()`
    2. 删除当前数据库,需要先进入删除的数据库 `use db_name` ，再执行删除命令 `db.dropDatabase()`
@@ -174,12 +176,10 @@
      { "_id" : ObjectId("5facdf85ae691aca255d6256"), "title" : "爬虫", "by" : "offcn" }
      ```
 
-     
-
   2. 定义变量后由变量插入
 
      ```
-     > document = {title: '网络爬虫',by: 'text'}
+   > document = {title: '网络爬虫',by: 'text'}
      { "title" : "网络爬虫", "by" : "text" }
      > db.python.insert(document)
      WriteResult({ "nInserted" : 1 })
@@ -187,12 +187,12 @@
      { "_id" : ObjectId("5facdf85ae691aca255d6256"), "title" : "爬虫", "by" : "offcn" }
      { "_id" : ObjectId("5facdfd9ae691aca255d6257"), "title" : "网络爬虫", "by" : "text" }
      ```
-
+  
 + 多条插入文档 : `db.集合名.insert([document1, document2, ...])`
 
 ##### MongoDB 查询表达式
 
-+ MongoDB 中查询表达式相当于 sql 中的 where 子句查询条件,可以用来过滤数据
++ MongoDB 中查询表达式相当于 sql 中的 where 子句查询条件,可以用来过滤数据<br>
   1. **等于** : `{field:value}` 表示 field = value
 
   2. **小于** : `{field:{$lt:value}}` 表示 field < value
@@ -210,7 +210,7 @@
      + 实例: 取出不属于第三栏且不属于第十一栏目的商品 (与 **nin** 实例结果相同)
 
        ```mariadb
-       db.goods.find({$nor:[{cat_id:3}, {cat_id:11}]},{_id:0,goods_name:1,cat_id:1}).pretty()
+       db.goods.find({$not:[{cat_id:3}, {cat_id:11}]},{_id:0,goods_name:1,cat_id:1}).pretty()
        ```
 
        
@@ -304,12 +304,10 @@
       { "_id" : ObjectId("5facdfd9ae691aca255d6257"), "title" : "后端开发", "创作者" : "AngleLiu", "uid" : "01", "price" : 180 }
       ```
 
-      
-
   + `$rename` : 重命名某个列
 
     ```mariadb
-    > db.python.find()
+  > db.python.find()
     { "_id" : ObjectId("5facdf85ae691aca255d6256"), "title" : "爬虫测试", "by" : "李四" }
     { "_id" : ObjectId("5facdfd9ae691aca255d6257"), "title" : "网络爬虫", "创作者" : "text" }
     > db.python.update({title:"爬虫测试"}, {$rename:{by:"创作者"}}, {multi:true})
@@ -318,15 +316,13 @@
     { "_id" : ObjectId("5facdf85ae691aca255d6256"), "title" : "爬虫测试", "创作者" : "李四" }
     { "_id" : ObjectId("5facdfd9ae691aca255d6257"), "title" : "网络爬虫", "创作者" : "text" }
     ```
-
-    
-
+  
   + `$inc` : 增长某个列(做减法)
 
     ```mariadb
-    > db.python.find()
+  > db.python.find()
     { "_id" : ObjectId("5facdf85ae691aca255d6256"), "title" : "爬虫测试", "创作者" : "李四", "uid" : "01", "price" : 200 }
-    { "_id" : ObjectId("5facdfd9ae691aca255d6257"), "title" : "后端开发", "创作者" : "AngleLiu", "uid" : "01", "price" : 200 }
+  { "_id" : ObjectId("5facdfd9ae691aca255d6257"), "title" : "后端开发", "创作者" : "AngleLiu", "uid" : "01", "price" : 200 }
     > db.python.update({uid:"01"}, {$inc:{price:-20}})
     WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
     > db.python.find()
@@ -338,7 +334,7 @@
     { "_id" : ObjectId("5facdf85ae691aca255d6256"), "title" : "爬虫测试", "创作者" : "李四", "uid" : "01", "price" : 160 }
     { "_id" : ObjectId("5facdfd9ae691aca255d6257"), "title" : "后端开发", "创作者" : "AngleLiu", "uid" : "01", "price" : 180 }
     ```
-
+  
     
 
 ##### MongoDB 删除文档
@@ -539,7 +535,7 @@
 
 ##### MongoDB 导出数据
 
-+ mongodb 数据库文件夹下的各种工具介绍
++ mongodb 数据库文件夹下的各种工具介绍<br>
   1. **mongo.exe** : 客户端工具
   2. **mongod.exe** : 服务端工具
 
