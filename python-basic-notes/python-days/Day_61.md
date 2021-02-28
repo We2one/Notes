@@ -60,7 +60,7 @@
 
 #### Redis 安装
 
-1. 安装步骤
+1. 安装步骤<br>
    1. 将下载好的 redis 安装包解压到指定目录
    2. 将 redis 安装目录配置到环境变量的 path 中
    3. 在 cmd 中运行命令 `redis-server` ,查看是否可以启动 redis 数据库
@@ -126,7 +126,7 @@
 
       + Scrapy 改造了 python 本来的 **collection.deque (双向队列) ** 形成自己的 **Scrapy queue** 
 
-      + Scrapy 多个 spider 不能共享待爬取队列 Scrapy queue, 即 Scrapy 本身不支持爬虫分布式,Scrapy-redis 解决就是吧 Scrapy queue 换为 **redis 数据库** (也是指 redis 队列),在同一个 redis-server 存放要爬取的 request,便可以让多个 spider 在一个 redis 数据库读取
+      + Scrapy 多个 spider 不能共享待爬取队列 Scrapy queue, 即 Scrapy 本身不支持爬虫分布式,Scrapy-redis 解决就是把 Scrapy queue 换为 **redis 数据库** (也是指 redis 队列),在同一个 redis-server 存放要爬取的 request,便可以让多个 spider 在一个 redis 数据库读取
 
       + Scrapy-redis 把待爬取的队列按照优先级建立了一个字典结构,然后根据优先级,决定队列顺序,出列时优先级较小的优先出列.
 
@@ -143,7 +143,7 @@
 
    2. **Duplication Filter (DupeFilter)** : 负责 Scrapy-redis 的去重功能,通过redis 的 **set 不重复** 的特性,实现去重.
 
-      + **Scrapy 去重** : 用集合实现 request 去重,Scrapy 将已将发送的 request 指纹放入一个集合中,把下一个 request 指纹拿到集合中对比,如果指纹存在于集合资,说明 request 发送过了,没有则继续操作
+      + **Scrapy 去重** : 用集合实现 request 去重,Scrapy 将已将发送的 request 指纹放入一个集合中,把下一个 request 指纹拿到集合中对比,如果指纹存在于集合,说明 request 发送过了,没有则继续操作
 
         ```python
         def request_seen(self, request):
@@ -160,16 +160,22 @@
         
 
       + **Scrapy-redis 去重** : 调度器从引擎接受 **request** , 将 request 的指纹存入 redis 的 set 检查是否出现了重复,并将不重复的 request push 写入 redis 的 request queue
+
       + **Scrapy-redis 请求过程** : 引擎请求 request (Spider 发送出的) 时,调度器从 redis 的 request queue 队列里根据优先级 pop 出一个 request 给引擎,引擎将此 request 发送给 spider 处理
+
+        
 
    3. Item Pipeline
 
       + **Scrapy-redis 存储过程** : 引擎将 (spider 返回的) 爬取到的 Item 发送给 spider 处理; Item Pipeline  将爬取到的 Item 存入 redis 的 Items queue
+
       + 修改过后的 Item Pipeline 可以很方便的 根据 key 从 item queue 提取 item,从而实现 **items processes 集群**
+
+        
 
    4. Base Spider : 重写后的 RedisSpider 继承了 **Spider** 和 **RedisMixin (从 redis 中读取 url) ** 两个类
 
-      + 当生成一个 Spider 继承 RedisSpider 时, **调用 setup_redis 函数**，这个函数**连接 redis 数据库**,然后会**设置 signals** (信号):
+      + 当生成一个 Spider 继承 RedisSpider 时, **调用 setup_redis 函数**，这个函数**连接 redis 数据库**,然后会**设置 signals** (信号):<br>
         1. 当 **spider 空闲**的时候的 signals : 会调用 spider_idle 函数,这个函数调用 schedule_next_request 函数,保证 spider 一直存活,并且抛出 **DontCloseSpider 异常**
         2. **抓取到 item** 时的 signals : 调用 item-scraped 函数,这个函数会调用 schedule_next_request 函数,获取下一个 request
 
